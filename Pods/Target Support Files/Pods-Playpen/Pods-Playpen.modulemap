@@ -1,0 +1,6 @@
+framework module Pods_Playpen {
+  umbrella header "Pods-Playpen-umbrella.h"
+
+  export *
+  module * { export * }
+}
