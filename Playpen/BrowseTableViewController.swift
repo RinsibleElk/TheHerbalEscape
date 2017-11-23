@@ -43,14 +43,14 @@ class BrowseTableViewController: UITableViewController, UISearchResultsUpdating 
         
         allResults =
             [
-                Learnable(title: "Balisse", translation: "Essilab", image: #imageLiteral(resourceName: "balisse")),
-                Learnable(title: "Berbercane", translation: "Enacrebreb", image: #imageLiteral(resourceName: "berbercane")),
-                Learnable(title: "Crow's Eye", translation: "Eye Sworc", image: #imageLiteral(resourceName: "crows_eye")),
-                Learnable(title: "Feainnewedd", translation: "Ddewenniaef", image: #imageLiteral(resourceName: "feainnewedd")),
-                Learnable(title: "Fool's Parsley", translation: "Yelsrap Sloof", image: #imageLiteral(resourceName: "fools parsley")),
-                Learnable(title: "Beggartick", translation: "Kcitraggeb", image: #imageLiteral(resourceName: "beggartick_blossom")),
-                Learnable(title: "Ginatia", translation: "Aitanig", image: #imageLiteral(resourceName: "ginatia")),
-                Learnable(title: "White Myrtle", translation: "Eltrym Etihw", image: #imageLiteral(resourceName: "white_myrtle"))
+                Learnable(category: "Flower", title: "Balisse", translation: "Essilab", image: #imageLiteral(resourceName: "balisse")),
+                Learnable(category: "Flower", title: "Berbercane", translation: "Enacrebreb", image: #imageLiteral(resourceName: "berbercane")),
+                Learnable(category: "Flower", title: "Crow's Eye", translation: "Eye Sworc", image: #imageLiteral(resourceName: "crows_eye")),
+                Learnable(category: "Flower", title: "Feainnewedd", translation: "Ddewenniaef", image: #imageLiteral(resourceName: "feainnewedd")),
+                Learnable(category: "Flower", title: "Fool's Parsley", translation: "Yelsrap Sloof", image: #imageLiteral(resourceName: "fools parsley")),
+                Learnable(category: "Flower", title: "Beggartick", translation: "Kcitraggeb", image: #imageLiteral(resourceName: "beggartick_blossom")),
+                Learnable(category: "Flower", title: "Ginatia", translation: "Aitanig", image: #imageLiteral(resourceName: "ginatia")),
+                Learnable(category: "Flower", title: "White Myrtle", translation: "Eltrym Etihw", image: #imageLiteral(resourceName: "white_myrtle"))
             ]
         currentResults = allResults
 
