@@ -137,31 +137,17 @@
         <!--Browse Item-->
         <scene sceneID="gbj-s6-Ydd">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Browse Item" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fKg-zs-gqW" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Browse Item" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fKg-zs-gqW" customClass="BrowseItemViewController" customModule="Playpen" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YPu-DF-aPX"/>
+                        <barButtonItem title="Previous" id="dHw-o3-AWH"/>
+                        <barButtonItem title="Next" id="dN8-AQ-uh5"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNf-XK-ZUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1409" y="847"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="15u-wy-4da">
-            <objects>
-                <viewController id="wbm-BI-d0o" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jid-tP-n4i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sq-PE-NN7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="Y95-WF-FbN"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sd1-Ga-JaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2143.1999999999998" y="846.9265367316342"/>
         </scene>
         <!--Flashcards-->
         <scene sceneID="Srf-Ni-qjn">

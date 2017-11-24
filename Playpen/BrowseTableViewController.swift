@@ -147,14 +147,21 @@ class BrowseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let pagesViewController = segue.destination as? BrowseItemViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                var learnables : [Learnable]!
+                if isFiltering() {
+                    learnables = currentResults
+                } else {
+                    learnables = allResults
+                }                
+                pagesViewController.learnableIndex = indexPath.row
+                pagesViewController.learnables = learnables
+            }
+        }
     }
-    */
-
 }

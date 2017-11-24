@@ -33,6 +33,8 @@
 		D3AD5F041FC0F2370042FB47 /* PlaypenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD5F031FC0F2370042FB47 /* PlaypenTests.swift */; };
 		D3C9B76F1FC1BAA000A6C3A1 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9B76E1FC1BAA000A6C3A1 /* Segues.swift */; };
 		D3C9B7721FC1C76800A6C3A1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9B7711FC1C76800A6C3A1 /* Colors.swift */; };
+		D3D4883C1FC7952200796BB4 /* BrowseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4883B1FC7952200796BB4 /* BrowseItemViewController.swift */; };
+		D3D4883E1FC7966100796BB4 /* BrowseItemPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4883D1FC7966100796BB4 /* BrowseItemPageViewController.swift */; };
 		D3FD0B2C1FC4E66D00535999 /* FlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FD0B2B1FC4E66D00535999 /* FlashcardsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		D3AD5F051FC0F2370042FB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C9B76E1FC1BAA000A6C3A1 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		D3C9B7711FC1C76800A6C3A1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D3D4883B1FC7952200796BB4 /* BrowseItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseItemViewController.swift; sourceTree = "<group>"; };
+		D3D4883D1FC7966100796BB4 /* BrowseItemPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseItemPageViewController.swift; sourceTree = "<group>"; };
 		D3FD0B2B1FC4E66D00535999 /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewController.swift; sourceTree = "<group>"; };
 		D7F9BFCFF056BC711E513C40 /* Pods-Playpen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playpen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Playpen/Pods-Playpen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +146,8 @@
 				D3C9B7701FC1BB0000A6C3A1 /* Constants */,
 				D3AD5EEE1FC0F2370042FB47 /* AppDelegate.swift */,
 				D3862BEB1FC7606400742B67 /* Learnable.swift */,
+				D3D4883D1FC7966100796BB4 /* BrowseItemPageViewController.swift */,
+				D3D4883B1FC7952200796BB4 /* BrowseItemViewController.swift */,
 				D3862BF11FC7621900742B67 /* MenuTableViewController.swift */,
 				D3FD0B2B1FC4E66D00535999 /* FlashcardsViewController.swift */,
 				D3862BE81FC75ED200742B67 /* BrowseTableViewCell.swift */,
@@ -396,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D4883E1FC7966100796BB4 /* BrowseItemPageViewController.swift in Sources */,
 				D3FD0B2C1FC4E66D00535999 /* FlashcardsViewController.swift in Sources */,
 				D3862BEF1FC7612E00742B67 /* ReuseIdentifiers.swift in Sources */,
 				D3862BE91FC75ED200742B67 /* BrowseTableViewCell.swift in Sources */,
@@ -405,6 +412,7 @@
 				D3862BD21FC7558D00742B67 /* BrowseTableViewController.swift in Sources */,
 				D3862BEC1FC7606400742B67 /* Learnable.swift in Sources */,
 				D3C9B76F1FC1BAA000A6C3A1 /* Segues.swift in Sources */,
+				D3D4883C1FC7952200796BB4 /* BrowseItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
