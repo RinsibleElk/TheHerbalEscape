@@ -12,13 +12,18 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     // MARK: - Properties
     var selectedBrowsable : Browsable? {
         didSet {
+            // Dismiss the keyboard if filtering.
+            // TODO There might be a cleaner way to do this - https://stackoverflow.com/questions/29925373/how-to-make-keyboard-dismiss-when-i-press-out-of-searchbar-on-swift
+            tableVc?.searchController?.searchBar.endEditing(true)
+            
+            // Push the browsable to the content pane / page.
             if (isViewLoaded && selectedBrowsable != nil) {
                 pushSelectedBrowsableToClients()
             }
         }
     }
     var allBrowsables = [Browsable]()
-    var nav : UINavigationController!
+    private var tableVc : BrowserTableViewController?
     
     // MARK: - Overrides
     override func viewDidLoad() {
@@ -30,7 +35,7 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
             allBrowsables = appDelegate!.contentRepository.Browsables
         }
         
-        // On iPhone, start with the table, on iPad, show both.
+        // On compact width, start with the table (by ensuring we start with no selection), on regular width, show both table and content together.
         self.delegate = self
         self.preferredDisplayMode = .allVisible
 
@@ -38,7 +43,7 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
         let nav = viewControllers[0] as? UINavigationController
         if (nav != nil) {
             for child in nav!.childViewControllers {
-                let tableVc = child as? BrowserTableViewController
+                tableVc = child as? BrowserTableViewController
                 tableVc?.registerClient(client: self)
             }
         }
@@ -54,16 +59,6 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
         
     }
     
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (selectedBrowsable != nil) {
-            pushSelectedBrowsableToClients()
-        }
-    }
-    
     // MARK: - BrowsableClient
     func select(browsable: Browsable) {
         selectedBrowsable = browsable
@@ -71,39 +66,23 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     
     // MARK: - LinkHandler
     func handleLink(linkText: String, content: BrowserContentViewController?) {
-        print("Processing link \(linkText)")
         var foundBrowsable : Browsable?
-        // TODO: Yikes, must be a dictionary or something
+        // TODO: Yikes, must be a dictionary by name or something.
         for browsable in allBrowsables  {
             if browsable.BrowserTitle == linkText {
                 foundBrowsable = browsable
                 break
             }
         }
-        // Going to try something crafty.
+        // Clearly when we are handling a link, we already have content visible.
+        // Just push the page down. It will show up as a page transition in the content.
         if (foundBrowsable != nil && content != nil) {
-            //let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentIdentifier) as! BrowserContentViewController
-            //content.setLinkHandler(linkHandler: self)
-            //content.select(browsable: foundBrowsable!)
-            
-            //nav.pushViewController(content, animated: true)
-
-            //content!.navigateToBrowsable(browsable: foundBrowsable!)
-            
-            //selectedBrowsable = foundBrowsable!
-            //viewControllers.first?.navigationController?.pushViewController(content, animated: true)
-            
             content!.select(browsable: foundBrowsable!)
-            
-            //self.navigationController?.pushViewController(content, animated: true)
         }
     }
     
     // MARK: - Private functions
     func pushSelectedBrowsableToClients() {
-        //nav = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentNavigationIdentifier) as! UINavigationController
-        //let contentFirst = nav.viewControllers.first
-        //let content = contentFirst! as! BrowserContentViewController
         let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentIdentifier) as! BrowserContentViewController
         content.setLinkHandler(linkHandler: self)
         content.select(browsable: selectedBrowsable!)
