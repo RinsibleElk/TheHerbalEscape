@@ -10,5 +10,10 @@ import Foundation
 
 /// Constant table reuse identifiers.
 struct ReuseIdentifiers {
-    static let BrowserTableCellIdentifier = "BrowserTableCellIdentifier"
+    static let BrowserTableCellIdentifier                       = "BrowserTableCellIdentifier"
+    static let BrowserContentPageHeadingTableCellIdentifier     = "BrowserContentPageHeadingTableCellIdentifier"
+    static let BrowserContentPageTextTableCellIdentifier        = "BrowserContentPageTextTableCellIdentifier"
+    static let BrowserContentPageEtymologyTableCellIdentifier   = "BrowserContentPageEtymologyTableCellIdentifier"
+    static let BrowserContentPageEtymology2TableCellIdentifier  = "BrowserContentPageEtymology2TableCellIdentifier"
+    static let BrowserContentPageImageTableCellIdentifier       = "BrowserContentPageImageTableCellIdentifier"
 }

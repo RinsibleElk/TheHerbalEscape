@@ -67,7 +67,7 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     }
     
     // MARK: - LinkHandler
-    func handleLink(linkText: String, content: BrowserContentViewController?) {
+    func handleLink(linkText: String, content: BrowsableClient?) {
         var foundBrowsable : Browsable?
         // TODO: Yikes, must be a dictionary by name or something.
         for browsable in allBrowsables  {
@@ -85,7 +85,8 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     
     // MARK: - Private functions
     func pushSelectedBrowsableToClients() {
-        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentIdentifier) as! BrowserContentViewController
+        //        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentIdentifier) as! BrowserContentViewController
+        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentPagesIdentifier) as! BrowserContentPagesViewController
         content.setLinkHandler(linkHandler: self)
         content.select(browsable: selectedBrowsable!)
         showDetailViewController(content, sender: nil)

@@ -6,34 +6,213 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Browser Content View Controller-->
-        <scene sceneID="89f-bc-Mzv">
+        <!--Browser Content Pages View Controller-->
+        <scene sceneID="LFc-ZI-qZ8">
             <objects>
-                <pageViewController storyboardIdentifier="BrowserContentIdentifier" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="mLG-hq-Bqu" customClass="BrowserContentViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="dbo-Ba-Ahx"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NCx-Qg-2sK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="BrowserContentPagesIdentifier" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ykp-dR-wER" customClass="BrowserContentPagesViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOD-cC-KNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="444"/>
+            <point key="canvasLocation" x="630" y="482"/>
         </scene>
-        <!--Browser Content Page View Controller-->
-        <scene sceneID="sCg-bA-abX">
+        <!--Browser Content Page Table View Controller-->
+        <scene sceneID="NbC-Jx-E6A">
             <objects>
-                <viewController storyboardIdentifier="BrowserContentPageIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BdR-cC-fO1" customClass="BrowserContentPageViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CVs-aW-BfI">
+                <tableViewController storyboardIdentifier="BrowserContentPageTableIdentifier" id="4ZS-ud-IKY" customClass="BrowserContentPageTableViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" maximumZoomScale="2" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jr6-hX-t7Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="hjD-Ub-J3d"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqj-vo-sxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <gestureRecognizers/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageHeadingTableCellIdentifier" id="7Nm-E4-Gtw" customClass="BrowserContentPageHeadingTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Nm-E4-Gtw" id="Cqb-ai-qiI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJw-Nb-flC">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GJw-Nb-flC" firstAttribute="trailing" secondItem="Cqb-ai-qiI" secondAttribute="trailingMargin" id="M0h-RQ-Cdd"/>
+                                        <constraint firstItem="GJw-Nb-flC" firstAttribute="top" secondItem="Cqb-ai-qiI" secondAttribute="topMargin" id="WN6-h4-uKC"/>
+                                        <constraint firstItem="GJw-Nb-flC" firstAttribute="leading" secondItem="Cqb-ai-qiI" secondAttribute="leadingMargin" id="lpA-fj-Oz7"/>
+                                        <constraint firstItem="GJw-Nb-flC" firstAttribute="bottom" secondItem="Cqb-ai-qiI" secondAttribute="bottomMargin" id="vm1-u4-XzE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="headingTextLabel" destination="GJw-Nb-flC" id="T9r-l9-Dux"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageEtymologyTableCellIdentifier" id="5xk-vq-1qX" customClass="BrowserContentPageEtymologyTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5xk-vq-1qX" id="hBS-8P-zcw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ino-MS-Z3Y">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pk-a5-r8K">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Etymology" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csu-kj-dLZ">
+                                                    <rect key="frame" x="0.0" y="20.5" width="343" height="1.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ino-MS-Z3Y" firstAttribute="bottom" secondItem="hBS-8P-zcw" secondAttribute="bottomMargin" id="Jfd-hV-52w"/>
+                                        <constraint firstItem="Ino-MS-Z3Y" firstAttribute="leading" secondItem="hBS-8P-zcw" secondAttribute="leadingMargin" id="QOY-ge-uiv"/>
+                                        <constraint firstItem="Ino-MS-Z3Y" firstAttribute="top" secondItem="hBS-8P-zcw" secondAttribute="topMargin" id="hKL-RR-BOp"/>
+                                        <constraint firstItem="Ino-MS-Z3Y" firstAttribute="trailing" secondItem="hBS-8P-zcw" secondAttribute="trailingMargin" id="jUl-15-Z6I"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="etymologyLabel" destination="csu-kj-dLZ" id="b6V-cw-LDf"/>
+                                    <outlet property="wordLabel" destination="3pk-a5-r8K" id="TaJ-j3-FwE"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageImageTableCellIdentifier" rowHeight="350" id="kp0-iK-chW" customClass="BrowserContentPageImageTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="350"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kp0-iK-chW" id="zfJ-xT-hzw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="lzV-88-sYK">
+                                            <rect key="frame" x="16" y="11" width="343" height="328"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="328" id="p2N-W0-11i"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lzV-88-sYK" firstAttribute="bottom" secondItem="zfJ-xT-hzw" secondAttribute="bottomMargin" id="MIr-Be-fHe"/>
+                                        <constraint firstItem="lzV-88-sYK" firstAttribute="trailing" secondItem="zfJ-xT-hzw" secondAttribute="trailingMargin" id="Yw7-XI-Rfp"/>
+                                        <constraint firstItem="lzV-88-sYK" firstAttribute="leading" secondItem="zfJ-xT-hzw" secondAttribute="leadingMargin" id="d5D-Xy-kuQ"/>
+                                        <constraint firstItem="lzV-88-sYK" firstAttribute="top" secondItem="zfJ-xT-hzw" secondAttribute="topMargin" id="ksV-wO-Wi8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photoImageView" destination="lzV-88-sYK" id="Zav-S9-xXA"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageTextTableCellIdentifier" id="3tJ-nb-NSM" customClass="BrowserContentPageTextTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="466" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3tJ-nb-NSM" id="jTX-Rr-QcS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-hx-D7o">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <gestureRecognizers/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="trailing" secondItem="jTX-Rr-QcS" secondAttribute="trailingMargin" id="GV0-gH-q1L"/>
+                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="leading" secondItem="jTX-Rr-QcS" secondAttribute="leadingMargin" id="ixb-43-cWI"/>
+                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="top" secondItem="jTX-Rr-QcS" secondAttribute="topMargin" id="p11-0P-O8w"/>
+                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="bottom" secondItem="jTX-Rr-QcS" secondAttribute="bottomMargin" id="wCx-bO-fW3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="elementTextView" destination="fh1-hx-D7o" id="w67-ju-bXM"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageEtymology2TableCellIdentifier" rowHeight="129" id="dUN-WU-MVW" customClass="BrowserContentPageEtymology2TableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="510" width="375" height="129"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dUN-WU-MVW" id="izl-fa-mK8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-Di-qyA">
+                                            <rect key="frame" x="16" y="11" width="169.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMZ-sb-jHM">
+                                            <rect key="frame" x="189.5" y="11" width="169.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etymology2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-em-nJq">
+                                            <rect key="frame" x="189.5" y="31.5" width="169.5" height="86.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etymology1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeH-r7-vbp">
+                                            <rect key="frame" x="16" y="31.5" width="169.5" height="86.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aeH-r7-vbp" firstAttribute="top" secondItem="4hw-Di-qyA" secondAttribute="bottom" id="4Gv-oj-FvV"/>
+                                        <constraint firstItem="4hw-Di-qyA" firstAttribute="top" secondItem="izl-fa-mK8" secondAttribute="topMargin" id="5jm-kb-zBW"/>
+                                        <constraint firstItem="gIV-em-nJq" firstAttribute="trailing" secondItem="izl-fa-mK8" secondAttribute="trailingMargin" id="75i-xq-c52"/>
+                                        <constraint firstItem="gIV-em-nJq" firstAttribute="width" secondItem="4hw-Di-qyA" secondAttribute="width" id="JBS-Q9-Ec6"/>
+                                        <constraint firstItem="lMZ-sb-jHM" firstAttribute="trailing" secondItem="izl-fa-mK8" secondAttribute="trailingMargin" id="O20-ai-5jR"/>
+                                        <constraint firstItem="lMZ-sb-jHM" firstAttribute="top" secondItem="izl-fa-mK8" secondAttribute="topMargin" id="RaQ-ph-Y5Z"/>
+                                        <constraint firstItem="aeH-r7-vbp" firstAttribute="width" secondItem="4hw-Di-qyA" secondAttribute="width" id="Vit-5F-OZH"/>
+                                        <constraint firstItem="lMZ-sb-jHM" firstAttribute="width" secondItem="4hw-Di-qyA" secondAttribute="width" id="eOe-S1-AW1"/>
+                                        <constraint firstItem="aeH-r7-vbp" firstAttribute="bottom" secondItem="izl-fa-mK8" secondAttribute="bottomMargin" id="g5E-jI-hmv"/>
+                                        <constraint firstItem="lMZ-sb-jHM" firstAttribute="height" secondItem="4hw-Di-qyA" secondAttribute="height" id="jbM-nA-yUE"/>
+                                        <constraint firstItem="gIV-em-nJq" firstAttribute="height" secondItem="aeH-r7-vbp" secondAttribute="height" id="mdw-6q-Prl"/>
+                                        <constraint firstItem="lMZ-sb-jHM" firstAttribute="leading" secondItem="4hw-Di-qyA" secondAttribute="trailing" constant="4" id="p8F-p0-2sl"/>
+                                        <constraint firstItem="gIV-em-nJq" firstAttribute="leading" secondItem="aeH-r7-vbp" secondAttribute="trailing" constant="4" id="qi8-To-7Ej"/>
+                                        <constraint firstItem="gIV-em-nJq" firstAttribute="top" secondItem="lMZ-sb-jHM" secondAttribute="bottom" id="rfY-Mx-ef5"/>
+                                        <constraint firstItem="4hw-Di-qyA" firstAttribute="leading" secondItem="izl-fa-mK8" secondAttribute="leadingMargin" id="v9w-OD-rzJ"/>
+                                        <constraint firstItem="aeH-r7-vbp" firstAttribute="top" secondItem="4hw-Di-qyA" secondAttribute="bottom" id="wDW-bo-dC9"/>
+                                        <constraint firstItem="gIV-em-nJq" firstAttribute="bottom" secondItem="izl-fa-mK8" secondAttribute="bottomMargin" id="x87-oK-qGV"/>
+                                        <constraint firstItem="aeH-r7-vbp" firstAttribute="leading" secondItem="izl-fa-mK8" secondAttribute="leadingMargin" id="zny-Kr-aOK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="etymology1Label" destination="aeH-r7-vbp" id="39m-JR-Aj8"/>
+                                    <outlet property="etymology2Label" destination="gIV-em-nJq" id="HEu-cu-Tdb"/>
+                                    <outlet property="word1Label" destination="4hw-Di-qyA" id="Gtr-2J-8Yh"/>
+                                    <outlet property="word2Label" destination="lMZ-sb-jHM" id="6Zn-Tc-ajr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4ZS-ud-IKY" id="qR5-zl-C0B"/>
+                            <outlet property="delegate" destination="4ZS-ud-IKY" id="6Iv-SF-2Zj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUu-lW-9K9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="444"/>
+            <point key="canvasLocation" x="1582" y="482"/>
         </scene>
         <!--Browser-->
         <scene sceneID="ZFd-R0-jD2">
@@ -51,7 +230,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUR-7s-wee">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUR-7s-wee">
                                             <rect key="frame" x="16" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -110,4 +289,7 @@
             <point key="canvasLocation" x="-322" y="81"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="noImage" width="540" height="540"/>
+    </resources>
 </document>

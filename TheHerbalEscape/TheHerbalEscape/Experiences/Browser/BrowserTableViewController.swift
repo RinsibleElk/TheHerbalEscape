@@ -126,23 +126,4 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
         }
         browsableClient?.select(browsable: browsable!)
     }
-
-    // MARK: - Details view
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == SegueIdentifiers.ShowDetailIdentifier) {
-            pushBrowsableToDetailsView()
-        }
-    }
-/*    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-    {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSString *object = dailyGramsNumbers[indexPath.row];
-    NSString *object1 = dailyGramsBody [indexPath.row];
-    [[segue destinationViewController] setDetailItem:object1];
-    [[segue destinationViewController] setTitle:object];
-    
-    }
-    }*/
-
 }
