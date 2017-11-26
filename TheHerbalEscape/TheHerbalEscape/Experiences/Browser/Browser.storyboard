@@ -254,7 +254,13 @@
                             <outlet property="delegate" destination="KZM-dF-7es" id="dHF-vU-RiL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Browser" id="qHN-Sv-gye"/>
+                    <navigationItem key="navigationItem" title="Browser" id="qHN-Sv-gye">
+                        <barButtonItem key="rightBarButtonItem" title="Home" id="2qq-UQ-AaW">
+                            <connections>
+                                <action selector="goHome:" destination="KZM-dF-7es" id="qxN-cx-PSH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7h-5h-f4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -286,7 +292,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cg-xB-yCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="81"/>
+            <point key="canvasLocation" x="-334" y="81"/>
         </scene>
     </scenes>
     <resources>

@@ -126,4 +126,10 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
         }
         browsableClient?.select(browsable: browsable!)
     }
+    
+    // MARK: - Exit
+    @IBAction func goHome(_ sender: UIBarButtonItem) {
+        let parentMaster = browsableClient as! BrowserMasterViewController
+        parentMaster.dismiss(animated: true, completion: nil)
+    }
 }
