@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         contentRepository.loadContentPack(contentPack: WitcherContentPack())
+        for font in UIFont.familyNames {
+            print("* \(font)")
+            for fontName in UIFont.fontNames(forFamilyName: font) {
+                print("  - \(fontName)")
+            }
+        }
         return true
     }
 

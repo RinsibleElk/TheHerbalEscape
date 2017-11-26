@@ -10,8 +10,8 @@ import Foundation
 
 /// Font names used in this application.
 struct FontNames {
-    static let Perpetua = "Perpetua"
-    static let PerpetuaBold = "Perpetua-Bold"
-    static let PerpetuaItalic = "Perpetua-Italic"
-    static let PerpetuaBoldItalic = "Perpetua-BoldItalic"
+    static let Perpetua = "HelveticaNeue"
+    static let PerpetuaBold = "HelveticaNeue-Bold"
+    static let PerpetuaItalic = "HelveticaNeue-Italic"
+    static let PerpetuaBoldItalic = "HelveticaNeue-BoldItalic"
 }

@@ -14,7 +14,9 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
         didSet {
             // Dismiss the keyboard if filtering.
             // TODO There might be a cleaner way to do this - https://stackoverflow.com/questions/29925373/how-to-make-keyboard-dismiss-when-i-press-out-of-searchbar-on-swift
-            tableVc?.searchController?.searchBar.endEditing(true)
+            // I think this solution leads to transaction synchronize issue, plus doesn't quite reform the views correctly.
+            // Use delegate?
+            tableVc?.searchController?.searchBar.resignFirstResponder()
             
             // Push the browsable to the content pane / page.
             if (isViewLoaded && selectedBrowsable != nil) {

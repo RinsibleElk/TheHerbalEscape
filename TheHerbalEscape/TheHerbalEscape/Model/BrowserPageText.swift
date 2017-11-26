@@ -16,8 +16,12 @@ public class BrowserPageText: Codable {
     /// The links.
     var Links : [BrowserPageTextLink]
     
-    init(text: String, links: [BrowserPageTextLink]) {
+    /// Highlights - e.g. Bold, Italics.
+    var Highlights : [BrowserPageTextHighlight]
+    
+    init(text: String, links: [BrowserPageTextLink], highlights: [BrowserPageTextHighlight]) {
         Text = text
         Links = links
+        Highlights = highlights
     }
 }

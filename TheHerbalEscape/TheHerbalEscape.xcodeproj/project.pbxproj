@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A3E44EE686E3BBBD8F8C1B2 /* Pods_TheHerbalEscape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6847C45EA1817D05B727DC6 /* Pods_TheHerbalEscape.framework */; };
 		939C84065FD5E1D3D62984BF /* Pods_TheHerbalEscapeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1441C67092958C3BDD1B364 /* Pods_TheHerbalEscapeTests.framework */; };
+		D32BCB441FCAF20800BE0A22 /* BrowserPageTextHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BCB431FCAF20800BE0A22 /* BrowserPageTextHighlight.swift */; };
+		D32BCB461FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BCB451FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift */; };
 		D3569AFC1FC972000038EE6F /* Regexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569AFB1FC972000038EE6F /* Regexes.swift */; };
 		D3569AFE1FC974680038EE6F /* BrowserContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569AFD1FC974680038EE6F /* BrowserContentViewController.swift */; };
 		D3569B001FC97D9D0038EE6F /* BrowserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569AFF1FC97D9D0038EE6F /* BrowserPage.swift */; };
@@ -38,18 +40,6 @@
 		D3B86E871FC8A8C300DF1723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B86E851FC8A8C300DF1723 /* LaunchScreen.storyboard */; };
 		D3B86E921FC8A8C300DF1723 /* TheHerbalEscapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B86E911FC8A8C300DF1723 /* TheHerbalEscapeTests.swift */; };
 		D3B86E9D1FC8A8C300DF1723 /* TheHerbalEscapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B86E9C1FC8A8C300DF1723 /* TheHerbalEscapeUITests.swift */; };
-		D3B86EAF1FC8A9E100DF1723 /* PerpetuaBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAB1FC8A9E000DF1723 /* PerpetuaBold.ttf */; };
-		D3B86EB01FC8A9E100DF1723 /* PerpetuaBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAB1FC8A9E000DF1723 /* PerpetuaBold.ttf */; };
-		D3B86EB11FC8A9E100DF1723 /* PerpetuaBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAB1FC8A9E000DF1723 /* PerpetuaBold.ttf */; };
-		D3B86EB21FC8A9E100DF1723 /* PerpetuaBoldItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAC1FC8A9E000DF1723 /* PerpetuaBoldItalics.ttf */; };
-		D3B86EB31FC8A9E100DF1723 /* PerpetuaBoldItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAC1FC8A9E000DF1723 /* PerpetuaBoldItalics.ttf */; };
-		D3B86EB41FC8A9E100DF1723 /* PerpetuaBoldItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAC1FC8A9E000DF1723 /* PerpetuaBoldItalics.ttf */; };
-		D3B86EB51FC8A9E100DF1723 /* PerpetuaItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAD1FC8A9E000DF1723 /* PerpetuaItalics.ttf */; };
-		D3B86EB61FC8A9E100DF1723 /* PerpetuaItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAD1FC8A9E000DF1723 /* PerpetuaItalics.ttf */; };
-		D3B86EB71FC8A9E100DF1723 /* PerpetuaItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAD1FC8A9E000DF1723 /* PerpetuaItalics.ttf */; };
-		D3B86EB81FC8A9E100DF1723 /* PerpetuaRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAE1FC8A9E100DF1723 /* PerpetuaRegular.ttf */; };
-		D3B86EB91FC8A9E100DF1723 /* PerpetuaRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAE1FC8A9E100DF1723 /* PerpetuaRegular.ttf */; };
-		D3B86EBA1FC8A9E100DF1723 /* PerpetuaRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3B86EAE1FC8A9E100DF1723 /* PerpetuaRegular.ttf */; };
 		D3C0393E1FC8CE14000FD674 /* Learnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0393D1FC8CE14000FD674 /* Learnable.swift */; };
 		D3C039401FC8E2E5000FD674 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0393F1FC8E2E5000FD674 /* Flower.swift */; };
 		D3C039421FC8E34C000FD674 /* LearnableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C039411FC8E34C000FD674 /* LearnableType.swift */; };
@@ -91,6 +81,8 @@
 		83024B29B84E848EF667612E /* Pods-TheHerbalEscape.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheHerbalEscape.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheHerbalEscape/Pods-TheHerbalEscape.release.xcconfig"; sourceTree = "<group>"; };
 		A6847C45EA1817D05B727DC6 /* Pods_TheHerbalEscape.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheHerbalEscape.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1441C67092958C3BDD1B364 /* Pods_TheHerbalEscapeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheHerbalEscapeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D32BCB431FCAF20800BE0A22 /* BrowserPageTextHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageTextHighlight.swift; sourceTree = "<group>"; };
+		D32BCB451FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageTextHighlightType.swift; sourceTree = "<group>"; };
 		D3569AFB1FC972000038EE6F /* Regexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regexes.swift; sourceTree = "<group>"; };
 		D3569AFD1FC974680038EE6F /* BrowserContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentViewController.swift; sourceTree = "<group>"; };
 		D3569AFF1FC97D9D0038EE6F /* BrowserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPage.swift; sourceTree = "<group>"; };
@@ -126,10 +118,6 @@
 		D3B86E981FC8A8C300DF1723 /* TheHerbalEscapeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheHerbalEscapeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B86E9C1FC8A8C300DF1723 /* TheHerbalEscapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheHerbalEscapeUITests.swift; sourceTree = "<group>"; };
 		D3B86E9E1FC8A8C300DF1723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3B86EAB1FC8A9E000DF1723 /* PerpetuaBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PerpetuaBold.ttf; sourceTree = "<group>"; };
-		D3B86EAC1FC8A9E000DF1723 /* PerpetuaBoldItalics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PerpetuaBoldItalics.ttf; sourceTree = "<group>"; };
-		D3B86EAD1FC8A9E000DF1723 /* PerpetuaItalics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PerpetuaItalics.ttf; sourceTree = "<group>"; };
-		D3B86EAE1FC8A9E100DF1723 /* PerpetuaRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PerpetuaRegular.ttf; sourceTree = "<group>"; };
 		D3C0393D1FC8CE14000FD674 /* Learnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learnable.swift; sourceTree = "<group>"; };
 		D3C0393F1FC8E2E5000FD674 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		D3C039411FC8E34C000FD674 /* LearnableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnableType.swift; sourceTree = "<group>"; };
@@ -272,10 +260,6 @@
 		D3B86EAA1FC8A99000DF1723 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D3B86EAE1FC8A9E100DF1723 /* PerpetuaRegular.ttf */,
-				D3B86EAB1FC8A9E000DF1723 /* PerpetuaBold.ttf */,
-				D3B86EAC1FC8A9E000DF1723 /* PerpetuaBoldItalics.ttf */,
-				D3B86EAD1FC8A9E000DF1723 /* PerpetuaItalics.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -313,6 +297,8 @@
 				D3569B1C1FCA28A70038EE6F /* BrowserPageEtymology.swift */,
 				D3569B1E1FCA29210038EE6F /* BrowserPageEtymologyPhrase.swift */,
 				D3569B241FCA48840038EE6F /* BrowserPageTextLink.swift */,
+				D32BCB431FCAF20800BE0A22 /* BrowserPageTextHighlight.swift */,
+				D32BCB451FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,11 +461,7 @@
 			files = (
 				D3E5EA0F1FC8F45500E27037 /* Browser.storyboard in Resources */,
 				D3B86E871FC8A8C300DF1723 /* LaunchScreen.storyboard in Resources */,
-				D3B86EAF1FC8A9E100DF1723 /* PerpetuaBold.ttf in Resources */,
-				D3B86EB51FC8A9E100DF1723 /* PerpetuaItalics.ttf in Resources */,
 				D3B86E841FC8A8C300DF1723 /* Assets.xcassets in Resources */,
-				D3B86EB21FC8A9E100DF1723 /* PerpetuaBoldItalics.ttf in Resources */,
-				D3B86EB81FC8A9E100DF1723 /* PerpetuaRegular.ttf in Resources */,
 				D3E5EA0A1FC8EE7F00E27037 /* Settings.bundle in Resources */,
 				D3B86E7F1FC8A8C300DF1723 /* Main.storyboard in Resources */,
 			);
@@ -489,10 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3B86EB01FC8A9E100DF1723 /* PerpetuaBold.ttf in Resources */,
-				D3B86EB31FC8A9E100DF1723 /* PerpetuaBoldItalics.ttf in Resources */,
-				D3B86EB91FC8A9E100DF1723 /* PerpetuaRegular.ttf in Resources */,
-				D3B86EB61FC8A9E100DF1723 /* PerpetuaItalics.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,10 +478,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3B86EB11FC8A9E100DF1723 /* PerpetuaBold.ttf in Resources */,
-				D3B86EB41FC8A9E100DF1723 /* PerpetuaBoldItalics.ttf in Resources */,
-				D3B86EBA1FC8A9E100DF1723 /* PerpetuaRegular.ttf in Resources */,
-				D3B86EB71FC8A9E100DF1723 /* PerpetuaItalics.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,8 +662,10 @@
 				D3569B111FC986E30038EE6F /* StoryboardIdentifiers.swift in Sources */,
 				D3569B061FC981C50038EE6F /* BrowserPageText.swift in Sources */,
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
+				D32BCB441FCAF20800BE0A22 /* BrowserPageTextHighlight.swift in Sources */,
 				D3569B1F1FCA29210038EE6F /* BrowserPageEtymologyPhrase.swift in Sources */,
 				D3569B001FC97D9D0038EE6F /* BrowserPage.swift in Sources */,
+				D32BCB461FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift in Sources */,
 				D3C039421FC8E34C000FD674 /* LearnableType.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,

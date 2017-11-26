@@ -9,6 +9,7 @@
 import UIKit
 import PureLayout
 
+/// Contains a single formatted page of content.
 class BrowserContentPageViewController: UIViewController, LinkHandlerClient {
     // MARK: - Properties
     private var linkHandler : LinkHandler?
@@ -45,10 +46,37 @@ class BrowserContentPageViewController: UIViewController, LinkHandlerClient {
                 let textView = UITextView()
                 let textAttributedString = NSMutableAttributedString(string: text.Text)
                 let textEntireRange = NSRange(location: 0, length: text.Text.count)
-                textAttributedString.addAttribute(.font, value: UIFont(name: FontNames.Perpetua, size: FontSizes.p)!, range: textEntireRange)
                 textView.textAlignment = .left
                 textView.isEditable = false
                 textView.isScrollEnabled = false
+                
+                // Set up font, taking into account highlights.
+                if (text.Highlights.count == 0) {
+                    textAttributedString.addAttribute(.font, value: UIFont(name: FontNames.Perpetua, size: FontSizes.p)!, range: textEntireRange)
+                }
+                else {
+                    var currentLocation : Int = 0
+                    let font = UIFont(name: FontNames.Perpetua, size: FontSizes.p)!
+                    let boldFont = UIFont(name: FontNames.PerpetuaBold, size: FontSizes.p)!
+                    let italicFont = UIFont(name: FontNames.PerpetuaItalic, size: FontSizes.p)!
+                    for highlight in text.Highlights {
+                        let fontToUse = highlight.HighlightType == .bold ? boldFont : italicFont
+                        if (currentLocation == highlight.Range.location) {
+                            textAttributedString.addAttribute(.font, value: fontToUse, range: highlight.Range)
+                            currentLocation += highlight.Range.length
+                        }
+                        else {
+                            textAttributedString.addAttribute(.font, value: font, range: NSRange(location: currentLocation, length: highlight.Range.location - currentLocation))
+                            textAttributedString.addAttribute(.font, value: fontToUse, range: highlight.Range)
+                            currentLocation = highlight.Range.location + highlight.Range.length
+                        }
+                    }
+                    if (currentLocation < textEntireRange.length) {
+                        textAttributedString.addAttribute(.font, value: font, range: NSRange(location: currentLocation, length: textEntireRange.length - currentLocation))
+                    }
+                }
+                
+                // Set up links.
                 if (text.Links.count == 0) {
                     textAttributedString.addAttribute(.foregroundColor, value: Colors.Black, range: textEntireRange)
                 }
@@ -76,6 +104,8 @@ class BrowserContentPageViewController: UIViewController, LinkHandlerClient {
                         textAttributedString.addAttribute(.foregroundColor, value: Colors.Black, range: NSRange(location: currentLocation, length: textEntireRange.length - currentLocation))
                     }
                 }
+                
+                // All done.
                 textView.attributedText = textAttributedString
                 contentView.addArrangedSubview(textView)
             case .image(let image):
