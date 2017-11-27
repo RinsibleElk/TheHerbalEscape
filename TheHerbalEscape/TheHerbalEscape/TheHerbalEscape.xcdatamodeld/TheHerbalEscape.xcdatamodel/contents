@@ -3,7 +3,7 @@
     <entity name="FlashcardProgress" representedClassName="FlashcardProgress" syncable="YES" codeGenerationType="class">
         <attribute name="easyCount" attributeType="Integer 16" minValueString="0" maxValueString="5" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="flashcardName" attributeType="String" syncable="YES"/>
-        <attribute name="nextDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nextDate" attributeType="Date" defaultDateTimeInterval="533514540" usesScalarValueType="NO" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="flashcardName"/>

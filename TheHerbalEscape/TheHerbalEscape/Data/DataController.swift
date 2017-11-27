@@ -31,6 +31,8 @@ class DataController: NSObject, IDataController {
         let entity = NSEntityDescription.entity(forEntityName: CoreDataConstants.FlashcardProgress, in: managedObjectContext)!
         let flashcardProgress = NSManagedObject(entity: entity, insertInto: managedObjectContext) as! FlashcardProgress
         flashcardProgress.flashcardName = name
+        flashcardProgress.easyCount = 0
+        flashcardProgress.nextDate = Date()
         return FlashcardProgressModel(flashcardProgress: flashcardProgress)
     }
     
