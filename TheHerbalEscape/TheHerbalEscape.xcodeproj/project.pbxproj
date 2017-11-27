@@ -62,6 +62,7 @@
 		D3DBF1B01FCCBBF500A014F9 /* IDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1AF1FCCBBF500A014F9 /* IDataController.swift */; };
 		D3DBF1B21FCCBC1800A014F9 /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */; };
 		D3DBF1B41FCCBCDE00A014F9 /* iFlashcardProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B31FCCBCDE00A014F9 /* iFlashcardProgressModel.swift */; };
+		D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */; };
 		D3E5EA001FC8E8DC00E27037 /* Browsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5E9FF1FC8E8DC00E27037 /* Browsable.swift */; };
 		D3E5EA051FC8E9AB00E27037 /* ContentPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA041FC8E9AB00E27037 /* ContentPack.swift */; };
 		D3E5EA071FC8EB2700E27037 /* WitcherContentPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA061FC8EB2700E27037 /* WitcherContentPack.swift */; };
@@ -158,6 +159,7 @@
 		D3DBF1AF1FCCBBF500A014F9 /* IDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDataController.swift; sourceTree = "<group>"; };
 		D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
 		D3DBF1B31FCCBCDE00A014F9 /* iFlashcardProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlashcardProgressModel.swift; sourceTree = "<group>"; };
+		D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContentRepository.swift; sourceTree = "<group>"; };
 		D3E5E9FF1FC8E8DC00E27037 /* Browsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browsable.swift; sourceTree = "<group>"; };
 		D3E5EA041FC8E9AB00E27037 /* ContentPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPack.swift; sourceTree = "<group>"; };
 		D3E5EA061FC8EB2700E27037 /* WitcherContentPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitcherContentPack.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				D3569B031FC97EE40038EE6F /* BrowserPageHeading.swift */,
 				D3569B051FC981C50038EE6F /* BrowserPageText.swift */,
 				D3569B0C1FC984770038EE6F /* BrowserPageImage.swift */,
+				D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */,
 				D3569B181FC9BE4A0038EE6F /* ContentRepository.swift */,
 				D3569B1C1FCA28A70038EE6F /* BrowserPageEtymology.swift */,
 				D3569B1E1FCA29210038EE6F /* BrowserPageEtymologyPhrase.swift */,
@@ -764,6 +767,7 @@
 				D3C039421FC8E34C000FD674 /* LearnableType.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,
+				D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */,
 				D3569B171FC9B8AF0038EE6F /* BrowsableClient.swift in Sources */,
 				D3DBF1A31FCCA52F00A014F9 /* IFlashcardSession.swift in Sources */,
 				D3E5EA001FC8E8DC00E27037 /* Browsable.swift in Sources */,

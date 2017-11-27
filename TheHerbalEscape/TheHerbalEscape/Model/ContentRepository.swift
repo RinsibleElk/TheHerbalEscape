@@ -10,7 +10,7 @@ import Foundation
 
 /// Repository with all the content in it.
 /// Very eager for the minute. Meh.
-class ContentRepository {
+class ContentRepository: IContentRepository {
     var Flowers: [Flower] = []
     var Browsables: [Browsable] = []
     
