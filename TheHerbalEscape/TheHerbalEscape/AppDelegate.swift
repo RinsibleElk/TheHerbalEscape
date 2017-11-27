@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var progressController: ProgressController?
+    var dataController: DataController?
     var contentRepository = ContentRepository()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Hack in some dummy content for now.
         contentRepository.loadContentPack(contentPack: WitcherContentPack())
         
-        // Initialize the ProgressController.
-        
+        // Initialize the DataController.
+        dataController = DataController(managedObjectContext: persistentContainer.viewContext)
         
 //        for font in UIFont.familyNames {
 //            print("* \(font)")

@@ -13,7 +13,7 @@
         <!--Flashcards-->
         <scene sceneID="g2q-KP-0Ry">
             <objects>
-                <viewController title="Flashcards" id="XT1-Er-jYF" sceneMemberID="viewController">
+                <viewController title="Flashcards" id="XT1-Er-jYF" customClass="FlashcardsViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="131-0i-5Th">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
