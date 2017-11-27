@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         contentRepository.loadContentPack(contentPack: WitcherContentPack())
         
         // Initialize the DataController.
+        persistentContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         dataController = DataController(managedObjectContext: persistentContainer.viewContext)
         
 //        for font in UIFont.familyNames {

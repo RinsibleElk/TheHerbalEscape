@@ -8,7 +8,6 @@
 
 import Foundation
 
-// managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 // add a uniqueness constraint on FlashcardName in FlashcardProgress, then inserting a new model will
 // just overwrite the last
 public class FlashcardProgressModel: IFlashcardProgressModel {
