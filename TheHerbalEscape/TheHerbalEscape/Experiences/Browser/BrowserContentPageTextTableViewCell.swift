@@ -13,7 +13,7 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
     @IBOutlet weak var elementTextView: UITextView!
     
     // MARK: - Properties
-    private var linkHandler : LinkHandler!
+    private weak var linkHandler : LinkHandler!
     var textElement: BrowserPageText? {
         didSet {
             setUpView()

@@ -11,7 +11,7 @@ import UIKit
 class BrowserContentPagesViewController: UIPageViewController, UIPageViewControllerDataSource, BrowsableClient, LinkHandlerClient, LinkHandler {
     // MARK: - Properties
     var pages = [BrowserPage]()
-    private var linkHandler : LinkHandler?
+    private weak var linkHandler : LinkHandler?
     private var orderedViewControllers: [UIViewController] = []
 
     // MARK: - UIPageViewControllerDataSource

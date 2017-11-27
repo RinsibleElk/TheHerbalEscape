@@ -10,7 +10,7 @@ import UIKit
 
 class BrowserContentPageTableViewController: UITableViewController, BrowserPageClient, LinkHandlerClient {
     // MARK: - Private properties
-    private var linkHandler: LinkHandler!
+    private weak var linkHandler: LinkHandler!
     private var elements = [BrowserPageElement]()
     
     // MARK: - LinkHandlerClient

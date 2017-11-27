@@ -9,6 +9,6 @@
 import Foundation
 
 /// Declared by components that can handle links to external browsers or within this one.
-protocol LinkHandler {
+protocol LinkHandler : class {
     func handleLink(linkText: String, content: BrowsableClient?)
 }

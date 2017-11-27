@@ -9,6 +9,6 @@
 import Foundation
 
 /// Defines a page that can receive a BrowserPage.
-protocol BrowserPageClient {
+protocol BrowserPageClient : class {
     func setBrowserPage(browserPage: BrowserPage)
 }

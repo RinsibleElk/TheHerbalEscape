@@ -13,17 +13,24 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var progressController: ProgressController?
     var contentRepository = ContentRepository()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Hack in some dummy content for now.
         contentRepository.loadContentPack(contentPack: WitcherContentPack())
-        for font in UIFont.familyNames {
-            print("* \(font)")
-            for fontName in UIFont.fontNames(forFamilyName: font) {
-                print("  - \(fontName)")
-            }
-        }
+        
+        // Initialize the ProgressController.
+        
+        
+//        for font in UIFont.familyNames {
+//            print("* \(font)")
+//            for fontName in UIFont.fontNames(forFamilyName: font) {
+//                print("  - \(fontName)")
+//            }
+//        }
         return true
     }
 

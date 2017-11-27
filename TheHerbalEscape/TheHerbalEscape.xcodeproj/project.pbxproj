@@ -40,6 +40,8 @@
 		D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */; };
 		D394CC121FCB32E500945D5A /* BrowserPageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC111FCB32E500945D5A /* BrowserPageClient.swift */; };
 		D394CC141FCB5AD100945D5A /* BrowserContentPageEtymology2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC131FCB5AD100945D5A /* BrowserContentPageEtymology2TableViewCell.swift */; };
+		D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC151FCB8DBB00945D5A /* FlashcardProgressModel.swift */; };
+		D394CC191FCB912E00945D5A /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC181FCB912E00945D5A /* ProgressController.swift */; };
 		D3B86E7A1FC8A8C300DF1723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B86E791FC8A8C300DF1723 /* AppDelegate.swift */; };
 		D3B86E7F1FC8A8C300DF1723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B86E7D1FC8A8C300DF1723 /* Main.storyboard */; };
 		D3B86E821FC8A8C300DF1723 /* TheHerbalEscape.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3B86E801FC8A8C300DF1723 /* TheHerbalEscape.xcdatamodeld */; };
@@ -119,6 +121,8 @@
 		D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTextTableViewCell.swift; sourceTree = "<group>"; };
 		D394CC111FCB32E500945D5A /* BrowserPageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageClient.swift; sourceTree = "<group>"; };
 		D394CC131FCB5AD100945D5A /* BrowserContentPageEtymology2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageEtymology2TableViewCell.swift; sourceTree = "<group>"; };
+		D394CC151FCB8DBB00945D5A /* FlashcardProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardProgressModel.swift; sourceTree = "<group>"; };
+		D394CC181FCB912E00945D5A /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		D3B86E761FC8A8C300DF1723 /* TheHerbalEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHerbalEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B86E791FC8A8C300DF1723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B86E7E1FC8A8C300DF1723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,6 +222,15 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		D394CC171FCB8F7D00945D5A /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				D394CC151FCB8DBB00945D5A /* FlashcardProgressModel.swift */,
+				D394CC181FCB912E00945D5A /* ProgressController.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		D3B86E6D1FC8A8C200DF1723 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +256,7 @@
 		D3B86E781FC8A8C300DF1723 /* TheHerbalEscape */ = {
 			isa = PBXGroup;
 			children = (
+				D394CC171FCB8F7D00945D5A /* Progress */,
 				D3569B091FC982F40038EE6F /* Errors */,
 				D3E5EA101FC8F47E00E27037 /* Constants */,
 				D3E5EA011FC8E97600E27037 /* Content */,
@@ -688,6 +702,7 @@
 				D3569B021FC97DFE0038EE6F /* BrowserPageElement.swift in Sources */,
 				D3569B191FC9BE4A0038EE6F /* ContentRepository.swift in Sources */,
 				D3569B0D1FC984770038EE6F /* BrowserPageImage.swift in Sources */,
+				D394CC191FCB912E00945D5A /* ProgressController.swift in Sources */,
 				D3569B291FCA4FEC0038EE6F /* LinkHandlerClient.swift in Sources */,
 				D3569B211FCA37420038EE6F /* FontSizes.swift in Sources */,
 				D394CC121FCB32E500945D5A /* BrowserPageClient.swift in Sources */,
@@ -697,6 +712,7 @@
 				D394CC141FCB5AD100945D5A /* BrowserContentPageEtymology2TableViewCell.swift in Sources */,
 				D394CC0A1FCB2FAA00945D5A /* BrowserContentPageHeadingTableViewCell.swift in Sources */,
 				D3569B061FC981C50038EE6F /* BrowserPageText.swift in Sources */,
+				D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */,
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
 				D32BCB441FCAF20800BE0A22 /* BrowserPageTextHighlight.swift in Sources */,
 				D3569B1F1FCA29210038EE6F /* BrowserPageEtymologyPhrase.swift in Sources */,

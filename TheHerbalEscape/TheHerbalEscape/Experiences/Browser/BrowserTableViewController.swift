@@ -14,7 +14,7 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
     var allResults = [Browsable]()
     var currentResults = [Browsable]()
     var searchController : UISearchController?
-    private var browsableClient : BrowsableClient?
+    private weak var browsableClient : BrowsableClient?
     
     // MARK: - Overrides
     override func viewDidLoad() {

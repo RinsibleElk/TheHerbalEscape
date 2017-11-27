@@ -9,6 +9,6 @@
 import Foundation
 
 /// Client for dialog with a LinkHandler.
-protocol LinkHandlerClient {
+protocol LinkHandlerClient : class {
     func setLinkHandler(linkHandler: LinkHandler)
 }
