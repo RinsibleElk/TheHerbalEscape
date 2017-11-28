@@ -73,6 +73,7 @@
 		D3E5EA161FC8F4DF00E27037 /* BrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA151FC8F4DF00E27037 /* BrowserTableViewController.swift */; };
 		D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA171FC8FC0200E27037 /* BrowserTableViewCell.swift */; };
 		D3E5EA1A1FC905B200E27037 /* TextUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA191FC905B200E27037 /* TextUtilities.swift */; };
+		D3E9C69D1FCCCBBE0052CE46 /* FlashcardSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9C69C1FCCCBBE0052CE46 /* FlashcardSessionTests.swift */; };
 		EA3B76004C724BC9208D9AEE /* Pods_TheHerbalEscapeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091649DB1DEEE8EFF8CF671A /* Pods_TheHerbalEscapeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +171,7 @@
 		D3E5EA151FC8F4DF00E27037 /* BrowserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTableViewController.swift; sourceTree = "<group>"; };
 		D3E5EA171FC8FC0200E27037 /* BrowserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTableViewCell.swift; sourceTree = "<group>"; };
 		D3E5EA191FC905B200E27037 /* TextUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilities.swift; sourceTree = "<group>"; };
+		D3E9C69C1FCCCBBE0052CE46 /* FlashcardSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionTests.swift; sourceTree = "<group>"; };
 		DFB0B180BA43D1DB0D5D4B0B /* Pods-TheHerbalEscapeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheHerbalEscapeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheHerbalEscapeUITests/Pods-TheHerbalEscapeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E517C4945453352CC93EBB80 /* Pods-TheHerbalEscape.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheHerbalEscape.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheHerbalEscape/Pods-TheHerbalEscape.debug.xcconfig"; sourceTree = "<group>"; };
 		F29C01CA2607FB37863A40AD /* Pods-TheHerbalEscapeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheHerbalEscapeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheHerbalEscapeUITests/Pods-TheHerbalEscapeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B86E911FC8A8C300DF1723 /* TheHerbalEscapeTests.swift */,
+				D3E9C69C1FCCCBBE0052CE46 /* FlashcardSessionTests.swift */,
 				D3B86E931FC8A8C300DF1723 /* Info.plist */,
 			);
 			path = TheHerbalEscapeTests;
@@ -784,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B86E921FC8A8C300DF1723 /* TheHerbalEscapeTests.swift in Sources */,
+				D3E9C69D1FCCCBBE0052CE46 /* FlashcardSessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
