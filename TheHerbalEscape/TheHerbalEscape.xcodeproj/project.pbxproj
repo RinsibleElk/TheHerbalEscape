@@ -55,6 +55,8 @@
 		D3C039401FC8E2E5000FD674 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0393F1FC8E2E5000FD674 /* Flower.swift */; };
 		D3C039421FC8E34C000FD674 /* LearnableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C039411FC8E34C000FD674 /* LearnableType.swift */; };
 		D3C039441FC8E4BA000FD674 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C039431FC8E4BA000FD674 /* Flashcard.swift */; };
+		D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */; };
+		D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */; };
 		D3D748361FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D748351FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift */; };
 		D3DBF1A31FCCA52F00A014F9 /* IFlashcardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */; };
 		D3DBF1A51FCCA5DB00A014F9 /* FlashcardDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A41FCCA5DB00A014F9 /* FlashcardDifficulty.swift */; };
@@ -156,6 +158,8 @@
 		D3C0393F1FC8E2E5000FD674 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		D3C039411FC8E34C000FD674 /* LearnableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnableType.swift; sourceTree = "<group>"; };
 		D3C039431FC8E4BA000FD674 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		D3D748351FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageCollapsibleListTableViewCell.swift; sourceTree = "<group>"; };
 		D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFlashcardSession.swift; sourceTree = "<group>"; };
 		D3DBF1A41FCCA5DB00A014F9 /* FlashcardDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDifficulty.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 		D3B86EC01FC8C8A800DF1723 /* Experiences */ = {
 			isa = PBXGroup;
 			children = (
+				D3CDE0331FCF42A9004DD8C4 /* Main */,
 				D32BCB471FCB1DA500BE0A22 /* Flashcards */,
 				D3E5EA0D1FC8F43C00E27037 /* Browser */,
 			);
@@ -375,6 +380,15 @@
 				D32BCB451FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D3CDE0331FCF42A9004DD8C4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */,
+				D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		D3DBF1AC1FCCBBC000A014F9 /* Data */ = {
@@ -745,6 +759,7 @@
 				D3E5EA121FC8F49500E27037 /* ReuseIdentifiers.swift in Sources */,
 				D3DBF1B41FCCBCDE00A014F9 /* iFlashcardProgressModel.swift in Sources */,
 				D3569B0B1FC983010038EE6F /* CodingError.swift in Sources */,
+				D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */,
 				D3E5EA141FC8F4A000E27037 /* SegueIdentifiers.swift in Sources */,
 				D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */,
 				D3569B251FCA48840038EE6F /* BrowserPageTextLink.swift in Sources */,
@@ -764,6 +779,7 @@
 				D3569B211FCA37420038EE6F /* FontSizes.swift in Sources */,
 				D394CC121FCB32E500945D5A /* BrowserPageClient.swift in Sources */,
 				D3569B1D1FCA28A70038EE6F /* BrowserPageEtymology.swift in Sources */,
+				D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */,
 				D3569B231FCA3A2B0038EE6F /* FontNames.swift in Sources */,
 				D3569B111FC986E30038EE6F /* StoryboardIdentifiers.swift in Sources */,
 				D394CC141FCB5AD100945D5A /* BrowserContentPageEtymology2TableViewCell.swift in Sources */,

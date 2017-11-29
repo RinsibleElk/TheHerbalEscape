@@ -22,7 +22,9 @@ extension UIColor {
 
 /// Colors used in this application.
 struct Colors {
-    static let DarkForestGreen = UIColor(rgb:0x14351a)
+    static let SlightlyDarkForestGreen = UIColor(rgb:0x158015)
+    static let ForestGreen = UIColor(rgb:0x228b22)
+    static let DarkForestGreen = UIColor(rgb:0x0d4b02)
     static let DarkRed = UIColor(rgb:0x800000)
     static let Black = UIColor.black
     static let Blue = UIColor.blue
