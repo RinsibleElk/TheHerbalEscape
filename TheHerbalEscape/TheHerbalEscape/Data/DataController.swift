@@ -30,12 +30,12 @@ class DataController: NSObject, IDataController {
     func initNewFlashcardProgress(name: String) -> IFlashcardProgressModel {
         let entity = NSEntityDescription.entity(forEntityName: CoreDataConstants.FlashcardProgress, in: managedObjectContext)!
         let flashcardProgress = NSManagedObject(entity: entity, insertInto: managedObjectContext) as! FlashcardProgress
-        flashcardProgress.flashcardName = name
+        //flashcardProgress.flashcardName = name
         flashcardProgress.easyCount = 0
         flashcardProgress.nextDate = Date()
         return FlashcardProgressModel(flashcardProgress: flashcardProgress)
     }
-    
+
     /// Save all changes to the context. This suppresses errors. Errors in saving are a bit of a poor user experience, but the app can handle these in general, the user just won't have
     /// made progress today.
     func save() {
