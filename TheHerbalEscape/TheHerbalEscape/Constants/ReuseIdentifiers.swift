@@ -16,4 +16,7 @@ struct ReuseIdentifiers {
     static let BrowserContentPageEtymologyTableCellIdentifier   = "BrowserContentPageEtymologyTableCellIdentifier"
     static let BrowserContentPageEtymology2TableCellIdentifier  = "BrowserContentPageEtymology2TableCellIdentifier"
     static let BrowserContentPageImageTableCellIdentifier       = "BrowserContentPageImageTableCellIdentifier"
+    static let BrowserContentPageCollapsibleListTableCellIdentifier = "BrowserContentPageCollapsibleListTableCellIdentifier"
+    static let BulletPointListHeaderIdentifier = "BulletPointListHeaderIdentifier"
+    static let BulletPointListContentIdentifier = "BulletPointListContentIdentifier"
 }
