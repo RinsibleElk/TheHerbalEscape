@@ -14,6 +14,9 @@
 		D32BCB441FCAF20800BE0A22 /* BrowserPageTextHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BCB431FCAF20800BE0A22 /* BrowserPageTextHighlight.swift */; };
 		D32BCB461FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BCB451FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift */; };
 		D32BCB491FCB1DF000BE0A22 /* Flashcards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32BCB481FCB1DF000BE0A22 /* Flashcards.storyboard */; };
+		D34C85E81FD0D80A0083B9E0 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C85E71FD0D80A0083B9E0 /* Plant.swift */; };
+		D34C85EA1FD0D8840083B9E0 /* BrowserContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C85E91FD0D8840083B9E0 /* BrowserContentSection.swift */; };
+		D34C85ED1FD0DA080083B9E0 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C85EC1FD0DA080083B9E0 /* Json.swift */; };
 		D3569AFC1FC972000038EE6F /* Regexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569AFB1FC972000038EE6F /* Regexes.swift */; };
 		D3569B001FC97D9D0038EE6F /* BrowserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569AFF1FC97D9D0038EE6F /* BrowserPage.swift */; };
 		D3569B021FC97DFE0038EE6F /* BrowserPageElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569B011FC97DFE0038EE6F /* BrowserPageElement.swift */; };
@@ -111,6 +114,9 @@
 		D32BCB431FCAF20800BE0A22 /* BrowserPageTextHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageTextHighlight.swift; sourceTree = "<group>"; };
 		D32BCB451FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageTextHighlightType.swift; sourceTree = "<group>"; };
 		D32BCB481FCB1DF000BE0A22 /* Flashcards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Flashcards.storyboard; sourceTree = "<group>"; };
+		D34C85E71FD0D80A0083B9E0 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		D34C85E91FD0D8840083B9E0 /* BrowserContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentSection.swift; sourceTree = "<group>"; };
+		D34C85EC1FD0DA080083B9E0 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		D3569AFB1FC972000038EE6F /* Regexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regexes.swift; sourceTree = "<group>"; };
 		D3569AFF1FC97D9D0038EE6F /* BrowserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPage.swift; sourceTree = "<group>"; };
 		D3569B011FC97DFE0038EE6F /* BrowserPageElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageElement.swift; sourceTree = "<group>"; };
@@ -247,6 +253,14 @@
 			path = Flashcards;
 			sourceTree = "<group>";
 		};
+		D34C85EB1FD0D9FA0083B9E0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D34C85EC1FD0DA080083B9E0 /* Json.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D3569B091FC982F40038EE6F /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +308,7 @@
 		D3B86E781FC8A8C300DF1723 /* TheHerbalEscape */ = {
 			isa = PBXGroup;
 			children = (
+				D34C85EB1FD0D9FA0083B9E0 /* Utils */,
 				D3DBF1AC1FCCBBC000A014F9 /* Data */,
 				D394CC171FCB8F7D00945D5A /* Progress */,
 				D3569B091FC982F40038EE6F /* Errors */,
@@ -405,6 +420,8 @@
 			children = (
 				D3E5EA041FC8E9AB00E27037 /* ContentPack.swift */,
 				D3E5EA061FC8EB2700E27037 /* WitcherContentPack.swift */,
+				D34C85E71FD0D80A0083B9E0 /* Plant.swift */,
+				D34C85E91FD0D8840083B9E0 /* BrowserContentSection.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -747,6 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34C85ED1FD0DA080083B9E0 /* Json.swift in Sources */,
 				D394CC081FCB2ED800945D5A /* BrowserContentPagesViewController.swift in Sources */,
 				D3569AFC1FC972000038EE6F /* Regexes.swift in Sources */,
 				D3C039441FC8E4BA000FD674 /* Flashcard.swift in Sources */,
@@ -761,6 +779,7 @@
 				D3569B0B1FC983010038EE6F /* CodingError.swift in Sources */,
 				D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */,
 				D3E5EA141FC8F4A000E27037 /* SegueIdentifiers.swift in Sources */,
+				D34C85EA1FD0D8840083B9E0 /* BrowserContentSection.swift in Sources */,
 				D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */,
 				D3569B251FCA48840038EE6F /* BrowserPageTextLink.swift in Sources */,
 				D3E5EA1A1FC905B200E27037 /* TextUtilities.swift in Sources */,
@@ -774,6 +793,7 @@
 				D3569B191FC9BE4A0038EE6F /* ContentRepository.swift in Sources */,
 				D3569B0D1FC984770038EE6F /* BrowserPageImage.swift in Sources */,
 				D3DBF1B01FCCBBF500A014F9 /* IDataController.swift in Sources */,
+				D34C85E81FD0D80A0083B9E0 /* Plant.swift in Sources */,
 				D394CC191FCB912E00945D5A /* ProgressController.swift in Sources */,
 				D3569B291FCA4FEC0038EE6F /* LinkHandlerClient.swift in Sources */,
 				D3569B211FCA37420038EE6F /* FontSizes.swift in Sources */,
