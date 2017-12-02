@@ -37,6 +37,9 @@
 		D3569B251FCA48840038EE6F /* BrowserPageTextLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569B241FCA48840038EE6F /* BrowserPageTextLink.swift */; };
 		D3569B271FCA4EF10038EE6F /* LinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569B261FCA4EF10038EE6F /* LinkHandler.swift */; };
 		D3569B291FCA4FEC0038EE6F /* LinkHandlerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3569B281FCA4FEC0038EE6F /* LinkHandlerClient.swift */; };
+		D35B0A881FD2E98E00BD1F8F /* BrowserTextLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A871FD2E98E00BD1F8F /* BrowserTextLayout.swift */; };
+		D35B0A8A1FD2EA0800BD1F8F /* BrowserTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */; };
+		D35B0A8C1FD2ED1100BD1F8F /* BrowserTextParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */; };
 		D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */; };
 		D394CC081FCB2ED800945D5A /* BrowserContentPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC071FCB2ED800945D5A /* BrowserContentPagesViewController.swift */; };
 		D394CC0A1FCB2FAA00945D5A /* BrowserContentPageHeadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC091FCB2FAA00945D5A /* BrowserContentPageHeadingTableViewCell.swift */; };
@@ -58,6 +61,10 @@
 		D3C039401FC8E2E5000FD674 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C0393F1FC8E2E5000FD674 /* Flower.swift */; };
 		D3C039421FC8E34C000FD674 /* LearnableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C039411FC8E34C000FD674 /* LearnableType.swift */; };
 		D3C039441FC8E4BA000FD674 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C039431FC8E4BA000FD674 /* Flashcard.swift */; };
+		D3C1A5711FD2F74000C60824 /* BrowserTextLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5701FD2F74000C60824 /* BrowserTextLink.swift */; };
+		D3C1A5731FD2F76F00C60824 /* BrowserTextHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5721FD2F76F00C60824 /* BrowserTextHighlight.swift */; };
+		D3C1A5751FD2F78100C60824 /* BrowserTextHighlightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5741FD2F78100C60824 /* BrowserTextHighlightType.swift */; };
+		D3C1A5771FD2FB0D00C60824 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5761FD2FB0D00C60824 /* String.swift */; };
 		D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */; };
 		D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */; };
 		D3D748361FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D748351FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift */; };
@@ -137,6 +144,9 @@
 		D3569B241FCA48840038EE6F /* BrowserPageTextLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageTextLink.swift; sourceTree = "<group>"; };
 		D3569B261FCA4EF10038EE6F /* LinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHandler.swift; sourceTree = "<group>"; };
 		D3569B281FCA4FEC0038EE6F /* LinkHandlerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHandlerClient.swift; sourceTree = "<group>"; };
+		D35B0A871FD2E98E00BD1F8F /* BrowserTextLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextLayout.swift; sourceTree = "<group>"; };
+		D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextTests.swift; sourceTree = "<group>"; };
+		D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextParagraph.swift; sourceTree = "<group>"; };
 		D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTableViewController.swift; sourceTree = "<group>"; };
 		D394CC071FCB2ED800945D5A /* BrowserContentPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPagesViewController.swift; sourceTree = "<group>"; };
 		D394CC091FCB2FAA00945D5A /* BrowserContentPageHeadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageHeadingTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +174,10 @@
 		D3C0393F1FC8E2E5000FD674 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		D3C039411FC8E34C000FD674 /* LearnableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnableType.swift; sourceTree = "<group>"; };
 		D3C039431FC8E4BA000FD674 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		D3C1A5701FD2F74000C60824 /* BrowserTextLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextLink.swift; sourceTree = "<group>"; };
+		D3C1A5721FD2F76F00C60824 /* BrowserTextHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextHighlight.swift; sourceTree = "<group>"; };
+		D3C1A5741FD2F78100C60824 /* BrowserTextHighlightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextHighlightType.swift; sourceTree = "<group>"; };
+		D3C1A5761FD2FB0D00C60824 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		D3D748351FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageCollapsibleListTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				D34C85EC1FD0DA080083B9E0 /* Json.swift */,
+				D3C1A5761FD2FB0D00C60824 /* String.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -334,6 +349,7 @@
 			children = (
 				D3B86E911FC8A8C300DF1723 /* TheHerbalEscapeTests.swift */,
 				D3E9C69C1FCCCBBE0052CE46 /* FlashcardSessionTests.swift */,
+				D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */,
 				D3B86E931FC8A8C300DF1723 /* Info.plist */,
 			);
 			path = TheHerbalEscapeTests;
@@ -447,6 +463,11 @@
 				D3D748351FCE128F002E4A29 /* BrowserContentPageCollapsibleListTableViewCell.swift */,
 				D31BD59E1FCE18A40093048F /* BulletPointListHeaderView.xib */,
 				D31BD5A01FCE1A300093048F /* BulletPointListHeaderView.swift */,
+				D3C1A5701FD2F74000C60824 /* BrowserTextLink.swift */,
+				D3C1A5721FD2F76F00C60824 /* BrowserTextHighlight.swift */,
+				D3C1A5741FD2F78100C60824 /* BrowserTextHighlightType.swift */,
+				D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */,
+				D35B0A871FD2E98E00BD1F8F /* BrowserTextLayout.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -778,9 +799,11 @@
 				D3DBF1B41FCCBCDE00A014F9 /* iFlashcardProgressModel.swift in Sources */,
 				D3569B0B1FC983010038EE6F /* CodingError.swift in Sources */,
 				D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */,
+				D3C1A5731FD2F76F00C60824 /* BrowserTextHighlight.swift in Sources */,
 				D3E5EA141FC8F4A000E27037 /* SegueIdentifiers.swift in Sources */,
 				D34C85EA1FD0D8840083B9E0 /* BrowserContentSection.swift in Sources */,
 				D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */,
+				D35B0A881FD2E98E00BD1F8F /* BrowserTextLayout.swift in Sources */,
 				D3569B251FCA48840038EE6F /* BrowserPageTextLink.swift in Sources */,
 				D3E5EA1A1FC905B200E27037 /* TextUtilities.swift in Sources */,
 				D3569B151FC9B82F0038EE6F /* BrowserMasterViewController.swift in Sources */,
@@ -792,6 +815,7 @@
 				D3569B021FC97DFE0038EE6F /* BrowserPageElement.swift in Sources */,
 				D3569B191FC9BE4A0038EE6F /* ContentRepository.swift in Sources */,
 				D3569B0D1FC984770038EE6F /* BrowserPageImage.swift in Sources */,
+				D35B0A8C1FD2ED1100BD1F8F /* BrowserTextParagraph.swift in Sources */,
 				D3DBF1B01FCCBBF500A014F9 /* IDataController.swift in Sources */,
 				D34C85E81FD0D80A0083B9E0 /* Plant.swift in Sources */,
 				D394CC191FCB912E00945D5A /* ProgressController.swift in Sources */,
@@ -809,16 +833,19 @@
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
 				D3DBF1A91FCCA7F300A014F9 /* FlashcardSessionCardSide.swift in Sources */,
 				D32BCB441FCAF20800BE0A22 /* BrowserPageTextHighlight.swift in Sources */,
+				D3C1A5771FD2FB0D00C60824 /* String.swift in Sources */,
 				D3DBF1AE1FCCBBD300A014F9 /* DataController.swift in Sources */,
 				D3569B1F1FCA29210038EE6F /* BrowserPageEtymologyPhrase.swift in Sources */,
 				D3569B001FC97D9D0038EE6F /* BrowserPage.swift in Sources */,
 				D32BCB461FCAF24E00BE0A22 /* BrowserPageTextHighlightType.swift in Sources */,
+				D3C1A5751FD2F78100C60824 /* BrowserTextHighlightType.swift in Sources */,
 				D3C039421FC8E34C000FD674 /* LearnableType.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,
 				D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */,
 				D31BD5A11FCE1A300093048F /* BulletPointListHeaderView.swift in Sources */,
 				D3569B171FC9B8AF0038EE6F /* BrowsableClient.swift in Sources */,
+				D3C1A5711FD2F74000C60824 /* BrowserTextLink.swift in Sources */,
 				D3DBF1A31FCCA52F00A014F9 /* IFlashcardSession.swift in Sources */,
 				D3E5EA001FC8E8DC00E27037 /* Browsable.swift in Sources */,
 				D3E5EA051FC8E9AB00E27037 /* ContentPack.swift in Sources */,
@@ -836,6 +863,7 @@
 			files = (
 				D3B86E921FC8A8C300DF1723 /* TheHerbalEscapeTests.swift in Sources */,
 				D3E9C69D1FCCCBBE0052CE46 /* FlashcardSessionTests.swift in Sources */,
+				D35B0A8A1FD2EA0800BD1F8F /* BrowserTextTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,8 @@
 import Foundation
 
 struct Regexes {
-    // From markdown.pl v1.0.1 <http://daringfireball.net/projects/markdown/>
     static let LinkRegex = regexFromPattern(pattern: "\\[([^\\[]+)\\]\\([ \t]*<?(.*?)>?[ \t]*((['\"])(.*?)\\4)?\\)")
-
+    static let ParagraphsRegex = regexFromPattern(pattern: "\\n\\n")
+    static let StrongRegex = regexFromPattern(pattern: "(\\*\\*|__)(?=\\S)(?:.+?[*_]*)(?<=\\S)\\1")
+    static let ItalicsRegex = regexFromPattern(pattern: "(\\*|_)(?=\\S)(.+?)(?<=\\S)\\1")
 }
