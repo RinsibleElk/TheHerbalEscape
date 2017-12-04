@@ -48,6 +48,15 @@ public class Plant : Browsable, Decodable {
             let mainSection = BrowserContentSection(title: CommonName, isCollapsible: false, elements: mainElements)
             contents.append(mainSection)
             
+            // Extra custom sections.
+            for section in Sections {
+                let layout = BrowserTextLayout(section.Content)
+                let customSection = BrowserContentSection(title: section.Title, isCollapsible: true, elements: layout.paragraphs.map({ (paragraph) -> BrowserContentElement in
+                    return .text(paragraph)
+                }))
+                contents.append(customSection)
+            }
+            
             return contents
         }
     }

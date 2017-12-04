@@ -10,6 +10,7 @@ import UIKit
 
 class BrowserCollapsibleHeaderView: UITableViewHeaderFooterView {
     // MARK: - Outlets
+    @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var titleLabelView: UILabel!
     @IBAction func toggleCollapsed(_ sender: UIButton) {
         CollapseHandler.toggleCollapsed(Index)
@@ -18,4 +19,11 @@ class BrowserCollapsibleHeaderView: UITableViewHeaderFooterView {
     // MARK: - Properties
     var Index : Int = 0
     weak var CollapseHandler : CollapseHandler!
+    
+    // MARK: - Overrides
+    override var contentView: UIView {
+        get {
+            return wrapperView
+        }
+    }
 }
