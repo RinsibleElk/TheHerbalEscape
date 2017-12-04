@@ -10,5 +10,5 @@ import Foundation
 
 /// Client for notifications about the selected browsable.
 protocol BrowsableClient : class {
-    func select(browsable: Browsable)
+    func selectBrowsable(browsable: Browsable)
 }

@@ -11,10 +11,10 @@ import Foundation
 /// Container for all persisted data.
 public protocol IDataController : class {
     /// Fetch all of the flashcard progress models.
-    func fetchAllFlashcardProgress() -> [IFlashcardProgressModel]
+//    func fetchAllFlashcardProgress() -> [IFlashcardProgressModel]
     
     /// Create a new progress model for a flashcard name.
-    func initNewFlashcardProgress(name: String) -> IFlashcardProgressModel
+//    func initNewFlashcardProgress(name: String) -> IFlashcardProgressModel
 
     /// Save all changes.
     func save()

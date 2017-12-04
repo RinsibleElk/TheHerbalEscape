@@ -13,7 +13,7 @@ class BrowserContentPageImageTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     
     // MARK: - Properties
-    var imageElement : BrowserPageImage? {
+    var imageElement : BrowserImage? {
         didSet {
             setUpView()
         }

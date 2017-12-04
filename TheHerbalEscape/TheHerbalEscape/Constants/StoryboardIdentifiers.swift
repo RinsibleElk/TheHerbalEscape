@@ -10,6 +10,7 @@ import Foundation
 
 /// Identifiers for disconnected view controllers in storyboard.
 struct StoryboardIdentifiers {
-    static let BrowserContentPagesIdentifier = "BrowserContentPagesIdentifier"
     static let BrowserContentPageTableIdentifier = "BrowserContentPageTableIdentifier"
+    static let BrowserTitleHeaderView = "BrowserTitleHeaderView"
+    static let BrowserCollapsibleHeaderView = "BrowserCollapsibleHeaderView"
 }

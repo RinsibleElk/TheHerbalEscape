@@ -228,5 +228,87 @@ Here is some *italicised* text. And here is some **bold** text. And a little mor
         }
         XCTAssertEqual(paragraph.links.count, 0)
     }
+    
+    /// Create a paragraph with bullets.
+    func testSimpleBullets() {
+        let text = """
+Here are some bullets:
+- One
+- Two
+- Three
+"""
+        let layout = BrowserTextLayout(text)
+        XCTAssertEqual(layout.paragraphs.count, 1)
+        let paragraph = layout.paragraphs[0]
+        let expectedText = """
+Here are some bullets:
+  \u{2022} One
+  \u{2022} Two
+  \u{2022} Three
+"""
+        let expectedNSString = expectedText as NSString
+        XCTAssertEqual(paragraph.text, expectedText)
+        XCTAssertEqual(paragraph.highlights.count, 1)
+        if (paragraph.highlights.count == 1) {
+            let highlight = paragraph.highlights[0]
+            XCTAssertEqual(highlight.range.location, 0)
+            XCTAssertEqual(highlight.range.length, expectedNSString.length)
+            XCTAssertEqual(highlight.highlightTypes, [])
+        }
+        XCTAssertEqual(paragraph.links.count, 0)
+    }
+    
+    /// Create a paragraph with bullets with links on each bullet point.
+    func testBulletLinks() {
+        let text = """
+Here are some bullets:
+- [One]()
+- [Two]()
+- [Three]()
+"""
+        let layout = BrowserTextLayout(text)
+        XCTAssertEqual(layout.paragraphs.count, 1)
+        let paragraph = layout.paragraphs[0]
+        let expectedText = """
+Here are some bullets:
+  \u{2022} One
+  \u{2022} Two
+  \u{2022} Three
+"""
+        XCTAssertEqual(paragraph.text, expectedText)
+        XCTAssertEqual(paragraph.highlights.count, 6)
+        if (paragraph.highlights.count == 6) {
+            let highlight1 = paragraph.highlights[0]
+            let highlight2 = paragraph.highlights[1]
+            let highlight3 = paragraph.highlights[2]
+            let highlight4 = paragraph.highlights[3]
+            let highlight5 = paragraph.highlights[4]
+            let highlight6 = paragraph.highlights[5]
+            XCTAssertEqual(highlight1.range, NSRange(location: 0, length: 27))
+            XCTAssertEqual(highlight2.range, NSRange(location: 27, length: 3))
+            XCTAssertEqual(highlight3.range, NSRange(location: 30, length: 5))
+            XCTAssertEqual(highlight4.range, NSRange(location: 35, length: 3))
+            XCTAssertEqual(highlight5.range, NSRange(location: 38, length: 5))
+            XCTAssertEqual(highlight6.range, NSRange(location: 43, length: 5))
+            XCTAssertEqual(highlight1.highlightTypes, [])
+            XCTAssertEqual(highlight2.highlightTypes, [.link])
+            XCTAssertEqual(highlight3.highlightTypes, [])
+            XCTAssertEqual(highlight4.highlightTypes, [.link])
+            XCTAssertEqual(highlight5.highlightTypes, [])
+            XCTAssertEqual(highlight6.highlightTypes, [.link])
+        }
+        XCTAssertEqual(paragraph.links.count, 3)
+        if (paragraph.links.count == 3) {
+            let link1 = paragraph.links[0]
+            let link2 = paragraph.links[1]
+            let link3 = paragraph.links[2]
+            XCTAssertEqual(link1.range, NSRange(location: 27, length: 3))
+            XCTAssertEqual(link2.range, NSRange(location: 35, length: 3))
+            XCTAssertEqual(link3.range, NSRange(location: 43, length: 5))
+            XCTAssertEqual(link1.target, "One")
+            XCTAssertEqual(link2.target, "Two")
+            XCTAssertEqual(link3.target, "Three")
+        }
+    }
 }
 

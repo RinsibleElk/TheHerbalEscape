@@ -100,7 +100,7 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
             let lcSearchText = searchText!.lowercased()
             self.currentResults = self.allResults.filter({ (browsable:Browsable) -> Bool in
                 // to start, let's just search by name
-                return browsable.BrowserTitle.lowercased().range(of: lcSearchText) != nil
+                return browsable.BrowsableTitle.lowercased().range(of: lcSearchText) != nil
             })
         }
         tableView.reloadData()
@@ -124,7 +124,7 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
                 browsable = allResults[indexPath!.row]
             }
         }
-        browsableClient?.select(browsable: browsable!)
+        browsableClient?.selectBrowsable(browsable: browsable!)
     }
     
     // MARK: - Exit

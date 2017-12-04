@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BrowserTitleHeaderView" customModule="TheHerbalEscape" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGd-KH-BU6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoG-Xh-Zss">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="xoG-Xh-Zss" secondAttribute="bottom" id="Wj9-A9-zmK"/>
+                        <constraint firstItem="xoG-Xh-Zss" firstAttribute="top" secondItem="eGd-KH-BU6" secondAttribute="top" id="YfL-Fw-Leq"/>
+                        <constraint firstItem="xoG-Xh-Zss" firstAttribute="leading" secondItem="eGd-KH-BU6" secondAttribute="leading" id="aED-QH-jd2"/>
+                        <constraint firstAttribute="trailing" secondItem="xoG-Xh-Zss" secondAttribute="trailing" id="hle-9b-fr0"/>
+                        <constraint firstAttribute="height" constant="60" id="yxZ-bc-aEW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eGd-KH-BU6" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="4E1-f8-9UU"/>
+                <constraint firstItem="eGd-KH-BU6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ClS-LR-JeX"/>
+                <constraint firstItem="eGd-KH-BU6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Sqn-68-yem"/>
+                <constraint firstItem="eGd-KH-BU6" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Txz-42-XRf"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="titleLabelView" destination="xoG-Xh-Zss" id="a1g-ex-7jp"/>
+                <outlet property="wrapperView" destination="eGd-KH-BU6" id="P8r-88-DpM"/>
+            </connections>
+            <point key="canvasLocation" x="27.5" y="-269"/>
+        </view>
+    </objects>
+</document>

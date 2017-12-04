@@ -8,25 +8,49 @@
 
 import UIKit
 
-class BrowserContentPageTableViewController: UITableViewController, BrowserPageClient, LinkHandlerClient {
+class BrowserContentPageTableViewController: UITableViewController, BrowsableClient, LinkHandlerClient, CollapseHandler {
     // MARK: - Private properties
     private weak var linkHandler: LinkHandler!
-    private var elements = [BrowserPageElement]()
+    private var sections = [BrowserContentSection]()
+    private var browsableTitle = "No browsable loaded"
+    private var isCollapsed = [Bool]()
     
     // MARK: - LinkHandlerClient
     func setLinkHandler(linkHandler: LinkHandler) {
         self.linkHandler = linkHandler
     }
     
-    // MARK: - BrowserPageClient
-    func setBrowserPage(browserPage: BrowserPage) {
-        self.elements = browserPage.Elements
+    // MARK: - BrowsableClient
+    func selectBrowsable(browsable: Browsable) {
+        self.browsableTitle = browsable.BrowsableTitle
+        self.sections = browsable.BrowsableSections
+        self.isCollapsed = sections.map({ (section:BrowserContentSection) -> Bool in
+            if !section.IsCollapsible {
+                return false
+            }
+            else {
+                return true
+            }
+        })
         tableView.reloadData()
     }
     
+    // MARK: - CollapseHandler
+    func toggleCollapsed(_ index: Int) {
+        self.isCollapsed[index] = !self.isCollapsed[index]
+        let indexSet = IndexSet(integer: index)
+        tableView.reloadSections(indexSet, with: .top)
+    }
+
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Header nibs.
+        let titleNib = UINib(nibName: StoryboardIdentifiers.BrowserTitleHeaderView, bundle: nil)
+        tableView.register(titleNib, forHeaderFooterViewReuseIdentifier: ReuseIdentifiers.BrowserContentPageTitleSectionHeaderIdentifier)
+        let collapsibleNib = UINib(nibName: StoryboardIdentifiers.BrowserCollapsibleHeaderView, bundle: nil)
+        tableView.register(collapsibleNib, forHeaderFooterViewReuseIdentifier: ReuseIdentifiers.BrowserContentPageCollapsibleSectionHeaderIdentifier)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,43 +66,60 @@ class BrowserContentPageTableViewController: UITableViewController, BrowserPageC
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return elements.count
+        if isCollapsed[section] {
+            return 0
+        }
+        else {
+            return sections[section].Elements.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let element = elements[indexPath.row]
+        let section = sections[indexPath.section]
+        let element = section.Elements[indexPath.row]
         var cell : UITableViewCell!
         switch element {
-        case .heading(let heading):
-            let headingCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.BrowserContentPageHeadingTableCellIdentifier, for: indexPath) as! BrowserContentPageHeadingTableViewCell
-            headingCell.heading = heading
-            cell = headingCell
         case .image(let image):
             let imageCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.BrowserContentPageImageTableCellIdentifier, for: indexPath) as! BrowserContentPageImageTableViewCell
             imageCell.imageElement = image
             cell = imageCell
-        case .etymology(let etymology):
-            if etymology.Phrase2 == nil {
-                let etymologyCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.BrowserContentPageEtymologyTableCellIdentifier, for: indexPath) as! BrowserContentPageEtymologyTableViewCell
-                etymologyCell.etymology = etymology
-                cell = etymologyCell
-            }
-            else {
-                let etymologyCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.BrowserContentPageEtymology2TableCellIdentifier, for: indexPath) as! BrowserContentPageEtymology2TableViewCell
-                etymologyCell.etymology = etymology
-                cell = etymologyCell
-            }
-        case .text(let text):
+        case .text(let paragraph):
             let textCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.BrowserContentPageTextTableCellIdentifier, for: indexPath) as! BrowserContentPageTextTableViewCell
-            textCell.textElement = text
+            textCell.paragraph = paragraph
             textCell.setLinkHandler(linkHandler: linkHandler!)
             cell = textCell
             cell.tag = indexPath.row
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection sectionIndex: Int) -> CGFloat {
+        let section = sections[sectionIndex]
+        if section.IsCollapsible {
+            return 30
+        }
+        else {
+            return 60
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection sectionIndex: Int) -> UIView? {
+        let section = sections[sectionIndex]
+        if section.IsCollapsible {
+            let sectionView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReuseIdentifiers.BrowserContentPageCollapsibleSectionHeaderIdentifier) as! BrowserCollapsibleHeaderView
+            sectionView.titleLabelView.text = section.Title
+            sectionView.Index = sectionIndex
+            sectionView.CollapseHandler = self
+            return sectionView
+        }
+        else {
+            let sectionView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReuseIdentifiers.BrowserContentPageTitleSectionHeaderIdentifier) as! BrowserTitleHeaderView
+            sectionView.titleLabelView.text = section.Title
+            return sectionView
+        }
     }
 }

@@ -13,4 +13,5 @@ struct Regexes {
     static let ParagraphsRegex = regexFromPattern(pattern: "\\n\\n")
     static let StrongRegex = regexFromPattern(pattern: "(\\*\\*|__)(?=\\S)(?:.+?[*_]*)(?<=\\S)\\1")
     static let ItalicsRegex = regexFromPattern(pattern: "(\\*|_)(?=\\S)(.+?)(?<=\\S)\\1")
+    static let BulletRegex = regexFromPattern(pattern: "^(\\*|-) .*")
 }

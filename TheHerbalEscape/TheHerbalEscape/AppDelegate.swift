@@ -20,8 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Hack in some dummy content for now.
-        contentRepository.loadContentPack(contentPack: WitcherContentPack())
-        
+        let plantsUrl = DataManager.urlForResource("LevelOne", "plants", "json")
+        DataManager.getContents(plantsUrl) { (data, error) in
+            if let data = data {
+                let plants = PlantContents.decodeFromJSON(jsonData: data)
+                for plant in plants {
+                    // Not at all thread safe!!!!
+                    self.contentRepository.Browsables.append(plant)
+                }
+            }
+        }
+
         // Initialize the DataController.
         persistentContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         dataController = DataController(managedObjectContext: persistentContainer.viewContext)

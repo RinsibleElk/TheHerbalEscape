@@ -62,7 +62,7 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     }
     
     // MARK: - BrowsableClient
-    func select(browsable: Browsable) {
+    func selectBrowsable(browsable: Browsable) {
         selectedBrowsable = browsable
     }
     
@@ -71,7 +71,7 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
         var foundBrowsable : Browsable?
         // TODO: Yikes, must be a dictionary by name or something.
         for browsable in allBrowsables  {
-            if browsable.BrowserTitle == linkText {
+            if browsable.BrowsableTitle == linkText {
                 foundBrowsable = browsable
                 break
             }
@@ -79,16 +79,16 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
         // Clearly when we are handling a link, we already have content visible.
         // Just push the page down. It will show up as a page transition in the content.
         if (foundBrowsable != nil && content != nil) {
-            content!.select(browsable: foundBrowsable!)
+            content!.selectBrowsable(browsable: foundBrowsable!)
         }
     }
     
     // MARK: - Private functions
     func pushSelectedBrowsableToClients() {
         //        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentIdentifier) as! BrowserContentViewController
-        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentPagesIdentifier) as! BrowserContentPagesViewController
+        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentPageTableIdentifier) as! BrowserContentPageTableViewController
         content.setLinkHandler(linkHandler: self)
-        content.select(browsable: selectedBrowsable!)
+        content.selectBrowsable(browsable: selectedBrowsable!)
         showDetailViewController(content, sender: nil)
     }
 }

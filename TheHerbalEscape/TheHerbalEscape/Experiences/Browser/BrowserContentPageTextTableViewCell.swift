@@ -14,7 +14,7 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
     
     // MARK: - Properties
     private weak var linkHandler : LinkHandler!
-    var textElement: BrowserPageText? {
+    var paragraph: BrowserTextParagraph? {
         didSet {
             setUpView()
         }
@@ -27,7 +27,7 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
     
     // MARK: - UITapGestureRecogniser
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        if (textElement?.Links.count ?? 0) == 0 {
+        if (paragraph?.links.count ?? 0) == 0 {
             return
         }
         guard let view = sender.view else {
@@ -41,9 +41,9 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
             return
         }
         let characterLocation = textView.offset(from: textView.beginningOfDocument, to: position)
-        for link in textElement!.Links {
-            if link.Range.contains(characterLocation) {
-                linkHandler!.handleLink(linkText: link.Target, content: nil)
+        for link in paragraph!.links {
+            if link.range.contains(characterLocation) {
+                linkHandler!.handleLink(linkText: link.target, content: nil)
             }
         }
     }
@@ -64,66 +64,26 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
 
     // MARK: - Private functions
     private func setUpView() {
-        if (textElement != nil) {
-            let textAttributedString = NSMutableAttributedString(string: textElement!.Text)
-            let textEntireRange = NSRange(location: 0, length: textElement!.Text.count)
-            elementTextView.textAlignment = .left
-            elementTextView.isEditable = false
-            elementTextView.isScrollEnabled = false
-            
-            // Set up font, taking into account highlights.
-            if (textElement!.Highlights.count == 0) {
-                textAttributedString.addAttribute(.font, value: UIFont(name: FontNames.Perpetua, size: FontSizes.p)!, range: textEntireRange)
-            }
-            else {
-                var currentLocation : Int = 0
-                let font = UIFont(name: FontNames.Perpetua, size: FontSizes.p)!
-                let boldFont = UIFont(name: FontNames.PerpetuaBold, size: FontSizes.p)!
-                let italicFont = UIFont(name: FontNames.PerpetuaItalic, size: FontSizes.p)!
-                for highlight in textElement!.Highlights {
-                    let fontToUse = highlight.HighlightType == .bold ? boldFont : italicFont
-                    if (currentLocation == highlight.Range.location) {
-                        textAttributedString.addAttribute(.font, value: fontToUse, range: highlight.Range)
-                        currentLocation += highlight.Range.length
-                    }
-                    else {
-                        textAttributedString.addAttribute(.font, value: font, range: NSRange(location: currentLocation, length: highlight.Range.location - currentLocation))
-                        textAttributedString.addAttribute(.font, value: fontToUse, range: highlight.Range)
-                        currentLocation = highlight.Range.location + highlight.Range.length
-                    }
+        if (paragraph != nil) {
+            let textAttributedString = NSMutableAttributedString(string: paragraph!.text)
+            let font = UIFont.preferredFont(forTextStyle: .body)
+            let fontSize = font.pointSize
+            let fontDescriptor = font.fontDescriptor
+            for highlight in paragraph!.highlights {
+                var highlightFontDescriptor = fontDescriptor
+                var color = Colors.Black
+                if (highlight.highlightTypes.contains(.link)) {
+                    color = Colors.Blue
                 }
-                if (currentLocation < textEntireRange.length) {
-                    textAttributedString.addAttribute(.font, value: font, range: NSRange(location: currentLocation, length: textEntireRange.length - currentLocation))
+                if (highlight.highlightTypes.contains(.bold)) {
+                    highlightFontDescriptor = highlightFontDescriptor.withSymbolicTraits(.traitBold)!
                 }
-            }
-            
-            // Set up links.
-            if (textElement!.Links.count == 0) {
-                textAttributedString.addAttribute(.foregroundColor, value: Colors.Black, range: textEntireRange)
-            }
-            else {
-                elementTextView.isUserInteractionEnabled = true
-                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BrowserContentPageTextTableViewCell.handleTap(sender:)))
-                elementTextView.addGestureRecognizer(tapGestureRecognizer)
-                
-                // Split the string up, colorize, and add the link locations.
-                var currentLocation : Int = 0
-                for link in textElement!.Links {
-                    if (currentLocation == link.Range.location) {
-                        // Probably an error on the part of the content but hey.
-                        textAttributedString.addAttribute(.foregroundColor, value: Colors.Blue, range: link.Range)
-                        currentLocation += link.Range.length
-                    }
-                    else {
-                        textAttributedString.addAttribute(.foregroundColor, value: Colors.Black, range: NSRange(location: currentLocation, length: link.Range.location - currentLocation))
-                        textAttributedString.addAttribute(.foregroundColor, value: Colors.Blue, range: link.Range)
-                        currentLocation = link.Range.location + link.Range.length
-                    }
-                    //                linkViews.append((view: elementTextView, link: link))
+                if (highlight.highlightTypes.contains(.italics)) {
+                    highlightFontDescriptor = highlightFontDescriptor.withSymbolicTraits(.traitItalic)!
                 }
-                if (currentLocation < textEntireRange.length) {
-                    textAttributedString.addAttribute(.foregroundColor, value: Colors.Black, range: NSRange(location: currentLocation, length: textEntireRange.length - currentLocation))
-                }
+                textAttributedString.addAttribute(.foregroundColor, value: color, range: highlight.range)
+                let highlightedFont = UIFont(descriptor: highlightFontDescriptor, size: fontSize)
+                textAttributedString.addAttribute(.font, value: highlightedFont, range: highlight.range)
             }
             
             // All done.

@@ -8,7 +8,17 @@
 
 import Foundation
 
-public class BrowserContentSection: Codable {
+/// A section of browser content.
+class BrowserContentSection {
+    // MARK: - Properties
     var Title: String
-    var Content: String
+    var IsCollapsible: Bool
+    var Elements: [BrowserContentElement]
+    
+    // MARK: - Initializers
+    init(title: String, isCollapsible: Bool, elements: [BrowserContentElement]) {
+        Title = title
+        IsCollapsible = isCollapsible
+        Elements = elements
+    }
 }

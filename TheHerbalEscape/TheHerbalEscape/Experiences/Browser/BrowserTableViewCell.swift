@@ -17,14 +17,14 @@ class BrowserTableViewCell: UITableViewCell {
     // MARK: - Properties
     var browsable : Browsable? {
         didSet {
-            var image = UIImage(named: browsable!.BrowserImage)
+            var image = UIImage(named: browsable!.BrowsableImage)
             if (image == nil) {
                 image = #imageLiteral(resourceName: "noImage")
             }
             else {
                 browsableImageView.image = image
             }
-            browsableTitleView.text = browsable?.BrowserTitle
+            browsableTitleView.text = browsable?.BrowsableTitle
         }
     }
     
