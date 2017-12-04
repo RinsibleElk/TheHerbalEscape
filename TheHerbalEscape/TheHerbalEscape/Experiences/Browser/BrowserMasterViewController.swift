@@ -85,7 +85,6 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     
     // MARK: - Private functions
     func pushSelectedBrowsableToClients() {
-        //        let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentIdentifier) as! BrowserContentViewController
         let content = UIStoryboard(name: Experiences.Browser, bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.BrowserContentPageTableIdentifier) as! BrowserContentPageTableViewController
         content.setLinkHandler(linkHandler: self)
         content.selectBrowsable(browsable: selectedBrowsable!)

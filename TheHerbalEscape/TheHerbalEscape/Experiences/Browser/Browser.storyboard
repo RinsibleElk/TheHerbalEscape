@@ -14,14 +14,14 @@
         <scene sceneID="NbC-Jx-E6A">
             <objects>
                 <tableViewController storyboardIdentifier="BrowserContentPageTableIdentifier" id="4ZS-ud-IKY" customClass="BrowserContentPageTableViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" maximumZoomScale="2" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jr6-hX-t7Z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" maximumZoomScale="2" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" id="jr6-hX-t7Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageImageTableCellIdentifier" rowHeight="350" id="kp0-iK-chW" customClass="BrowserContentPageImageTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kp0-iK-chW" id="zfJ-xT-hzw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -46,31 +46,36 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageTextTableCellIdentifier" rowHeight="167" id="3tJ-nb-NSM" customClass="BrowserContentPageTextTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="378" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="405.5" width="375" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3tJ-nb-NSM" id="jTX-Rr-QcS">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-hx-D7o">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-t6-bGw">
                                             <rect key="frame" x="16" y="11" width="343" height="145"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <gestureRecognizers/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="17"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="trailing" secondItem="jTX-Rr-QcS" secondAttribute="trailingMargin" id="GV0-gH-q1L"/>
-                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="leading" secondItem="jTX-Rr-QcS" secondAttribute="leadingMargin" id="ixb-43-cWI"/>
-                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="top" secondItem="jTX-Rr-QcS" secondAttribute="topMargin" id="p11-0P-O8w"/>
-                                        <constraint firstItem="fh1-hx-D7o" firstAttribute="bottom" secondItem="jTX-Rr-QcS" secondAttribute="bottomMargin" id="wCx-bO-fW3"/>
+                                        <constraint firstItem="Q0k-t6-bGw" firstAttribute="top" secondItem="jTX-Rr-QcS" secondAttribute="topMargin" id="Ehb-qf-4aS"/>
+                                        <constraint firstItem="Q0k-t6-bGw" firstAttribute="leading" secondItem="jTX-Rr-QcS" secondAttribute="leadingMargin" id="GuD-Au-5Of"/>
+                                        <constraint firstItem="Q0k-t6-bGw" firstAttribute="bottom" secondItem="jTX-Rr-QcS" secondAttribute="bottomMargin" id="bMK-5Y-6I2"/>
+                                        <constraint firstItem="Q0k-t6-bGw" firstAttribute="trailing" secondItem="jTX-Rr-QcS" secondAttribute="trailingMargin" id="iU8-Zb-PMm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outlet property="elementTextView" destination="fh1-hx-D7o" id="w67-ju-bXM"/>
+                                    <outlet property="elementTextView" destination="Q0k-t6-bGw" id="N6F-cB-leL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CollapseHandler: class {
-    func toggleCollapsed(_ index: Int)
+protocol CollapsibleTableViewHeaderDelegate: class {
+    func toggleSection(header: BrowserCollapsibleHeaderView, section: Int)
 }

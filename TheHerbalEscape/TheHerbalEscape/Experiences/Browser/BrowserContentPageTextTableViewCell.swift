@@ -10,7 +10,7 @@ import UIKit
 
 class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
     // MARK: - Outlets
-    @IBOutlet weak var elementTextView: UITextView!
+    @IBOutlet weak var elementTextView: UILabel!
     
     // MARK: - Properties
     private weak var linkHandler : LinkHandler!
@@ -88,6 +88,7 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
             
             // All done.
             elementTextView.attributedText = textAttributedString
+            elementTextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(BrowserContentPageTextTableViewCell.handleTap)))
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowserContentPageTableViewController: UITableViewController, BrowsableClient, LinkHandlerClient, CollapseHandler {
+class BrowserContentPageTableViewController: UITableViewController, BrowsableClient, LinkHandlerClient, CollapsibleTableViewHeaderDelegate {
     // MARK: - Private properties
     private weak var linkHandler: LinkHandler!
     private var sections = [BrowserContentSection]()
@@ -35,28 +35,31 @@ class BrowserContentPageTableViewController: UITableViewController, BrowsableCli
         tableView.reloadData()
     }
     
-    // MARK: - CollapseHandler
-    func toggleCollapsed(_ index: Int) {
-        self.isCollapsed[index] = !self.isCollapsed[index]
-        let indexSet = IndexSet(integer: index)
-        tableView.reloadSections(indexSet, with: .top)
+    // MARK: - CollapsibleTableViewHeaderDelegate
+    func toggleSection(header: BrowserCollapsibleHeaderView, section: Int) {
+        self.isCollapsed[section] = !self.isCollapsed[section]
+        let indexSet = IndexSet(integer: section)
+        header.setCollapsed(collapsed: self.isCollapsed[section])
+        tableView.reloadSections(indexSet, with: .none)
     }
 
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Header nibs.
-        let titleNib = UINib(nibName: StoryboardIdentifiers.BrowserTitleHeaderView, bundle: nil)
-        tableView.register(titleNib, forHeaderFooterViewReuseIdentifier: ReuseIdentifiers.BrowserContentPageTitleSectionHeaderIdentifier)
-        let collapsibleNib = UINib(nibName: StoryboardIdentifiers.BrowserCollapsibleHeaderView, bundle: nil)
-        tableView.register(collapsibleNib, forHeaderFooterViewReuseIdentifier: ReuseIdentifiers.BrowserContentPageCollapsibleSectionHeaderIdentifier)
+        // Automatic resizing.
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 40.0
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.sectionFooterHeight = 1.0
+        
+        // Separators
+        tableView.separatorStyle = .none
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,26 +103,32 @@ class BrowserContentPageTableViewController: UITableViewController, BrowsableCli
     override func tableView(_ tableView: UITableView, heightForHeaderInSection sectionIndex: Int) -> CGFloat {
         let section = sections[sectionIndex]
         if section.IsCollapsible {
-            return 30
+            return UITableViewAutomaticDimension
         }
         else {
             return 60
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection sectionIndex: Int) -> UIView? {
         let section = sections[sectionIndex]
         if section.IsCollapsible {
-            let sectionView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReuseIdentifiers.BrowserContentPageCollapsibleSectionHeaderIdentifier) as! BrowserCollapsibleHeaderView
-            sectionView.titleLabelView.text = section.Title
-            sectionView.Index = sectionIndex
-            sectionView.CollapseHandler = self
-            return sectionView
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReuseIdentifiers.BrowserContentPageCollapsibleSectionHeaderIdentifier) as? BrowserCollapsibleHeaderView ?? BrowserCollapsibleHeaderView(reuseIdentifier: ReuseIdentifiers.BrowserContentPageCollapsibleSectionHeaderIdentifier)
+            header.titleLabel.text = section.Title
+            header.arrowLabel.text = ">"
+            header.setCollapsed(collapsed: isCollapsed[sectionIndex])
+            header.Index = sectionIndex
+            header.delegate = self
+            return header
         }
         else {
-            let sectionView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReuseIdentifiers.BrowserContentPageTitleSectionHeaderIdentifier) as! BrowserTitleHeaderView
-            sectionView.titleLabelView.text = section.Title
-            return sectionView
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReuseIdentifiers.BrowserContentPageTitleSectionHeaderIdentifier) as? BrowserTitleHeaderView ?? BrowserTitleHeaderView(reuseIdentifier: ReuseIdentifiers.BrowserContentPageTitleSectionHeaderIdentifier)
+            header.titleLabel.text = section.Title
+            return header
         }
     }
 }
