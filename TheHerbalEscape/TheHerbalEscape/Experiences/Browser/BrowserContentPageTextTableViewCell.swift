@@ -33,14 +33,13 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
         guard let view = sender.view else {
             return
         }
-        guard let textView = view as? UITextView else {
+        guard let label = view as? UILabel else {
             return
         }
         let location = sender.location(in: view)
-        guard let position = textView.closestPosition(to: location) else {
+        guard let characterLocation = label.characterIndexAtPosition(tapLocation: location) else {
             return
         }
-        let characterLocation = textView.offset(from: textView.beginningOfDocument, to: position)
         for link in paragraph!.links {
             if link.range.contains(characterLocation) {
                 linkHandler!.handleLink(linkText: link.target, content: nil)
@@ -53,6 +52,7 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
         super.awakeFromNib()
         
         // Initialization code
+        elementTextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(BrowserContentPageTextTableViewCell.handleTap)))
         setUpView()
     }
 
@@ -88,7 +88,6 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
             
             // All done.
             elementTextView.attributedText = textAttributedString
-            elementTextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(BrowserContentPageTextTableViewCell.handleTap)))
         }
     }
 }

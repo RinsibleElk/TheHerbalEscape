@@ -70,6 +70,14 @@ public class Plant : Browsable, Decodable {
                 contents.append(customSection)
             }
             
+            // References.
+            var referencesText = ""
+            for reference in References {
+                referencesText += "\n- \(reference)"
+            }
+            let referencesSection = BrowserContentSection(title: "References", isCollapsible: true, elements: [.text(BrowserTextParagraph(referencesText))])
+            contents.append(referencesSection)
+            
             return contents
         }
     }

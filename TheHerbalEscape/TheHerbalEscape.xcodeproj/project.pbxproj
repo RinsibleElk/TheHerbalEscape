@@ -31,6 +31,7 @@
 		D35B0A881FD2E98E00BD1F8F /* BrowserTextLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A871FD2E98E00BD1F8F /* BrowserTextLayout.swift */; };
 		D35B0A8A1FD2EA0800BD1F8F /* BrowserTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */; };
 		D35B0A8C1FD2ED1100BD1F8F /* BrowserTextParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */; };
+		D389B6C11FD61E23008CACA0 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */; };
 		D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */; };
 		D394CC0C1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0B1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift */; };
 		D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */; };
@@ -70,7 +71,7 @@
 		D3E9C69D1FCCCBBE0052CE46 /* FlashcardSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9C69C1FCCCBBE0052CE46 /* FlashcardSessionTests.swift */; };
 		D3F23E0B1FD436090061725D /* BrowserTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23E0A1FD436090061725D /* BrowserTitleHeaderView.swift */; };
 		D3F23E0D1FD4361E0061725D /* BrowserCollapsibleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23E0C1FD4361E0061725D /* BrowserCollapsibleHeaderView.swift */; };
-		D3F66E121FD5F552005FFC86 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F66E111FD5F552005FFC86 /* UIView.swift */; };
+		D3F66E121FD5F552005FFC86 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F66E111FD5F552005FFC86 /* UIViewExtensions.swift */; };
 		D3FC30581FD4A4BB005E581D /* BrowserContentMarkdownSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC30571FD4A4BB005E581D /* BrowserContentMarkdownSection.swift */; };
 		D3FC305A1FD4AC60005E581D /* CollapseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC30591FD4AC60005E581D /* CollapseHandler.swift */; };
 		D3FC30691FD4B099005E581D /* LevelOne.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3FC30681FD4B098005E581D /* LevelOne.bundle */; };
@@ -123,6 +124,7 @@
 		D35B0A871FD2E98E00BD1F8F /* BrowserTextLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextLayout.swift; sourceTree = "<group>"; };
 		D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextTests.swift; sourceTree = "<group>"; };
 		D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextParagraph.swift; sourceTree = "<group>"; };
+		D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTableViewController.swift; sourceTree = "<group>"; };
 		D394CC0B1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageImageTableViewCell.swift; sourceTree = "<group>"; };
 		D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,7 +170,7 @@
 		D3E9C69C1FCCCBBE0052CE46 /* FlashcardSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionTests.swift; sourceTree = "<group>"; };
 		D3F23E0A1FD436090061725D /* BrowserTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTitleHeaderView.swift; sourceTree = "<group>"; };
 		D3F23E0C1FD4361E0061725D /* BrowserCollapsibleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserCollapsibleHeaderView.swift; sourceTree = "<group>"; };
-		D3F66E111FD5F552005FFC86 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D3F66E111FD5F552005FFC86 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		D3FC30571FD4A4BB005E581D /* BrowserContentMarkdownSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentMarkdownSection.swift; sourceTree = "<group>"; };
 		D3FC30591FD4AC60005E581D /* CollapseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapseHandler.swift; sourceTree = "<group>"; };
 		D3FC30681FD4B098005E581D /* LevelOne.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LevelOne.bundle; sourceTree = "<group>"; };
@@ -242,7 +244,8 @@
 			children = (
 				D34C85EC1FD0DA080083B9E0 /* Json.swift */,
 				D3C1A5761FD2FB0D00C60824 /* String.swift */,
-				D3F66E111FD5F552005FFC86 /* UIView.swift */,
+				D3F66E111FD5F552005FFC86 /* UIViewExtensions.swift */,
+				D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -766,7 +769,7 @@
 				D3569B291FCA4FEC0038EE6F /* LinkHandlerClient.swift in Sources */,
 				D3569B211FCA37420038EE6F /* FontSizes.swift in Sources */,
 				D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */,
-				D3F66E121FD5F552005FFC86 /* UIView.swift in Sources */,
+				D3F66E121FD5F552005FFC86 /* UIViewExtensions.swift in Sources */,
 				D3569B231FCA3A2B0038EE6F /* FontNames.swift in Sources */,
 				D3569B111FC986E30038EE6F /* StoryboardIdentifiers.swift in Sources */,
 				D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */,
@@ -779,6 +782,7 @@
 				D3C1A5751FD2F78100C60824 /* BrowserTextHighlightType.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,
+				D389B6C11FD61E23008CACA0 /* UILabelExtensions.swift in Sources */,
 				D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */,
 				D3569B171FC9B8AF0038EE6F /* BrowsableClient.swift in Sources */,
 				D3C1A5711FD2F74000C60824 /* BrowserTextLink.swift in Sources */,

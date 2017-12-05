@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowserContentPageTableViewController: UITableViewController, BrowsableClient, LinkHandlerClient, CollapsibleTableViewHeaderDelegate {
+class BrowserContentPageTableViewController: UITableViewController, BrowsableClient, LinkHandler, LinkHandlerClient, CollapsibleTableViewHeaderDelegate {
     // MARK: - Private properties
     private weak var linkHandler: LinkHandler!
     private var sections = [BrowserContentSection]()
@@ -18,6 +18,11 @@ class BrowserContentPageTableViewController: UITableViewController, BrowsableCli
     // MARK: - LinkHandlerClient
     func setLinkHandler(linkHandler: LinkHandler) {
         self.linkHandler = linkHandler
+    }
+    
+    // MARKL - LinkHandler
+    func handleLink(linkText: String, content: BrowsableClient?) {
+        self.linkHandler.handleLink(linkText: linkText, content: self)
     }
     
     // MARK: - BrowsableClient
@@ -93,7 +98,7 @@ class BrowserContentPageTableViewController: UITableViewController, BrowsableCli
         case .text(let paragraph):
             let textCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.BrowserContentPageTextTableCellIdentifier, for: indexPath) as! BrowserContentPageTextTableViewCell
             textCell.paragraph = paragraph
-            textCell.setLinkHandler(linkHandler: linkHandler!)
+            textCell.setLinkHandler(linkHandler: self)
             cell = textCell
             cell.tag = indexPath.row
         }

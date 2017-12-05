@@ -68,18 +68,27 @@ class BrowserMasterViewController: UISplitViewController, UISplitViewControllerD
     
     // MARK: - LinkHandler
     func handleLink(linkText: String, content: BrowsableClient?) {
-        var foundBrowsable : Browsable?
-        // TODO: Yikes, must be a dictionary by name or something.
-        for browsable in allBrowsables  {
-            if browsable.BrowsableTitle == linkText {
-                foundBrowsable = browsable
-                break
+        /// If it is obviously a web link, then handle it.
+        if linkText.starts(with: "http") {
+            if let url = URL(string: linkText) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { (_) in
+                })
             }
         }
-        // Clearly when we are handling a link, we already have content visible.
-        // Just push the page down. It will show up as a page transition in the content.
-        if (foundBrowsable != nil && content != nil) {
-            content!.selectBrowsable(browsable: foundBrowsable!)
+        else {
+            var foundBrowsable : Browsable?
+            // TODO: Yikes, must be a dictionary by name or something.
+            for browsable in allBrowsables  {
+                if browsable.BrowsableTitle == linkText {
+                    foundBrowsable = browsable
+                    break
+                }
+            }
+            // Clearly when we are handling a link, we already have content visible.
+            // Just push the page down. It will show up as a page transition in the content.
+            if (foundBrowsable != nil && content != nil) {
+                content!.selectBrowsable(browsable: foundBrowsable!)
+            }
         }
     }
     
