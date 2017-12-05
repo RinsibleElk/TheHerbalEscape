@@ -15,10 +15,6 @@
                "Habitat": ["Hedgerows", "Road Sides", "Grasslands"],
                "Sections": [
                             {
-                            "Title": "Dummy",
-                            "Content": "Here is a *sample* link to [Horse Chestnut]()."
-                            },
-                            {
                             "Title": "Other Names",
                             "Content": "Harvest lice, Ray’s tail(s), Liverwort, Sticklewort, Stickweed, Sweethearts, Tea plant, Cockeburr, Cockleburr, Clot burr, Fairy’s wand, Lemonwort, Church steeples, Salt and pepper, Aaron’s rod, Beggars’s lice, Beggra’s ticks, Money-in-both-pockets, Philanthropos, garclive (Saxon)"
                             },
