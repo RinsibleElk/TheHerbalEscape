@@ -56,7 +56,7 @@ public class Plant : Browsable, Decodable {
             for constituent in Constituents {
                 constituentsText += "\n- [\(constituent)]()"
             }
-            mainElements.append(.text(BrowserTextParagraph(actionsText)))
+            mainElements.append(.text(BrowserTextParagraph(constituentsText)))
 
             let mainSection = BrowserContentSection(title: CommonName, isCollapsible: false, elements: mainElements)
             contents.append(mainSection)
