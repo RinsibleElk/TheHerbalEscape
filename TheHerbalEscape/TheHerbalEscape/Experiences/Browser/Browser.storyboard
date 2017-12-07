@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qcl-aU-oeg">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,20 +16,20 @@
             <objects>
                 <tableViewController storyboardIdentifier="BrowserContentPageTableIdentifier" id="4ZS-ud-IKY" customClass="BrowserContentPageTableViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" maximumZoomScale="2" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" id="jr6-hX-t7Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageImageTableCellIdentifier" rowHeight="350" id="kp0-iK-chW" customClass="BrowserContentPageImageTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="55.5" width="667" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kp0-iK-chW" id="zfJ-xT-hzw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="350"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="lzV-88-sYK">
-                                            <rect key="frame" x="16" y="11" width="343" height="328"/>
+                                            <rect key="frame" x="20" y="11" width="627" height="328"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="328" id="p2N-W0-11i"/>
                                             </constraints>
@@ -46,14 +47,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserContentPageTextTableCellIdentifier" rowHeight="167" id="3tJ-nb-NSM" customClass="BrowserContentPageTextTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="405.5" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="405.5" width="667" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3tJ-nb-NSM" id="jTX-Rr-QcS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-t6-bGw">
-                                            <rect key="frame" x="16" y="11" width="343" height="145"/>
+                                            <rect key="frame" x="8" y="11" width="651" height="145"/>
                                             <gestureRecognizers/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
@@ -94,15 +95,15 @@
             <objects>
                 <tableViewController title="Browser" clearsSelectionOnViewWillAppear="NO" id="KZM-dF-7es" customClass="BrowserTableViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3of-bv-bwN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowserTableCellIdentifier" id="RRj-jx-SGt" customClass="BrowserTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="667" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RRj-jx-SGt" id="ZIJ-4G-2La">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUR-7s-wee">
@@ -146,7 +147,7 @@
             <objects>
                 <navigationController id="19w-XL-grj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s1W-U8-Rw5">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -168,6 +169,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cg-xB-yCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-334" y="81"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wuc-ie-wCV">
+            <objects>
+                <viewController id="Y1s-Gm-1Ea" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kpc-Eh-THu">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64T-rG-ga4">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="USe-Fh-sdh" kind="embed" id="vIv-Tu-6eA"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-nK-2Gk">
+                                <rect key="frame" x="335" y="0.0" width="332" height="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="oYJ-Rd-fO5" kind="embed" id="SEw-8v-7Ni"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iah-y0-tcq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFc-mb-kXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-903.59820089955031" y="984.79999999999995"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EK1-ok-5vN">
+            <objects>
+                <viewController id="USe-Fh-sdh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Iy-8U-8Jl">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-V6-LRq">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zeZ-Wq-WuG">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zeZ-Wq-WuG" id="XbZ-ZB-a6E">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Vhd-V6-LRq" secondAttribute="bottom" id="4Ni-eQ-CaD"/>
+                            <constraint firstItem="Vhd-V6-LRq" firstAttribute="top" secondItem="1Iy-8U-8Jl" secondAttribute="top" id="9yO-XD-sle"/>
+                            <constraint firstAttribute="trailing" secondItem="Vhd-V6-LRq" secondAttribute="trailing" id="Dlk-Yw-eLK"/>
+                            <constraint firstItem="Vhd-V6-LRq" firstAttribute="leading" secondItem="1Iy-8U-8Jl" secondAttribute="leading" id="zgw-yh-WrC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jY-Px-5FK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1163.568215892054" y="1832.8"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="G5N-sN-6fg">
+            <objects>
+                <viewController id="oYJ-Rd-fO5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c3Q-b1-OxF">
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vr7-O3-1Y4">
+                                <rect key="frame" x="0.0" y="0.0" width="332" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vr7-O3-1Y4" firstAttribute="leading" secondItem="c3Q-b1-OxF" secondAttribute="leading" id="AA5-dc-VxF"/>
+                            <constraint firstAttribute="bottom" secondItem="Vr7-O3-1Y4" secondAttribute="bottom" id="I8K-A6-ev9"/>
+                            <constraint firstAttribute="trailing" secondItem="Vr7-O3-1Y4" secondAttribute="trailing" id="lUf-2S-h8w"/>
+                            <constraint firstItem="Vr7-O3-1Y4" firstAttribute="top" secondItem="c3Q-b1-OxF" secondAttribute="top" id="wWg-dl-9oE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DiH-1V-BeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-605.3973013493254" y="1832.8"/>
         </scene>
     </scenes>
     <resources>

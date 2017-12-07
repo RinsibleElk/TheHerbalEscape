@@ -26,28 +26,34 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-GJ-Gee">
-                                        <rect key="frame" x="28" y="28" width="319" height="142"/>
+                                        <rect key="frame" x="28" y="28" width="319" height="217"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iut-WC-b6f" customClass="MenuButton" customModule="TheHerbalEscape" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="34"/>
-                                                <state key="normal" title="Browser">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iut-WC-b6f">
+                                                <rect key="frame" x="0.0" y="0.0" width="319" height="59"/>
+                                                <state key="normal" title="Browser" backgroundImage="buttonNormal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" backgroundImage="buttonSelected"/>
+                                                <state key="highlighted" backgroundImage="buttonSelected"/>
                                                 <connections>
                                                     <segue destination="ft1-QC-7LJ" kind="presentation" id="KAd-FG-Heq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCy-pJ-ScH" customClass="MenuButton" customModule="TheHerbalEscape" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="54" width="319" height="34"/>
-                                                <state key="normal" title="Collapsible">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCy-pJ-ScH">
+                                                <rect key="frame" x="0.0" y="79" width="319" height="59"/>
+                                                <state key="normal" title="Collapsible" backgroundImage="buttonNormal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" backgroundImage="buttonSelected"/>
+                                                <state key="highlighted" backgroundImage="buttonSelected"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-nO-v6g" customClass="MenuButton" customModule="TheHerbalEscape" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="319" height="34"/>
-                                                <state key="normal" title="Flashcards">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-nO-v6g">
+                                                <rect key="frame" x="0.0" y="158" width="319" height="59"/>
+                                                <state key="normal" title="Flashcards" backgroundImage="buttonNormal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" backgroundImage="buttonSelected"/>
+                                                <state key="highlighted" backgroundImage="buttonSelected"/>
                                                 <connections>
                                                     <segue destination="eTl-ju-HKE" kind="show" id="exC-9j-BbX"/>
                                                 </connections>
@@ -119,5 +125,7 @@
     </scenes>
     <resources>
         <image name="background" width="640" height="426"/>
+        <image name="buttonNormal" width="272" height="59"/>
+        <image name="buttonSelected" width="272" height="59"/>
     </resources>
 </document>
