@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1A3E44EE686E3BBBD8F8C1B2 /* Pods_TheHerbalEscape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6847C45EA1817D05B727DC6 /* Pods_TheHerbalEscape.framework */; };
 		939C84065FD5E1D3D62984BF /* Pods_TheHerbalEscapeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1441C67092958C3BDD1B364 /* Pods_TheHerbalEscapeTests.framework */; };
+		D303AB431FD8C21A006F4919 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303AB421FD8C21A006F4919 /* NavigationViewController.swift */; };
+		D303AB451FD8C4BC006F4919 /* CAGradientLayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303AB441FD8C4BC006F4919 /* CAGradientLayerExtensions.swift */; };
+		D303AB471FD8C526006F4919 /* UINavigationControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303AB461FD8C526006F4919 /* UINavigationControllerExtensions.swift */; };
 		D31749A41FD3326500CB2942 /* BrowserContentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31749A31FD3326500CB2942 /* BrowserContentElement.swift */; };
 		D321EE821FD42B8F0082E8B9 /* BrowserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321EE811FD42B8F0082E8B9 /* BrowserImage.swift */; };
 		D321EE861FD4300A0082E8B9 /* EmptyBrowsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321EE851FD4300A0082E8B9 /* EmptyBrowsable.swift */; };
@@ -102,6 +105,9 @@
 		83024B29B84E848EF667612E /* Pods-TheHerbalEscape.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheHerbalEscape.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheHerbalEscape/Pods-TheHerbalEscape.release.xcconfig"; sourceTree = "<group>"; };
 		A6847C45EA1817D05B727DC6 /* Pods_TheHerbalEscape.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheHerbalEscape.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1441C67092958C3BDD1B364 /* Pods_TheHerbalEscapeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheHerbalEscapeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D303AB421FD8C21A006F4919 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		D303AB441FD8C4BC006F4919 /* CAGradientLayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtensions.swift; sourceTree = "<group>"; };
+		D303AB461FD8C526006F4919 /* UINavigationControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtensions.swift; sourceTree = "<group>"; };
 		D31749A31FD3326500CB2942 /* BrowserContentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentElement.swift; sourceTree = "<group>"; };
 		D321EE811FD42B8F0082E8B9 /* BrowserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserImage.swift; sourceTree = "<group>"; };
 		D321EE851FD4300A0082E8B9 /* EmptyBrowsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBrowsable.swift; sourceTree = "<group>"; };
@@ -230,6 +236,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D303AB411FD8C1E2006F4919 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D303AB421FD8C21A006F4919 /* NavigationViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		D32BCB471FCB1DA500BE0A22 /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +260,8 @@
 				D3C1A5761FD2FB0D00C60824 /* String.swift */,
 				D3F66E111FD5F552005FFC86 /* UIViewExtensions.swift */,
 				D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */,
+				D303AB441FD8C4BC006F4919 /* CAGradientLayerExtensions.swift */,
+				D303AB461FD8C526006F4919 /* UINavigationControllerExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -356,6 +372,7 @@
 		D3B86EC01FC8C8A800DF1723 /* Experiences */ = {
 			isa = PBXGroup;
 			children = (
+				D303AB411FD8C1E2006F4919 /* Navigation */,
 				D3CDE0331FCF42A9004DD8C4 /* Main */,
 				D32BCB471FCB1DA500BE0A22 /* Flashcards */,
 				D3E5EA0D1FC8F43C00E27037 /* Browser */,
@@ -742,6 +759,7 @@
 				D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */,
 				D3569B271FCA4EF10038EE6F /* LinkHandler.swift in Sources */,
 				D3DBF1A71FCCA6D200A014F9 /* FlashcardSessionCard.swift in Sources */,
+				D303AB471FD8C526006F4919 /* UINavigationControllerExtensions.swift in Sources */,
 				D3E5EA121FC8F49500E27037 /* ReuseIdentifiers.swift in Sources */,
 				D321EE821FD42B8F0082E8B9 /* BrowserImage.swift in Sources */,
 				D3DBF1B41FCCBCDE00A014F9 /* iFlashcardProgressModel.swift in Sources */,
@@ -775,10 +793,12 @@
 				D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */,
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
 				D3DBF1A91FCCA7F300A014F9 /* FlashcardSessionCardSide.swift in Sources */,
+				D303AB431FD8C21A006F4919 /* NavigationViewController.swift in Sources */,
 				D3C1A5771FD2FB0D00C60824 /* String.swift in Sources */,
 				D3FC305A1FD4AC60005E581D /* CollapseHandler.swift in Sources */,
 				D3F23E0D1FD4361E0061725D /* BrowserCollapsibleHeaderView.swift in Sources */,
 				D3DBF1AE1FCCBBD300A014F9 /* DataController.swift in Sources */,
+				D303AB451FD8C4BC006F4919 /* CAGradientLayerExtensions.swift in Sources */,
 				D3C1A5751FD2F78100C60824 /* BrowserTextHighlightType.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,

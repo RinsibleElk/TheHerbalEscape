@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1581.5999999999999" y="-251.42428785607197"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="C3F-r9-UMk">
             <objects>
-                <navigationController id="19w-XL-grj" sceneMemberID="viewController">
+                <navigationController id="19w-XL-grj" customClass="NavigationViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s1W-U8-Rw5">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -231,6 +231,7 @@
                             <constraint firstAttribute="trailing" secondItem="Vhd-V6-LRq" secondAttribute="trailing" id="Dlk-Yw-eLK"/>
                             <constraint firstItem="Vhd-V6-LRq" firstAttribute="leading" secondItem="1Iy-8U-8Jl" secondAttribute="leading" id="zgw-yh-WrC"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="KuC-ee-Mha"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jY-Px-5FK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,6 +258,7 @@
                             <constraint firstAttribute="trailing" secondItem="Vr7-O3-1Y4" secondAttribute="trailing" id="lUf-2S-h8w"/>
                             <constraint firstItem="Vr7-O3-1Y4" firstAttribute="top" secondItem="c3Q-b1-OxF" secondAttribute="top" id="wWg-dl-9oE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="zEa-LT-3AX"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiH-1V-BeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
