@@ -10,7 +10,7 @@ import UIKit
 
 class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
     // MARK: - Outlets
-    @IBOutlet weak var elementTextView: UILabel!
+    @IBOutlet weak var elementTextView: UITextView!
     
     // MARK: - Properties
     private weak var linkHandler : LinkHandler!
@@ -33,11 +33,11 @@ class BrowserContentPageTextTableViewCell: UITableViewCell, LinkHandlerClient {
         guard let view = sender.view else {
             return
         }
-        guard let label = view as? UILabel else {
+        guard let textView = view as? UITextView else {
             return
         }
         let location = sender.location(in: view)
-        guard let characterLocation = label.characterIndexAtPosition(tapLocation: location) else {
+        guard let characterLocation = textView.characterIndexAtPosition(tapLocation: location) else {
             return
         }
         for link in paragraph!.links {

@@ -21,12 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Hack in some dummy content for now.
         let plantsUrl = DataManager.urlForResource("LevelOne", "plants", "json")
+        let herbalActionsUrl = DataManager.urlForResource("Global", "actions", "json")
         DataManager.getContents(plantsUrl) { (data, error) in
             if let data = data {
                 let plants = PlantContents.decodeFromJSON(jsonData: data)
                 for plant in plants {
                     // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(plant)
+                }
+            }
+        }
+        DataManager.getContents(herbalActionsUrl) { (data, error) in
+            if let data = data {
+                let actions = HerbalActionContents.decodeFromJSON(jsonData: data)
+                for action in actions {
+                    // Not at all thread safe!!!!
+                    self.contentRepository.Browsables.append(action)
                 }
             }
         }

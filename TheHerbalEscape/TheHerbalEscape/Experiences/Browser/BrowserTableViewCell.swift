@@ -17,9 +17,9 @@ class BrowserTableViewCell: UITableViewCell {
     // MARK: - Properties
     var browsable : Browsable? {
         didSet {
-            var image = UIImage(named: browsable!.BrowsableImage)
+            let image = UIImage(named: browsable!.BrowsableImage)
             if (image == nil) {
-                image = #imageLiteral(resourceName: "noImage")
+                browsableImageView.image = #imageLiteral(resourceName: "noImage")
             }
             else {
                 browsableImageView.image = image
@@ -31,6 +31,7 @@ class BrowserTableViewCell: UITableViewCell {
     // MARK: - Overrides
     override func awakeFromNib() {
         super.awakeFromNib()
+
         // Initialization code
     }
 

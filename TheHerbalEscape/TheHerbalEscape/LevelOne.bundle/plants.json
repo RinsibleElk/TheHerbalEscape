@@ -17,8 +17,7 @@
                            "North Africa"
                            ],
                "Actions": [
-                           "Astrigent",
-                           "Tonic",
+                           "Astringent",
                            "Diuretic",
                            "Vulnerary",
                            "Cholagogue"
@@ -468,7 +467,7 @@
                {
                "CommonName": "São Caetano melon",
                "LatinName": "Cayaponia espelina",
-               "ImageName": "sãocaetanomelon",
+               "ImageName": "saocaetanomelon",
                "Level": 1,
                "HerbalFamily": "TODO",
                "PartsUsed": [],
@@ -1845,4 +1844,3 @@
                }
                ]
 }
-

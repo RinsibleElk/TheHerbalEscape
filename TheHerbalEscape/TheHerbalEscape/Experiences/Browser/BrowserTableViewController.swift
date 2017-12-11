@@ -23,7 +23,10 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
         // Starter data - TODO find a better way to do this.
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         if (appDelegate != nil) {
-            allResults = appDelegate!.contentRepository.Browsables
+            allResults = appDelegate!.contentRepository.Browsables.sorted(by: { (browsable1, browsable2) -> Bool in
+                let compareResult = browsable1.BrowsableTitle.lowercased().compare(browsable2.BrowsableTitle.lowercased())
+                return compareResult.rawValue <= 0
+            })
             currentResults = allResults
         }
         

@@ -1,0 +1,172 @@
+{
+    "Actions": [
+                {
+                "Name": "Adaptogen",
+                "ImageName": "adaptogen"
+                },
+                {
+                "Name": "Alterative",
+                "ImageName": "alterative"
+                },
+                {
+                "Name": "Anthelmintic",
+                "ImageName": "anthelmintic"
+                },
+                {
+                "Name": "Anti-catarrhal",
+                "ImageName": "anticatarrhal"
+                },
+                {
+                "Name": "Anti-cholinergic",
+                "ImageName": "anticholinergic"
+                },
+                {
+                "Name": "Anti-depressant",
+                "ImageName": "antidepressant"
+                },
+                {
+                "Name": "Anti-emetic",
+                "ImageName": "antiemetic"
+                },
+                {
+                "Name": "Anti-fungal",
+                "ImageName": "antifungal"
+                },
+                {
+                "Name": "Anti-hemorrhagic",
+                "ImageName": "antihemorrhagic"
+                },
+                {
+                "Name": "Anti-inflammatory",
+                "ImageName": "antiinflammatory"
+                },
+                {
+                "Name": "Anti-lithic",
+                "ImageName": "antilithic"
+                },
+                {
+                "Name": "Anti-microbial",
+                "ImageName": "antimicrobial"
+                },
+                {
+                "Name": "Anti-parasitic",
+                "ImageName": "antiparasitic"
+                },
+                {
+                "Name": "Anti-pyretic",
+                "ImageName": "antipyretic"
+                },
+                {
+                "Name": "Antiseptic",
+                "ImageName": "antiseptic"
+                },
+                {
+                "Name": "Antispasmodic",
+                "ImageName": "antispasmodic"
+                },
+                {
+                "Name": "Anti-viral",
+                "ImageName": "antiviral"
+                },
+                {
+                "Name": "Anodyne",
+                "ImageName": "anodyne"
+                },
+                {
+                "Name": "Astringent",
+                "ImageName": "astringent"
+                },
+                {
+                "Name": "Bitter",
+                "ImageName": "bitter"
+                },
+                {
+                "Name": "Cardiac Tonic",
+                "ImageName": "cardiactonic"
+                },
+                {
+                "Name": "Carminative",
+                "ImageName": "carminative"
+                },
+                {
+                "Name": "Cholagogue",
+                "ImageName": "cholagogue"
+                },
+                {
+                "Name": "Choleretic",
+                "ImageName": "choleretic"
+                },
+                {
+                "Name": "Demulcent",
+                "ImageName": "demulcent"
+                },
+                {
+                "Name": "Diaphoretic",
+                "ImageName": "diaphoretic"
+                },
+                {
+                "Name": "Diuretic",
+                "ImageName": "diuretic"
+                },
+                {
+                "Name": "Emetic",
+                "ImageName": "emetic"
+                },
+                {
+                "Name": "Emmenagogue",
+                "ImageName": "emmenagogue"
+                },
+                {
+                "Name": "Emollient",
+                "ImageName": "emollient"
+                },
+                {
+                "Name": "Expectorant",
+                "ImageName": "expectorant"
+                },
+                {
+                "Name": "Febrifuge",
+                "ImageName": "febrifuge"
+                },
+                {
+                "Name": "Galactagogue",
+                "ImageName": "galactagogue"
+                },
+                {
+                "Name": "Hepatic",
+                "ImageName": "hepatic"
+                },
+                {
+                "Name": "Hypnotic",
+                "ImageName": "hypnotic"
+                },
+                {
+                "Name": "Laxative",
+                "ImageName": "laxative"
+                },
+                {
+                "Name": "Nervine",
+                "ImageName": "nervine"
+                },
+                {
+                "Name": "Rubefacient",
+                "ImageName": "rubefacient"
+                },
+                {
+                "Name": "Sedative",
+                "ImageName": "sedative"
+                },
+                {
+                "Name": "Stimulant",
+                "ImageName": "stimulant"
+                },
+                {
+                "Name": "Styptic",
+                "ImageName": "styptic"
+                },
+                {
+                "Name": "Vulnerary",
+                "ImageName": "vulnerary"
+                }
+                ]
+}

@@ -43,6 +43,9 @@
 		D35B0A8A1FD2EA0800BD1F8F /* BrowserTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */; };
 		D35B0A8C1FD2ED1100BD1F8F /* BrowserTextParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */; };
 		D389B6C11FD61E23008CACA0 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */; };
+		D39379F21FDF179500D16D8F /* Global.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D39379F11FDF179500D16D8F /* Global.bundle */; };
+		D39379F41FDF17EB00D16D8F /* HerbalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39379F31FDF17EB00D16D8F /* HerbalAction.swift */; };
+		D39379F61FDF4EAC00D16D8F /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39379F51FDF4EAC00D16D8F /* UITextViewExtensions.swift */; };
 		D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */; };
 		D394CC0C1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0B1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift */; };
 		D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */; };
@@ -151,6 +154,9 @@
 		D35B0A891FD2EA0800BD1F8F /* BrowserTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextTests.swift; sourceTree = "<group>"; };
 		D35B0A8B1FD2ED1100BD1F8F /* BrowserTextParagraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextParagraph.swift; sourceTree = "<group>"; };
 		D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		D39379F11FDF179500D16D8F /* Global.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Global.bundle; sourceTree = "<group>"; };
+		D39379F31FDF17EB00D16D8F /* HerbalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbalAction.swift; sourceTree = "<group>"; };
+		D39379F51FDF4EAC00D16D8F /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
 		D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTableViewController.swift; sourceTree = "<group>"; };
 		D394CC0B1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageImageTableViewCell.swift; sourceTree = "<group>"; };
 		D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 				D303AB441FD8C4BC006F4919 /* CAGradientLayerExtensions.swift */,
 				D303AB461FD8C526006F4919 /* UINavigationControllerExtensions.swift */,
 				D3E653F41FDC3063006072E7 /* UIColorExtensions.swift */,
+				D39379F51FDF4EAC00D16D8F /* UITextViewExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -338,6 +345,7 @@
 		D3B86E781FC8A8C300DF1723 /* TheHerbalEscape */ = {
 			isa = PBXGroup;
 			children = (
+				D39379F11FDF179500D16D8F /* Global.bundle */,
 				D3FC30681FD4B098005E581D /* LevelOne.bundle */,
 				D34C85EB1FD0D9FA0083B9E0 /* Utils */,
 				D3DBF1AC1FCCBBC000A014F9 /* Data */,
@@ -430,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				D329E62A1FDDA82B00F82110 /* ContentType.swift */,
+				D39379F31FDF17EB00D16D8F /* HerbalAction.swift */,
 				D34C85E71FD0D80A0083B9E0 /* Plant.swift */,
 				D329E62C1FDDB84A00F82110 /* HerbalFamily.swift */,
 				D3E5E9FF1FC8E8DC00E27037 /* Browsable.swift */,
@@ -613,6 +622,7 @@
 				D3FC30691FD4B099005E581D /* LevelOne.bundle in Resources */,
 				D3E5EA0A1FC8EE7F00E27037 /* Settings.bundle in Resources */,
 				D3B86E7F1FC8A8C300DF1723 /* Main.storyboard in Resources */,
+				D39379F21FDF179500D16D8F /* Global.bundle in Resources */,
 				D32BCB491FCB1DF000BE0A22 /* Flashcards.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,6 +805,7 @@
 				D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */,
 				D3569B271FCA4EF10038EE6F /* LinkHandler.swift in Sources */,
 				D3DBF1A71FCCA6D200A014F9 /* FlashcardSessionCard.swift in Sources */,
+				D39379F41FDF17EB00D16D8F /* HerbalAction.swift in Sources */,
 				D303AB471FD8C526006F4919 /* UINavigationControllerExtensions.swift in Sources */,
 				D3E653F71FDC329D006072E7 /* Course.swift in Sources */,
 				D3E5EA121FC8F49500E27037 /* ReuseIdentifiers.swift in Sources */,
@@ -836,6 +847,7 @@
 				D329E62D1FDDB84A00F82110 /* HerbalFamily.swift in Sources */,
 				D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */,
 				D3E653F51FDC3064006072E7 /* UIColorExtensions.swift in Sources */,
+				D39379F61FDF4EAC00D16D8F /* UITextViewExtensions.swift in Sources */,
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
 				D3DBF1A91FCCA7F300A014F9 /* FlashcardSessionCardSide.swift in Sources */,
 				D303AB431FD8C21A006F4919 /* NavigationViewController.swift in Sources */,
