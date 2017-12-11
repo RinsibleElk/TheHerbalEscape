@@ -10,5 +10,6 @@ import Foundation
 
 /// Errors that occur during coding/decoding.
 enum CodingError: Error {
+    case stringToDataError
     case pageElementError
 }

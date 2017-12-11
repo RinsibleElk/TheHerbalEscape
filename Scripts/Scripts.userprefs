@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="HerbalScripts/Script.fsx">
+    <Files>
+      <File FileName="Scripts/Library.fs" Line="2" Column="1" />
+      <File FileName="Scripts/Wikipedia.fsx" Line="35" Column="1" />
+      <File FileName="HerbalScripts/Component1.fs" Line="5" Column="5" />
+      <File FileName="HerbalScripts/Script.fsx" Line="61" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

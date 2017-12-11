@@ -1,0 +1,43 @@
+Core Concepts
+=============
+
+Level
+- Just a number (1-3)
+- Everything has a level
+- User can filter their level globally (via Preferences)
+- Progress will be scoped to this level
+- Content will be presented to the user if all concepts involved are <= Level, and at least one concept is == Level
+
+Testable
+- Describes the category of knowledge that is under test
+- Has a colour associated (used as a visual reminder throughout the app for this category)
+- Has a name (used for navigation and titles)
+- Used as a key into progress to track the progress within a given
+
+Relationship
+- Describes a relationship from an entity to another.
+- Can be OneToOne, ManyToOne, OneToMany, ManyToMany
+- Has a name
+- 
+
+Browsable
+- Describes how to lay out content in the Browser
+
+TestQuestion
+- Has a testable
+- Has a relationship
+
+Core Components
+===============
+
+ContentRepository
+- Fetch Browsables (optional filter by type, optional sort)
+- Fetch Testables
+
+ProgressController
+- Fetch and calculate global progress (by level)
+- Switch level
+-
+
+PreferencesController
+-
