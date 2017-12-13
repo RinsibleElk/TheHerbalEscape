@@ -11,15 +11,20 @@ import Foundation
 /// Representation of a Herbal Family for use in tests, flashcards and displaying in the Browser.
 class HerbalFamily : Browsable, Decodable {
     var Name: String
-    var Level: Int
-    var Introduction: String
+    var Introduction: String?
     var ImageName: String
-    var Sections: [BrowserContentMarkdownSection]
-    var References: [String]
 
     // MARK: - Browsable
-    var BrowsableTitle: String
-    var BrowsableImage: String
+    var BrowsableTitle: String {
+        get {
+            return Name
+        }
+    }
+    var BrowsableImage: String {
+        get {
+            return ImageName
+        }
+    }
     var BrowsableSections: [BrowserContentSection] {
         get {
             var contents = [BrowserContentSection]()
@@ -27,26 +32,26 @@ class HerbalFamily : Browsable, Decodable {
             // First section is the title, the latin name and the image.
             var mainElements = [BrowserContentElement]()
             mainElements.append(.image(BrowserImage(ImageName, "Photograph of \(Name)")))
-            mainElements.append(.text(BrowserTextParagraph(Introduction)))
-            
-            // Extra custom sections.
-            for section in Sections {
-                let layout = BrowserTextLayout(section.Content)
-                let customSection = BrowserContentSection(title: section.Title, isCollapsible: true, elements: layout.paragraphs.map({ (paragraph) -> BrowserContentElement in
-                    return .text(paragraph)
-                }))
-                contents.append(customSection)
+            if (Introduction != nil) {
+                mainElements.append(.text(BrowserTextParagraph(Introduction!)))
             }
-            
-            // References.
-            var referencesText = ""
-            for reference in References {
-                referencesText += "\n- \(reference)"
-            }
-            let referencesSection = BrowserContentSection(title: "References", isCollapsible: true, elements: [.text(BrowserTextParagraph(referencesText))])
-            contents.append(referencesSection)
+            contents.append(BrowserContentSection(title: Name, isCollapsible: false, elements: mainElements))
             
             return contents
+        }
+    }
+}
+
+public class HerbalFamilyContents : Decodable {
+    var Families: [HerbalFamily]
+    static func decodeFromJSON(jsonData: Data) -> [HerbalFamily] {
+        let jsonDecoder = JSONDecoder()
+        do {
+            let herbalFamilies = try jsonDecoder.decode(HerbalFamilyContents.self, from: jsonData)
+            return herbalFamilies.Families
+        }
+        catch {
+            return []
         }
     }
 }

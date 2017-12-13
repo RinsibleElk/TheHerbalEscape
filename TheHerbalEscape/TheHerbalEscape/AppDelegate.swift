@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Hack in some dummy content for now.
         let plantsUrl = DataManager.urlForResource("LevelOne", "plants", "json")
         let herbalActionsUrl = DataManager.urlForResource("Global", "actions", "json")
+        let herbalFamiliesUrl = DataManager.urlForResource("Global", "herbalfamilies", "json")
         DataManager.getContents(plantsUrl) { (data, error) in
             if let data = data {
                 let plants = PlantContents.decodeFromJSON(jsonData: data)
@@ -37,6 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for action in actions {
                     // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(action)
+                }
+            }
+        }
+        DataManager.getContents(herbalFamiliesUrl) { (data, error) in
+            if let data = data {
+                let families = HerbalFamilyContents.decodeFromJSON(jsonData: data)
+                for family in families {
+                    // Not at all thread safe!!!!
+                    self.contentRepository.Browsables.append(family)
                 }
             }
         }

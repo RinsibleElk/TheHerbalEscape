@@ -1,0 +1,232 @@
+{
+    "Families": [
+                 {
+                 "Name": "Acanthaceae",
+                 "ImageName": "acanthaceae"
+                 },
+                 {
+                 "Name": "Adoxaceae",
+                 "ImageName": "adoxaceae"
+                 },
+                 {
+                 "Name": "Aizoaceae",
+                 "ImageName": "aizoaceae"
+                 },
+                 {
+                 "Name": "Alismataceae",
+                 "ImageName": "alismataceae"
+                 },
+                 {
+                 "Name": "Amaryllidaceae",
+                 "ImageName": "amaryllidaceae"
+                 },
+                 {
+                 "Name": "Aquifoliaceae",
+                 "ImageName": "aquifoliaceae"
+                 },
+                 {
+                 "Name": "Araliaceae",
+                 "ImageName": "araliaceae"
+                 },
+                 {
+                 "Name": "Asphodelaceae",
+                 "ImageName": "asphodelaceae"
+                 },
+                 {
+                 "Name": "Asteraceae",
+                 "ImageName": "asteraceae"
+                 },
+                 {
+                 "Name": "Boraginaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Campanulaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Caryophyllaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Celastraceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Commelinaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Cucurbitaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Elaeagnaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Equisetaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Ericaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Euphorbiaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Fabaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Geraniaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Hamamelidaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Hippocastanaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Lamiaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Lauraceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Linaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Lythraceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Magnoliaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Malvaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Menispermaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Moringaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Myrtaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Nelumbonaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Nitrariaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Oleaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Orchidaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Papaveraceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Passifloraceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Piperaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Plantaginaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Poaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Polygonaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Ranunculaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Rosaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Rubiaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Rutaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Salicaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Santalaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Schisandraceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Scrophulariaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Solanaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Urticaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Verbenaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Violaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Vitaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Zingiberaceae",
+                 "ImageName": "noImage"
+                 },
+                 {
+                 "Name": "Zygophyllaceae",
+                 "ImageName": "noImage"
+                 }
+                 ]
+}
