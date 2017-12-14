@@ -9,7 +9,7 @@
 import CoreData
 
 /// This class manages the relationship with CoreData for tracking progress of various testable things, including flashcards.
-class ProgressController {
+class ProgressController: IProgressController {
     // MARK: - Private properties
     private var moc : NSManagedObjectContext
     
@@ -18,6 +18,34 @@ class ProgressController {
         self.moc = moc
     }
     
-    // MARK: - API
+    // MARK: - IProgressController
+    /// Create a flashcard session for a given course.
+    func createFlashcardSession(course: String, contentRepository: IContentRepository) -> IFlashcardSession {
+        return FlashcardSession(randomSeed: nil, course: course, progressController: self, contentRepository: contentRepository)
+    }
     
+    /// Retrieve all the progress objects for a given course, ordered by due date.
+    func fetchProgress(course: String?) -> [Progress] {
+        // Some constants that I might configure somewhere, that determine how I will choose what to show.
+        let sampleCount = 100
+        var sortDescriptors = [NSSortDescriptor]()
+        sortDescriptors.append(NSSortDescriptor(key: "dueDate", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: "easyCount", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: "lastDifficulty", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: "name", ascending: true))
+        sortDescriptors.append(NSSortDescriptor(key: "question", ascending: true))
+        let fetchRequest = NSFetchRequest<Progress>(entityName: "Progress")
+        fetchRequest.sortDescriptors = sortDescriptors
+        if (course != nil) {
+            fetchRequest.predicate = NSPredicate(format: "course == %@", course!)
+        }
+        fetchRequest.fetchLimit = sampleCount
+        do {
+            let progressObjects = try moc.fetch(fetchRequest)
+            return progressObjects
+        }
+        catch {
+            return [Progress]()
+        }
+    }
 }

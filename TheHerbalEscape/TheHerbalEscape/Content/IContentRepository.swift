@@ -11,4 +11,10 @@ import Foundation
 /// Repository with all the content in it.
 protocol IContentRepository: class {
     var Browsables: [Browsable] { get }
+    
+    func fetchQuestion(question: String) -> Question
+    
+    func fetchContent(contentKey: ContentKey) -> Content
+    
+    func fetchCourse(courseName: String) -> Course
 }

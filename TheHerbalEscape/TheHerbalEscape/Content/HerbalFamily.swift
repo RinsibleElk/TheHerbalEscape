@@ -9,7 +9,8 @@
 import Foundation
 
 /// Representation of a Herbal Family for use in tests, flashcards and displaying in the Browser.
-class HerbalFamily : Browsable, Decodable {
+class HerbalFamily : Browsable, Content, Decodable {
+    // MARK: - Properties
     var Name: String
     var Introduction: String?
     var ImageName: String
@@ -38,6 +39,23 @@ class HerbalFamily : Browsable, Decodable {
             contents.append(BrowserContentSection(title: Name, isCollapsible: false, elements: mainElements))
             
             return contents
+        }
+    }
+    
+    // MARK: - Content
+    func getValue(name: String) -> String? {
+        switch name {
+        case "Name": return Name
+        case "ImageName": return ImageName
+        default:
+            return nil
+        }
+    }
+    
+    func getValues(name: String) -> [String] {
+        switch name {
+        default:
+            return [String]()
         }
     }
 }

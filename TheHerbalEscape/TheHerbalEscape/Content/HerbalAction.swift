@@ -9,7 +9,7 @@
 import Foundation
 
 /// Representation of a HerbalAction for use in Quizzes, Flashcards and displaying in the Browser.
-class HerbalAction : Browsable, Decodable {
+class HerbalAction : Browsable, Content, Decodable {
     // MARK: - Browsable
     var BrowsableTitle: String {
         get {
@@ -38,6 +38,23 @@ class HerbalAction : Browsable, Decodable {
     // MARK: - Properties
     var Name: String
     var ImageName: String
+    
+    // MARK: - Content
+    func getValue(name: String) -> String? {
+        switch name {
+        case "Name": return Name
+        case "ImageName": return ImageName
+        default:
+            return nil
+        }
+    }
+    
+    func getValues(name: String) -> [String] {
+        switch name {
+        default:
+            return [String]()
+        }
+    }
 }
 
 public class HerbalActionContents : Decodable {

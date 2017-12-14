@@ -9,7 +9,10 @@
 import Foundation
 
 /// Protocol defining how to interact with flashcard progress.
-protocol IFlashcardProgress : class, Codable {
+protocol IFlashcardSession : class, Codable {
+    /// Whether there is anything to show.
+    var hasMoreFlashcardsToShow: Bool { get }
+
     /// Is there anything to undo?
     var canUndo: Bool { get }
     
@@ -17,8 +20,11 @@ protocol IFlashcardProgress : class, Codable {
     func undo()
     
     /// Move to the next card (if there is one) and mark the current card with the difficulty given.
-    func finishCard(difficulty: FlashcardDifficulty) -> Bool
+    func finishCard(difficulty: FlashcardDifficulty)
     
-    /// Current card.
-    var currentCard: FlashcardSessionCard? { get }
+    /// Current card front side.
+    var currentFrontSide: FlashcardSide { get }
+    
+    /// Current card back side.
+    var currentBackSide: FlashcardSide { get }
 }

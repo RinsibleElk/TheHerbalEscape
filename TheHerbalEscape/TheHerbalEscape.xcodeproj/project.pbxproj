@@ -15,6 +15,15 @@
 		D31749A41FD3326500CB2942 /* BrowserContentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31749A31FD3326500CB2942 /* BrowserContentElement.swift */; };
 		D321EE821FD42B8F0082E8B9 /* BrowserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321EE811FD42B8F0082E8B9 /* BrowserImage.swift */; };
 		D321EE861FD4300A0082E8B9 /* EmptyBrowsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321EE851FD4300A0082E8B9 /* EmptyBrowsable.swift */; };
+		D3266DC11FE29D1B00CB6422 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DC01FE29D1B00CB6422 /* PreferencesController.swift */; };
+		D3266DC31FE29E0000CB6422 /* IPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DC21FE29E0000CB6422 /* IPreferencesController.swift */; };
+		D3266DC51FE2A66D00CB6422 /* IProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DC41FE2A66D00CB6422 /* IProgressController.swift */; };
+		D3266DC71FE2A95400CB6422 /* FlashcardSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DC61FE2A95400CB6422 /* FlashcardSide.swift */; };
+		D3266DC91FE2ABC300CB6422 /* PlayingSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DC81FE2ABC300CB6422 /* PlayingSounds.swift */; };
+		D3266DCB1FE2B2AC00CB6422 /* FlashcardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DCA1FE2B2AC00CB6422 /* FlashcardSession.swift */; };
+		D3266DCD1FE2B59000CB6422 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DCC1FE2B59000CB6422 /* Flashcard.swift */; };
+		D3266DCF1FE2C89300CB6422 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DCE1FE2C89300CB6422 /* Content.swift */; };
+		D3266DD11FE2CB4000CB6422 /* ContentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DD01FE2CB4000CB6422 /* ContentKey.swift */; };
 		D329E61F1FDD545A00F82110 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329E61E1FDD545A00F82110 /* Question.swift */; };
 		D329E6211FDD569300F82110 /* CourseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329E6201FDD569300F82110 /* CourseColor.swift */; };
 		D329E6231FDD7D9400F82110 /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329E6221FDD7D9400F82110 /* SerializationTests.swift */; };
@@ -49,7 +58,6 @@
 		D394CC041FCB2B5200945D5A /* BrowserContentPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */; };
 		D394CC0C1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0B1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift */; };
 		D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */; };
-		D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC151FCB8DBB00945D5A /* FlashcardProgressModel.swift */; };
 		D394CC191FCB912E00945D5A /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394CC181FCB912E00945D5A /* ProgressController.swift */; };
 		D3B86E7A1FC8A8C300DF1723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B86E791FC8A8C300DF1723 /* AppDelegate.swift */; };
 		D3B86E7F1FC8A8C300DF1723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B86E7D1FC8A8C300DF1723 /* Main.storyboard */; };
@@ -66,16 +74,12 @@
 		D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */; };
 		D3DBF1A31FCCA52F00A014F9 /* IFlashcardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */; };
 		D3DBF1A51FCCA5DB00A014F9 /* FlashcardDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A41FCCA5DB00A014F9 /* FlashcardDifficulty.swift */; };
-		D3DBF1A71FCCA6D200A014F9 /* FlashcardSessionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A61FCCA6D200A014F9 /* FlashcardSessionCard.swift */; };
-		D3DBF1A91FCCA7F300A014F9 /* FlashcardSessionCardSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A81FCCA7F300A014F9 /* FlashcardSessionCardSide.swift */; };
 		D3DBF1AB1FCCAAA200A014F9 /* FlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1AA1FCCAAA200A014F9 /* FlashcardsViewController.swift */; };
 		D3DBF1AE1FCCBBD300A014F9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1AD1FCCBBD300A014F9 /* DataController.swift */; };
 		D3DBF1B01FCCBBF500A014F9 /* IDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1AF1FCCBBF500A014F9 /* IDataController.swift */; };
 		D3DBF1B21FCCBC1800A014F9 /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */; };
-		D3DBF1B41FCCBCDE00A014F9 /* iFlashcardProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B31FCCBCDE00A014F9 /* iFlashcardProgressModel.swift */; };
 		D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */; };
 		D3E5EA001FC8E8DC00E27037 /* Browsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5E9FF1FC8E8DC00E27037 /* Browsable.swift */; };
-		D3E5EA0A1FC8EE7F00E27037 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3E5EA091FC8EE7F00E27037 /* Settings.bundle */; };
 		D3E5EA0F1FC8F45500E27037 /* Browser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E5EA0E1FC8F45500E27037 /* Browser.storyboard */; };
 		D3E5EA121FC8F49500E27037 /* ReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA111FC8F49500E27037 /* ReuseIdentifiers.swift */; };
 		D3E5EA141FC8F4A000E27037 /* SegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5EA131FC8F4A000E27037 /* SegueIdentifiers.swift */; };
@@ -126,6 +130,15 @@
 		D31749A31FD3326500CB2942 /* BrowserContentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentElement.swift; sourceTree = "<group>"; };
 		D321EE811FD42B8F0082E8B9 /* BrowserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserImage.swift; sourceTree = "<group>"; };
 		D321EE851FD4300A0082E8B9 /* EmptyBrowsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBrowsable.swift; sourceTree = "<group>"; };
+		D3266DC01FE29D1B00CB6422 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		D3266DC21FE29E0000CB6422 /* IPreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPreferencesController.swift; sourceTree = "<group>"; };
+		D3266DC41FE2A66D00CB6422 /* IProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProgressController.swift; sourceTree = "<group>"; };
+		D3266DC61FE2A95400CB6422 /* FlashcardSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSide.swift; sourceTree = "<group>"; };
+		D3266DC81FE2ABC300CB6422 /* PlayingSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingSounds.swift; sourceTree = "<group>"; };
+		D3266DCA1FE2B2AC00CB6422 /* FlashcardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSession.swift; sourceTree = "<group>"; };
+		D3266DCC1FE2B59000CB6422 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		D3266DCE1FE2C89300CB6422 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		D3266DD01FE2CB4000CB6422 /* ContentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentKey.swift; sourceTree = "<group>"; };
 		D329E61E1FDD545A00F82110 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D329E6201FDD569300F82110 /* CourseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseColor.swift; sourceTree = "<group>"; };
 		D329E6221FDD7D9400F82110 /* SerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
@@ -160,7 +173,6 @@
 		D394CC031FCB2B5200945D5A /* BrowserContentPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTableViewController.swift; sourceTree = "<group>"; };
 		D394CC0B1FCB2FD100945D5A /* BrowserContentPageImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageImageTableViewCell.swift; sourceTree = "<group>"; };
 		D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentPageTextTableViewCell.swift; sourceTree = "<group>"; };
-		D394CC151FCB8DBB00945D5A /* FlashcardProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardProgressModel.swift; sourceTree = "<group>"; };
 		D394CC181FCB912E00945D5A /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		D3B86E761FC8A8C300DF1723 /* TheHerbalEscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHerbalEscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B86E791FC8A8C300DF1723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,16 +195,12 @@
 		D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFlashcardSession.swift; sourceTree = "<group>"; };
 		D3DBF1A41FCCA5DB00A014F9 /* FlashcardDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDifficulty.swift; sourceTree = "<group>"; };
-		D3DBF1A61FCCA6D200A014F9 /* FlashcardSessionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionCard.swift; sourceTree = "<group>"; };
-		D3DBF1A81FCCA7F300A014F9 /* FlashcardSessionCardSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionCardSide.swift; sourceTree = "<group>"; };
 		D3DBF1AA1FCCAAA200A014F9 /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewController.swift; sourceTree = "<group>"; };
 		D3DBF1AD1FCCBBD300A014F9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D3DBF1AF1FCCBBF500A014F9 /* IDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDataController.swift; sourceTree = "<group>"; };
 		D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
-		D3DBF1B31FCCBCDE00A014F9 /* iFlashcardProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFlashcardProgressModel.swift; sourceTree = "<group>"; };
 		D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContentRepository.swift; sourceTree = "<group>"; };
 		D3E5E9FF1FC8E8DC00E27037 /* Browsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browsable.swift; sourceTree = "<group>"; };
-		D3E5EA091FC8EE7F00E27037 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D3E5EA0E1FC8F45500E27037 /* Browser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Browser.storyboard; sourceTree = "<group>"; };
 		D3E5EA111FC8F49500E27037 /* ReuseIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiers.swift; sourceTree = "<group>"; };
 		D3E5EA131FC8F4A000E27037 /* SegueIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifiers.swift; sourceTree = "<group>"; };
@@ -274,11 +282,21 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		D3266DBF1FE2998700CB6422 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				D3266DC01FE29D1B00CB6422 /* PreferencesController.swift */,
+				D3266DC21FE29E0000CB6422 /* IPreferencesController.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
 		D32BCB471FCB1DA500BE0A22 /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
 				D32BCB481FCB1DF000BE0A22 /* Flashcards.storyboard */,
 				D3DBF1AA1FCCAAA200A014F9 /* FlashcardsViewController.swift */,
+				D3266DC61FE2A95400CB6422 /* FlashcardSide.swift */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -294,6 +312,7 @@
 				D303AB461FD8C526006F4919 /* UINavigationControllerExtensions.swift */,
 				D3E653F41FDC3063006072E7 /* UIColorExtensions.swift */,
 				D39379F51FDF4EAC00D16D8F /* UITextViewExtensions.swift */,
+				D3266DC81FE2ABC300CB6422 /* PlayingSounds.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -309,13 +328,12 @@
 		D394CC171FCB8F7D00945D5A /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				D394CC151FCB8DBB00945D5A /* FlashcardProgressModel.swift */,
 				D394CC181FCB912E00945D5A /* ProgressController.swift */,
 				D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */,
 				D3DBF1A41FCCA5DB00A014F9 /* FlashcardDifficulty.swift */,
-				D3DBF1A61FCCA6D200A014F9 /* FlashcardSessionCard.swift */,
-				D3DBF1A81FCCA7F300A014F9 /* FlashcardSessionCardSide.swift */,
-				D3DBF1B31FCCBCDE00A014F9 /* iFlashcardProgressModel.swift */,
+				D3266DC41FE2A66D00CB6422 /* IProgressController.swift */,
+				D3266DCA1FE2B2AC00CB6422 /* FlashcardSession.swift */,
+				D3266DCC1FE2B59000CB6422 /* Flashcard.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -323,6 +341,7 @@
 		D3B86E6D1FC8A8C200DF1723 = {
 			isa = PBXGroup;
 			children = (
+				D3266DBF1FE2998700CB6422 /* Preferences */,
 				D3B86E781FC8A8C300DF1723 /* TheHerbalEscape */,
 				D3B86E901FC8A8C300DF1723 /* TheHerbalEscapeTests */,
 				D3B86E9B1FC8A8C300DF1723 /* TheHerbalEscapeUITests */,
@@ -362,7 +381,6 @@
 				D3B86E851FC8A8C300DF1723 /* LaunchScreen.storyboard */,
 				D3B86E881FC8A8C300DF1723 /* Info.plist */,
 				D3B86E801FC8A8C300DF1723 /* TheHerbalEscape.xcdatamodeld */,
-				D3E5EA091FC8EE7F00E27037 /* Settings.bundle */,
 			);
 			path = TheHerbalEscape;
 			sourceTree = "<group>";
@@ -460,6 +478,8 @@
 				D3E653F21FDC3025006072E7 /* Relationship.swift */,
 				D329E61E1FDD545A00F82110 /* Question.swift */,
 				D329E6281FDD8F0500F82110 /* QuestionBuilder.swift */,
+				D3266DCE1FE2C89300CB6422 /* Content.swift */,
+				D3266DD01FE2CB4000CB6422 /* ContentKey.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -620,7 +640,6 @@
 				D3B86E871FC8A8C300DF1723 /* LaunchScreen.storyboard in Resources */,
 				D3B86E841FC8A8C300DF1723 /* Assets.xcassets in Resources */,
 				D3FC30691FD4B099005E581D /* LevelOne.bundle in Resources */,
-				D3E5EA0A1FC8EE7F00E27037 /* Settings.bundle in Resources */,
 				D3B86E7F1FC8A8C300DF1723 /* Main.storyboard in Resources */,
 				D39379F21FDF179500D16D8F /* Global.bundle in Resources */,
 				D32BCB491FCB1DF000BE0A22 /* Flashcards.storyboard in Resources */,
@@ -800,18 +819,20 @@
 			files = (
 				D34C85ED1FD0DA080083B9E0 /* Json.swift in Sources */,
 				D3569AFC1FC972000038EE6F /* Regexes.swift in Sources */,
+				D3266DC91FE2ABC300CB6422 /* PlayingSounds.swift in Sources */,
+				D3266DC51FE2A66D00CB6422 /* IProgressController.swift in Sources */,
 				D3DBF1B21FCCBC1800A014F9 /* CoreDataConstants.swift in Sources */,
+				D3266DC11FE29D1B00CB6422 /* PreferencesController.swift in Sources */,
 				D3DBF1AB1FCCAAA200A014F9 /* FlashcardsViewController.swift in Sources */,
 				D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */,
 				D3569B271FCA4EF10038EE6F /* LinkHandler.swift in Sources */,
-				D3DBF1A71FCCA6D200A014F9 /* FlashcardSessionCard.swift in Sources */,
 				D39379F41FDF17EB00D16D8F /* HerbalAction.swift in Sources */,
 				D303AB471FD8C526006F4919 /* UINavigationControllerExtensions.swift in Sources */,
 				D3E653F71FDC329D006072E7 /* Course.swift in Sources */,
+				D3266DCD1FE2B59000CB6422 /* Flashcard.swift in Sources */,
 				D3E5EA121FC8F49500E27037 /* ReuseIdentifiers.swift in Sources */,
 				D321EE821FD42B8F0082E8B9 /* BrowserImage.swift in Sources */,
 				D329E6251FDD85BF00F82110 /* DataManager.swift in Sources */,
-				D3DBF1B41FCCBCDE00A014F9 /* iFlashcardProgressModel.swift in Sources */,
 				D329E61F1FDD545A00F82110 /* Question.swift in Sources */,
 				D3569B0B1FC983010038EE6F /* CodingError.swift in Sources */,
 				D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */,
@@ -835,6 +856,7 @@
 				D3569B191FC9BE4A0038EE6F /* ContentRepository.swift in Sources */,
 				D35B0A8C1FD2ED1100BD1F8F /* BrowserTextParagraph.swift in Sources */,
 				D3DBF1B01FCCBBF500A014F9 /* IDataController.swift in Sources */,
+				D3266DC71FE2A95400CB6422 /* FlashcardSide.swift in Sources */,
 				D34C85E81FD0D80A0083B9E0 /* Plant.swift in Sources */,
 				D394CC191FCB912E00945D5A /* ProgressController.swift in Sources */,
 				D3569B291FCA4FEC0038EE6F /* LinkHandlerClient.swift in Sources */,
@@ -842,14 +864,14 @@
 				D329E6291FDD8F0500F82110 /* QuestionBuilder.swift in Sources */,
 				D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */,
 				D3F66E121FD5F552005FFC86 /* UIViewExtensions.swift in Sources */,
+				D3266DD11FE2CB4000CB6422 /* ContentKey.swift in Sources */,
 				D3569B231FCA3A2B0038EE6F /* FontNames.swift in Sources */,
+				D3266DC31FE29E0000CB6422 /* IPreferencesController.swift in Sources */,
 				D3569B111FC986E30038EE6F /* StoryboardIdentifiers.swift in Sources */,
 				D329E62D1FDDB84A00F82110 /* HerbalFamily.swift in Sources */,
-				D394CC161FCB8DBB00945D5A /* FlashcardProgressModel.swift in Sources */,
 				D3E653F51FDC3064006072E7 /* UIColorExtensions.swift in Sources */,
 				D39379F61FDF4EAC00D16D8F /* UITextViewExtensions.swift in Sources */,
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
-				D3DBF1A91FCCA7F300A014F9 /* FlashcardSessionCardSide.swift in Sources */,
 				D303AB431FD8C21A006F4919 /* NavigationViewController.swift in Sources */,
 				D3C1A5771FD2FB0D00C60824 /* StringExtensions.swift in Sources */,
 				D3FC305A1FD4AC60005E581D /* CollapseHandler.swift in Sources */,
@@ -857,6 +879,7 @@
 				D3DBF1AE1FCCBBD300A014F9 /* DataController.swift in Sources */,
 				D303AB451FD8C4BC006F4919 /* CAGradientLayerExtensions.swift in Sources */,
 				D3C1A5751FD2F78100C60824 /* BrowserTextHighlightType.swift in Sources */,
+				D3266DCF1FE2C89300CB6422 /* Content.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,
 				D389B6C11FD61E23008CACA0 /* UILabelExtensions.swift in Sources */,
@@ -866,6 +889,7 @@
 				D3E653F31FDC3025006072E7 /* Relationship.swift in Sources */,
 				D3DBF1A31FCCA52F00A014F9 /* IFlashcardSession.swift in Sources */,
 				D3E5EA001FC8E8DC00E27037 /* Browsable.swift in Sources */,
+				D3266DCB1FE2B2AC00CB6422 /* FlashcardSession.swift in Sources */,
 				D3E5EA161FC8F4DF00E27037 /* BrowserTableViewController.swift in Sources */,
 				D3B86E7A1FC8A8C300DF1723 /* AppDelegate.swift in Sources */,
 			);

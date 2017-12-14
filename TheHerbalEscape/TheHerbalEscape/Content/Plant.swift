@@ -9,7 +9,7 @@
 import Foundation
 
 /// Representation of a Plant for use in Quizzes, Flashcards and displaying in the Browser.
-class Plant : Browsable, Decodable {
+class Plant : Browsable, Content, Decodable {
     // MARK: - Properties
     var CommonName: String
     var LatinName: String
@@ -83,6 +83,33 @@ class Plant : Browsable, Decodable {
             contents.append(referencesSection)
             
             return contents
+        }
+    }
+    
+    // MARK: - Content
+    func getValue(name: String) -> String? {
+        switch name {
+        case "CommonName":
+            return CommonName
+        case "LatinName":
+            return LatinName
+        case "ImageName":
+            return ImageName
+        case "HerbalFamily":
+            return HerbalFamily
+        default:
+            return nil
+        }
+    }
+    
+    func getValues(name: String) -> [String] {
+        switch name {
+        case "Actions":
+            return Actions
+        case "Constituents":
+            return Constituents
+        default:
+            return [String]()
         }
     }
 }

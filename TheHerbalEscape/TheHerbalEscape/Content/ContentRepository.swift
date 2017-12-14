@@ -12,4 +12,19 @@ import Foundation
 /// Very eager for the minute. Meh.
 class ContentRepository: IContentRepository {
     var Browsables = [Browsable]()
+    var Questions = [String:Question]()
+    var Contents = [ContentKey:Content]()
+    var Courses = [String:Course]()
+    
+    func fetchQuestion(question: String) -> Question {
+        return Questions[question]!
+    }
+    
+    func fetchContent(contentKey: ContentKey) -> Content {
+        return Contents[contentKey]!
+    }
+    
+    func fetchCourse(courseName: String) -> Course {
+        return Courses[courseName]!
+    }
 }

@@ -1,0 +1,15 @@
+{
+  "Questions": [
+    {
+        "Name": "PlantLatinName",
+        "RelationshipType": "Simple",
+        "Course": "Plants",
+        "BaseContentType": "Plant",
+        "TargetContentType": "Plant",
+        "BaseFieldName": "CommonName",
+        "TargetFieldName": "LatinName",
+        "FlashcardQuestion": "Latin Name?",
+        "TestQuestion": "What is the latin name of $1?"
+    }
+  ]
+}
