@@ -27,4 +27,21 @@ class ContentRepository: IContentRepository {
     func fetchCourse(courseName: String) -> Course {
         return Courses[courseName]!
     }
+    func allQuestions() -> [Question] {
+        var questions = [Question]()
+        for kvp in Questions {
+            questions.append(kvp.value)
+        }
+        return questions
+    }
+    
+    func allContent(contentType: ContentType) -> [Content] {
+        var content = [Content]()
+        for kvp in Contents {
+            if (kvp.key.ContentType == contentType) {
+                content.append(kvp.value)
+            }
+        }
+        return content
+    }
 }

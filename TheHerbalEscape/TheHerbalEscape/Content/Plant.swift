@@ -112,6 +112,12 @@ class Plant : Browsable, Content, Decodable {
             return [String]()
         }
     }
+    
+    var contentKey: ContentKey {
+        get {
+            return ContentKey(contentType: .Plant, contentName: CommonName)
+        }
+    }
 }
 
 public class PlantContents : Decodable {

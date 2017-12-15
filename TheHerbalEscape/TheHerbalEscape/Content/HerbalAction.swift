@@ -55,6 +55,12 @@ class HerbalAction : Browsable, Content, Decodable {
             return [String]()
         }
     }
+    
+    var contentKey: ContentKey {
+        get {
+            return ContentKey(contentType: .HerbalAction, contentName: Name)
+        }
+    }
 }
 
 public class HerbalActionContents : Decodable {

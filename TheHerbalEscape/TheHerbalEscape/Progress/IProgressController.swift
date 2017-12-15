@@ -15,4 +15,7 @@ protocol IProgressController {
 
     /// Fetch a sample of progress values.
     func fetchProgress(course: String?) -> [Progress]
+    
+    /// Load initial data for all progress.
+    func loadInitialData(contentRepository: IContentRepository)
 }

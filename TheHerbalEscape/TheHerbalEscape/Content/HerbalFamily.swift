@@ -58,6 +58,12 @@ class HerbalFamily : Browsable, Content, Decodable {
             return [String]()
         }
     }
+    
+    var contentKey: ContentKey {
+        get {
+            return ContentKey(contentType: .HerbalFamily, contentName: Name)
+        }
+    }
 }
 
 public class HerbalFamilyContents : Decodable {

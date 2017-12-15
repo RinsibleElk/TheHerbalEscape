@@ -48,4 +48,26 @@ class ProgressController: IProgressController {
             return [Progress]()
         }
     }
+    
+    /// Load initial data.
+    func loadInitialData(contentRepository: IContentRepository) {
+        let todayDate = Date()
+        for question in contentRepository.allQuestions() {
+            for content in contentRepository.allContent(contentType: question.BaseContentType) {
+                let entity = NSEntityDescription()
+                entity.name = "Progress"
+                let progress = NSManagedObject(entity: entity, insertInto: moc) as! Progress
+                progress.dueDate = todayDate
+                progress.easyCount = 0
+                progress.lastDifficulty = 0
+                progress.name = content.contentKey.ContentName
+                progress.question = question.Name
+            }
+        }
+        do {
+            try moc.save()
+        }
+        catch {
+        }
+    }
 }

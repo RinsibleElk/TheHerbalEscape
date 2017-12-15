@@ -9,6 +9,13 @@
 import UIKit
 
 class FlashcardsViewController: UIViewController {
+    // MARK: - Outlets
+    @IBOutlet weak var safeView: UIView!
+    @IBOutlet weak var veryEasy: UIImageView!
+    @IBOutlet weak var easy: UIImageView!
+    @IBOutlet weak var hard: UIImageView!
+    @IBOutlet weak var veryHard: UIImageView!
+    
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +28,6 @@ class FlashcardsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

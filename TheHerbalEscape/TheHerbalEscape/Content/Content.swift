@@ -15,4 +15,7 @@ protocol Content {
 
     /// Get a value for an array field.
     func getValues(name: String) -> [String]
+    
+    /// The key for this content for lookups.
+    var contentKey: ContentKey { get }
 }

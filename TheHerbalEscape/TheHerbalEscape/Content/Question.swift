@@ -62,3 +62,17 @@ class Question: Codable {
     /// This can include the variable $1 which will refer to the target value.
     var ReverseTestQuestion: String?
 }
+
+public class QuestionContents : Decodable {
+    var Questions: [Question]
+    static func decodeFromJSON(jsonData: Data) -> [Question] {
+        let jsonDecoder = JSONDecoder()
+        do {
+            let questions = try jsonDecoder.decode(QuestionContents.self, from: jsonData)
+            return questions.Questions
+        }
+        catch {
+            return []
+        }
+    }
+}

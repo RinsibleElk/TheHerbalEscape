@@ -10,5 +10,7 @@ import Foundation
 
 /// All of the possible types of dynamic content.
 enum ContentType: String, Codable {
-    case Plant
+    case Plant = "Plant"
+    case HerbalAction = "HerbalAction"
+    case HerbalFamily = "HerbalFamily"
 }

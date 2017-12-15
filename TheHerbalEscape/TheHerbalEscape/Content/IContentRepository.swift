@@ -17,4 +17,8 @@ protocol IContentRepository: class {
     func fetchContent(contentKey: ContentKey) -> Content
     
     func fetchCourse(courseName: String) -> Course
+    
+    func allQuestions() -> [Question]
+    
+    func allContent(contentType: ContentType) -> [Content]
 }

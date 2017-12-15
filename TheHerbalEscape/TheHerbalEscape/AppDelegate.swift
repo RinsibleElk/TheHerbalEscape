@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var dataController: DataController?
+    var progressController: ProgressController?
     var contentRepository = ContentRepository()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -23,7 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let plantsUrl = DataManager.urlForResource("LevelOne", "plants", "json")
         let herbalActionsUrl = DataManager.urlForResource("Global", "actions", "json")
         let herbalFamiliesUrl = DataManager.urlForResource("Global", "herbalfamilies", "json")
+        let questionsUrl = DataManager.urlForResource("LevelOne", "questions", "json")
+        var remaining = 0
+        remaining = remaining + 1
         DataManager.getContents(plantsUrl) { (data, error) in
+            remaining = remaining - 1
             if let data = data {
                 let plants = PlantContents.decodeFromJSON(jsonData: data)
                 for plant in plants {
@@ -31,8 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.contentRepository.Browsables.append(plant)
                 }
             }
+            if (remaining == 0) {
+                self.loadData()
+            }
         }
+        remaining = remaining + 1
         DataManager.getContents(herbalActionsUrl) { (data, error) in
+            remaining = remaining - 1
             if let data = data {
                 let actions = HerbalActionContents.decodeFromJSON(jsonData: data)
                 for action in actions {
@@ -40,8 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.contentRepository.Browsables.append(action)
                 }
             }
+            if (remaining == 0) {
+                self.loadData()
+            }
         }
+        remaining = remaining + 1
         DataManager.getContents(herbalFamiliesUrl) { (data, error) in
+            remaining = remaining - 1
             if let data = data {
                 let families = HerbalFamilyContents.decodeFromJSON(jsonData: data)
                 for family in families {
@@ -49,12 +63,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.contentRepository.Browsables.append(family)
                 }
             }
+            if (remaining == 0) {
+                self.loadData()
+            }
+        }
+        remaining = remaining + 1
+        DataManager.getContents(questionsUrl) { (data, error) in
+            remaining = remaining - 1
+            if let data = data {
+                let questions = QuestionContents.decodeFromJSON(jsonData: data)
+                for question in questions {
+                    // Not at all thread safe!!!!
+                    self.contentRepository.Questions[question.Name] = question
+                }
+            }
+            if (remaining == 0) {
+                self.loadData()
+            }
         }
 
         // Initialize the DataController.
         persistentContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        dataController = DataController(managedObjectContext: persistentContainer.viewContext)
-        
+        progressController = ProgressController(moc: persistentContainer.viewContext)
+        if (remaining == 0) {
+            self.loadData()
+        }
+
 //        for font in UIFont.familyNames {
 //            print("* \(font)")
 //            for fontName in UIFont.fontNames(forFamilyName: font) {
@@ -132,6 +166,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    // MARK: - Loading progress data on first run
+    private func loadData() {
+        if progressController != nil {
+            let progress = progressController!.fetchProgress(course: nil)
+            if progress.count == 0 {
+                progressController!.loadInitialData(contentRepository: contentRepository)
+            }
+        }
+    }
 }
 
