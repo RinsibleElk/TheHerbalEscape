@@ -24,6 +24,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     var flashcardVc2: FlashcardViewController?
     var showingFrontSide = true
     var showingCard1 = true
+    var midAnimation = false
     var animator: UIDynamicAnimator!
     var snapBehavior: UISnapBehavior?
     var snapPoint: CGPoint?
@@ -197,6 +198,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         // Run animations
+        midAnimation = true
         if flashcardSession.hasMoreFlashcardsToShow {
             backView!.frame = initialBackFrame!
             backView!.isHidden = false
@@ -218,6 +220,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
                             UIView.animate(withDuration: 2.0, animations: {
                                 emoticonToShow?.alpha = 0
                             })
+                            self.midAnimation = false
             })
         }
         else {
@@ -237,13 +240,16 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
                                     emoticonToShow?.alpha = 0
                                 })
                             }
+                            self.midAnimation = false
             })
         }
     }
     private func handleSwipe(difficulty: FlashcardDifficulty) {
-        flashcardSession.finishCard(difficulty: difficulty)
-        setUndoEnabled(isEnabled: flashcardSession.canUndo)
-        handleSwipeAnimation(difficulty: difficulty, showEmoticons: true)
+        if (!midAnimation) {
+            flashcardSession.finishCard(difficulty: difficulty)
+            setUndoEnabled(isEnabled: flashcardSession.canUndo)
+            handleSwipeAnimation(difficulty: difficulty, showEmoticons: true)
+        }
     }
 
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
@@ -343,9 +349,5 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             sender.setTranslation(CGPoint.zero, in: self.view)
         }
-    }
-
-    @IBAction func browseContentButtonTapped(_ sender: UIButton) {
-        
     }
 }
