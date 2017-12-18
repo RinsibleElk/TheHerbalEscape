@@ -11,5 +11,6 @@ import Foundation
 /// Segue identifiers that need to be referenced in code.
 struct SegueIdentifiers {
     /// To transition at the end of the flashcards experience.
-    static let FlashcardsAllDoneIdentifier = "FlashcardsAllDoneIdentifier"
+    static let Flashcard1Identifier = "Flashcard1Identifier"
+    static let Flashcard2Identifier = "Flashcard2Identifier"
 }

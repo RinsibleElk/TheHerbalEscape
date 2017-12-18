@@ -20,3 +20,18 @@ class Course: Codable {
     /// The level of the Course. Used to determine if the Course is applicable for testing based on the user's preferences.
     var Level: Int
 }
+
+public class CourseContents : Decodable {
+    var Courses: [Course]
+    static func decodeFromJSON(jsonData: Data) -> [Course] {
+        let jsonDecoder = JSONDecoder()
+        do {
+            let courses = try jsonDecoder.decode(CourseContents.self, from: jsonData)
+            return courses.Courses
+        }
+        catch {
+            return []
+        }
+    }
+}
+

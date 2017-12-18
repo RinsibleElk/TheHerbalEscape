@@ -9,7 +9,11 @@
 import Foundation
 
 /// Tracks a flashcard that is currently in use in a session.
-class Flashcard: Codable {
+class Flashcard: Codable, ProgressKey {
+    // MARK: - ProgressKey
+    var question: String { get { return Question }}
+    var name: String { get { return Name }}
+    
     // MARK: - Properties
     var Result: FlashcardDifficulty?
     var Front: FlashcardSide
@@ -29,12 +33,12 @@ class Flashcard: Codable {
         var answerText : String
         switch question.RelationshipType {
         case .Simple:
-            answerText = content.getValue(name: question.BaseFieldName)!
+            answerText = content.getValue(name: question.TargetFieldName)!
         case .ManyToOne:
-            answerText = content.getValue(name: question.BaseFieldName)!
+            answerText = content.getValue(name: question.TargetFieldName)!
         case .ManyToMany:
             answerText = ""
-            for answer in content.getValues(name: question.BaseFieldName) {
+            for answer in content.getValues(name: question.TargetFieldName) {
                 if (answerText == "") {
                     answerText = answer
                 }

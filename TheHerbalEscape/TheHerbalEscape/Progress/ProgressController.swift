@@ -20,8 +20,33 @@ class ProgressController: IProgressController {
     
     // MARK: - IProgressController
     /// Create a flashcard session for a given course.
-    func createFlashcardSession(course: String, contentRepository: IContentRepository) -> IFlashcardSession {
+    func createFlashcardSession(course: String?, contentRepository: IContentRepository) -> IFlashcardSession {
         return FlashcardSession(randomSeed: nil, course: course, progressController: self, contentRepository: contentRepository)
+    }
+    
+    /// Save after changes.
+    func save() throws {
+        try moc.save()
+    }
+    
+    /// Retrieve the progress object for a given key.
+    func fetchProgress(progressKey: ProgressKey) -> Progress? {
+        let fetchRequest = NSFetchRequest<Progress>(entityName: "Progress")
+        let sampleCount = 1
+        fetchRequest.predicate = NSPredicate(format: "(question == %@) AND (name == %@)", progressKey.question, progressKey.name)
+        fetchRequest.fetchLimit = sampleCount
+        do {
+            let progressObjects = try moc.fetch(fetchRequest)
+            if progressObjects.count > 0 {
+                return progressObjects[0]
+            }
+            else {
+                return nil
+            }
+        }
+        catch {
+            return nil
+        }
     }
     
     /// Retrieve all the progress objects for a given course, ordered by due date.
@@ -54,8 +79,7 @@ class ProgressController: IProgressController {
         let todayDate = Date()
         for question in contentRepository.allQuestions() {
             for content in contentRepository.allContent(contentType: question.BaseContentType) {
-                let entity = NSEntityDescription()
-                entity.name = "Progress"
+                let entity = NSEntityDescription.entity(forEntityName: "Progress", in: moc)!
                 let progress = NSManagedObject(entity: entity, insertInto: moc) as! Progress
                 progress.dueDate = todayDate
                 progress.easyCount = 0

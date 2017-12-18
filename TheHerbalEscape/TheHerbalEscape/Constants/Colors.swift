@@ -18,4 +18,8 @@ struct Colors {
     static let Blue = UIColor.blue
     static let Green = UIColor.green
     static let Purple = UIColor.purple
+    static let Yellow = UIColor.yellow
+    static let Pink = UIColor.magenta
+    static let Brown = UIColor.brown
+    static let Orange = UIColor.orange
 }

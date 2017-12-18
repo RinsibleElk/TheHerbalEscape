@@ -16,6 +16,14 @@ class FlashcardSession: IFlashcardSession {
     var currentIndex: Int = 0
     
     // MARK: - IFlashcardSession
+    var veryEasyCount: Int = 0
+    
+    var easyCount: Int = 0
+    
+    var veryHardCount: Int = 0
+    
+    var hardCount: Int = 0
+    
     var hasMoreFlashcardsToShow: Bool {
         get {
             return currentIndex < flashcards.count
@@ -28,14 +36,36 @@ class FlashcardSession: IFlashcardSession {
         }
     }
     
-    func undo() {
+    func undo() -> FlashcardDifficulty {
         currentIndex = currentIndex - 1
+        let difficulty = flashcards[currentIndex].Result!
+        switch difficulty {
+        case .easy:
+            easyCount = easyCount - 1
+        case .veryEasy:
+            veryEasyCount = veryEasyCount - 1
+        case .hard:
+            hardCount = hardCount - 1
+        case .veryHard:
+            veryHardCount = veryHardCount - 1
+        }
         flashcards[currentIndex].Result = nil
+        return difficulty
     }
     
     func finishCard(difficulty: FlashcardDifficulty) {
         flashcards[currentIndex].Result = difficulty
         currentIndex = currentIndex + 1
+        switch difficulty {
+        case .easy:
+            easyCount = easyCount + 1
+        case .veryEasy:
+            veryEasyCount = veryEasyCount + 1
+        case .hard:
+            hardCount = hardCount + 1
+        case .veryHard:
+            veryHardCount = veryHardCount + 1
+        }
     }
     
     var currentFrontSide: FlashcardSide {
@@ -47,6 +77,47 @@ class FlashcardSession: IFlashcardSession {
     var currentBackSide: FlashcardSide {
         get {
             return flashcards[currentIndex].Back
+        }
+    }
+    
+    var progressSaved: Bool = false
+    
+    func save(progressController: IProgressController) {
+        progressSaved = true
+        let date = Date()
+        for flashcard in flashcards {
+            if let progress = progressController.fetchProgress(progressKey: flashcard) {
+                if let difficulty = flashcard.Result {
+                    switch difficulty {
+                    case .easy:
+                        var timeInterval = DateComponents()
+                        timeInterval.day = ProgressDateIntervals.easyDays
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.easyCount = 0
+                    case .veryEasy:
+                        var timeInterval = DateComponents()
+                        timeInterval.day = ProgressDateIntervals.veryEasyDays
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.easyCount = progress.easyCount + 1
+                    case .hard:
+                        var timeInterval = DateComponents()
+                        timeInterval.day = ProgressDateIntervals.hardDays
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.easyCount = 0
+                    case .veryHard:
+                        var timeInterval = DateComponents()
+                        timeInterval.day = ProgressDateIntervals.veryHardDays
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.easyCount = 0
+                    }
+                }
+            }
+        }
+        do {
+            try progressController.save()
+        }
+        catch {
+            return
         }
     }
     
@@ -66,7 +137,7 @@ class FlashcardSession: IFlashcardSession {
         var notDueProgress = [Progress]()
         let date = Date()
         for progressObject in progress {
-            if progressObject.dueDate! > date {
+            if progressObject.dueDate! <= date {
                 dueProgress.append(progressObject)
             }
             else {

@@ -14,4 +14,18 @@ public enum FlashcardDifficulty : Int, Codable {
     case easy
     case hard
     case veryHard
+    
+    /// This is the reverse from the point of view of the UI, so probably doesn't belong here.
+    func reverse() -> FlashcardDifficulty {
+        switch self {
+        case .veryEasy:
+            return .hard
+        case .easy:
+            return .veryHard
+        case .hard:
+            return .veryEasy
+        case .veryHard:
+            return .easy
+        }
+    }
 }

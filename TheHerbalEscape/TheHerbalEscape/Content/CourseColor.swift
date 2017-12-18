@@ -6,7 +6,7 @@
 //  Copyright © 2017 Oliver Samson. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Colours representing Courses within the app.
 enum CourseColor: String, Codable {
@@ -16,5 +16,22 @@ enum CourseColor: String, Codable {
     case Blue = "Blue"
     case Orange = "Orange"
     case Purple = "Purple"
+    
+    func getUiColor() -> UIColor {
+        switch self {
+        case .Yellow:
+            return Colors.Yellow
+        case .Pink:
+            return Colors.Pink
+        case .Brown:
+            return Colors.Brown
+        case .Blue:
+            return Colors.Blue
+        case .Orange:
+            return Colors.Orange
+        case .Purple:
+            return Colors.Purple
+        }
+    }
 }
 

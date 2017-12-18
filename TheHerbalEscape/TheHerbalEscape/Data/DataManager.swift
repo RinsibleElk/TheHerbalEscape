@@ -17,9 +17,9 @@ public final class DataManager {
     }
     
     public static func getContents(_ resourceUrl: URL, completion:@escaping (_ data:Data?, _ error:Error?) -> Void) {
-        DispatchQueue.global(qos: .background).async {
+//        DispatchQueue.global(qos: .background).async {
             let data = try! Data(contentsOf: resourceUrl, options: .uncached)
             completion(data, nil)
-        }
+//        }
     }
 }

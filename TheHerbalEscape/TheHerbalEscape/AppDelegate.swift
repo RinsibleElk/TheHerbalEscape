@@ -24,6 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let herbalActionsUrl = DataManager.urlForResource("Global", "actions", "json")
         let herbalFamiliesUrl = DataManager.urlForResource("Global", "herbalfamilies", "json")
         let questionsUrl = DataManager.urlForResource("LevelOne", "questions", "json")
+        let coursesUrl = DataManager.urlForResource("LevelOne", "courses", "json")
+        DataManager.getContents(coursesUrl) { (data, error) in
+            if let data = data {
+                let courses = CourseContents.decodeFromJSON(jsonData: data)
+                for course in courses {
+                    self.contentRepository.Courses[course.Name] = course
+                }
+            }
+        }
         var remaining = 0
         remaining = remaining + 1
         DataManager.getContents(plantsUrl) { (data, error) in
@@ -33,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for plant in plants {
                     // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(plant)
+                    self.contentRepository.Contents[plant.contentKey] = plant
                 }
             }
             if (remaining == 0) {
@@ -47,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for action in actions {
                     // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(action)
+                    self.contentRepository.Contents[action.contentKey] = action
                 }
             }
             if (remaining == 0) {
@@ -61,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for family in families {
                     // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(family)
+                    self.contentRepository.Contents[family.contentKey] = family
                 }
             }
             if (remaining == 0) {
