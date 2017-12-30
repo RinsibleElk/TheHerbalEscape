@@ -33,6 +33,7 @@
 		D329E62B1FDDA82B00F82110 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329E62A1FDDA82B00F82110 /* ContentType.swift */; };
 		D329E62D1FDDB84A00F82110 /* HerbalFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329E62C1FDDB84A00F82110 /* HerbalFamily.swift */; };
 		D32BCB491FCB1DF000BE0A22 /* Flashcards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32BCB481FCB1DF000BE0A22 /* Flashcards.storyboard */; };
+		D330D92D1FEFE17000B24532 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330D92C1FEFE17000B24532 /* BrowserViewController.swift */; };
 		D34C85E81FD0D80A0083B9E0 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C85E71FD0D80A0083B9E0 /* Plant.swift */; };
 		D34C85EA1FD0D8840083B9E0 /* BrowserContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C85E91FD0D8840083B9E0 /* BrowserContentSection.swift */; };
 		D34C85ED1FD0DA080083B9E0 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C85EC1FD0DA080083B9E0 /* Json.swift */; };
@@ -149,6 +150,7 @@
 		D329E62A1FDDA82B00F82110 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		D329E62C1FDDB84A00F82110 /* HerbalFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbalFamily.swift; sourceTree = "<group>"; };
 		D32BCB481FCB1DF000BE0A22 /* Flashcards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Flashcards.storyboard; sourceTree = "<group>"; };
+		D330D92C1FEFE17000B24532 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		D34C85E71FD0D80A0083B9E0 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		D34C85E91FD0D8840083B9E0 /* BrowserContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentSection.swift; sourceTree = "<group>"; };
 		D34C85EC1FD0DA080083B9E0 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				D394CC0F1FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift */,
 				D3F23E0A1FD436090061725D /* BrowserTitleHeaderView.swift */,
 				D3F23E0C1FD4361E0061725D /* BrowserCollapsibleHeaderView.swift */,
+				D330D92C1FEFE17000B24532 /* BrowserViewController.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				D3810E6D1FE87B06007CC2B3 /* ProgressKey.swift in Sources */,
 				D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */,
 				D3C1A5731FD2F76F00C60824 /* BrowserTextHighlight.swift in Sources */,
+				D330D92D1FEFE17000B24532 /* BrowserViewController.swift in Sources */,
 				D3FC30581FD4A4BB005E581D /* BrowserContentMarkdownSection.swift in Sources */,
 				D3E5EA141FC8F4A000E27037 /* SegueIdentifiers.swift in Sources */,
 				D34C85EA1FD0D8840083B9E0 /* BrowserContentSection.swift in Sources */,

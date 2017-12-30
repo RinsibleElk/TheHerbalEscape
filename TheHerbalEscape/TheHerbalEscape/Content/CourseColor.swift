@@ -10,27 +10,21 @@ import UIKit
 
 /// Colours representing Courses within the app.
 enum CourseColor: String, Codable {
-    case Yellow = "Yellow"
-    case Pink = "Pink"
-    case Brown = "Brown"
-    case Blue = "Blue"
-    case Orange = "Orange"
-    case Purple = "Purple"
-    
+    case Azure = "Azure"
+    case Lavender = "Lavender"
+    case MistyRose = "MistyRose"
+    case LemonChiffon = "LemonChiffon"
+
     func getUiColor() -> UIColor {
         switch self {
-        case .Yellow:
-            return Colors.Yellow
-        case .Pink:
-            return Colors.Pink
-        case .Brown:
-            return Colors.Brown
-        case .Blue:
-            return Colors.Blue
-        case .Orange:
-            return Colors.Orange
-        case .Purple:
-            return Colors.Purple
+        case .Azure:
+            return Colors.Azure
+        case .Lavender:
+            return Colors.Lavender
+        case .MistyRose:
+            return Colors.MistyRose
+        case .LemonChiffon:
+            return Colors.LemonChiffon
         }
     }
 }

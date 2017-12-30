@@ -22,4 +22,8 @@ struct Colors {
     static let Pink = UIColor.magenta
     static let Brown = UIColor.brown
     static let Orange = UIColor.orange
+    static let Azure = UIColor(rgb: 0xf0ffff)
+    static let Lavender = UIColor(rgb: 0xe6e6fa)
+    static let MistyRose = UIColor(rgb: 0xffe4e1)
+    static let LemonChiffon = UIColor(rgb: 0xfffacd)
 }

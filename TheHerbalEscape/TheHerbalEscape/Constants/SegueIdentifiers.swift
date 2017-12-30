@@ -13,4 +13,6 @@ struct SegueIdentifiers {
     /// To transition at the end of the flashcards experience.
     static let Flashcard1Identifier = "Flashcard1Identifier"
     static let Flashcard2Identifier = "Flashcard2Identifier"
+    static let BrowserTableEmbedSegueIdentifier = "BrowserTableEmbedSegueIdentifier"
+    static let BrowserContentEmbedSegueIdentifier = "BrowserContentEmbedSegueIdentifier"
 }

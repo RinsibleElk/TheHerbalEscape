@@ -24,7 +24,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     var flashcardVc2: FlashcardViewController?
     var showingFrontSide = true
     var showingCard1 = true
-    var midAnimation = false
+    var isAnimating = false
     var animator: UIDynamicAnimator!
     var snapBehavior: UISnapBehavior?
     var snapPoint: CGPoint?
@@ -198,7 +198,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         // Run animations
-        midAnimation = true
+        isAnimating = true
         if flashcardSession.hasMoreFlashcardsToShow {
             backView!.frame = initialBackFrame!
             backView!.isHidden = false
@@ -220,7 +220,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
                             UIView.animate(withDuration: 2.0, animations: {
                                 emoticonToShow?.alpha = 0
                             })
-                            self.midAnimation = false
+                            self.isAnimating = false
             })
         }
         else {
@@ -240,12 +240,12 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
                                     emoticonToShow?.alpha = 0
                                 })
                             }
-                            self.midAnimation = false
+                            self.isAnimating = false
             })
         }
     }
     private func handleSwipe(difficulty: FlashcardDifficulty) {
-        if (!midAnimation) {
+        if (!isAnimating) {
             flashcardSession.finishCard(difficulty: difficulty)
             setUndoEnabled(isEnabled: flashcardSession.canUndo)
             handleSwipeAnimation(difficulty: difficulty, showEmoticons: true)
@@ -256,17 +256,22 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         handleSwipe(difficulty: .veryEasy)
     }
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        let frontView = showingCard1 ? flashcard1 : flashcard2
-        let backView = showingCard1 ? flashcard2 : flashcard1
-        let transitionOptions: UIViewAnimationOptions = showingFrontSide ? [.transitionFlipFromRight, .showHideTransitionViews] : [.transitionFlipFromLeft, .showHideTransitionViews]
-        UIView.transition(with: frontView!, duration: 1.0, options: transitionOptions, animations: {
-            frontView!.isHidden = true
-        })
-        UIView.transition(with: backView!, duration: 1.0, options: transitionOptions, animations: {
-            backView!.isHidden = false
-        })
-        showingCard1 = !showingCard1
-        showingFrontSide = !showingFrontSide
+        if !isAnimating {
+            isAnimating = true
+            let frontView = showingCard1 ? flashcard1 : flashcard2
+            let backView = showingCard1 ? flashcard2 : flashcard1
+            let transitionOptions: UIViewAnimationOptions = showingFrontSide ? [.transitionFlipFromRight, .showHideTransitionViews] : [.transitionFlipFromLeft, .showHideTransitionViews]
+            UIView.transition(with: frontView!, duration: 1.0, options: transitionOptions, animations: {
+                frontView!.isHidden = true
+            })
+            UIView.transition(with: backView!, duration: 1.0, options: transitionOptions, animations: {
+                backView!.isHidden = false
+            }, completion: { (finished:Bool) in
+                self.isAnimating = false
+            })
+            showingCard1 = !showingCard1
+            showingFrontSide = !showingFrontSide
+        }
     }
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         handleSwipe(difficulty: .easy)
@@ -278,7 +283,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         handleSwipe(difficulty: .veryHard)
     }
     @IBAction func handleUndo(_ sender: UIBarButtonItem) {
-        if flashcardSession.canUndo {
+        if !isAnimating && flashcardSession.canUndo {
             let lastDifficulty = flashcardSession.undo()
             setUndoEnabled(isEnabled: flashcardSession.canUndo)
             handleSwipeAnimation(difficulty: lastDifficulty.reverse(), showEmoticons: false)
