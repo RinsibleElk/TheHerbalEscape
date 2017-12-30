@@ -55,6 +55,9 @@
 		D3810E6B1FE7E33F007CC2B3 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3810E6A1FE7E33F007CC2B3 /* FlashcardViewController.swift */; };
 		D3810E6D1FE87B06007CC2B3 /* ProgressKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3810E6C1FE87B06007CC2B3 /* ProgressKey.swift */; };
 		D3810E6F1FE87DD8007CC2B3 /* ProgressDateIntervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3810E6E1FE87DD8007CC2B3 /* ProgressDateIntervals.swift */; };
+		D38996921FF857C900FEB463 /* IQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38996911FF857C900FEB463 /* IQuizSession.swift */; };
+		D38996941FF857ED00FEB463 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38996931FF857ED00FEB463 /* QuizQuestion.swift */; };
+		D38996961FF85CD000FEB463 /* QuizAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38996951FF85CD000FEB463 /* QuizAnswer.swift */; };
 		D389B6C11FD61E23008CACA0 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */; };
 		D39379F21FDF179500D16D8F /* Global.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D39379F11FDF179500D16D8F /* Global.bundle */; };
 		D39379F41FDF17EB00D16D8F /* HerbalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39379F31FDF17EB00D16D8F /* HerbalAction.swift */; };
@@ -74,6 +77,8 @@
 		D3C1A5731FD2F76F00C60824 /* BrowserTextHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5721FD2F76F00C60824 /* BrowserTextHighlight.swift */; };
 		D3C1A5751FD2F78100C60824 /* BrowserTextHighlightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5741FD2F78100C60824 /* BrowserTextHighlightType.swift */; };
 		D3C1A5771FD2FB0D00C60824 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1A5761FD2FB0D00C60824 /* StringExtensions.swift */; };
+		D3C2DFFC1FF7F3A30058B758 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C2DFFB1FF7F3A30058B758 /* Quiz.storyboard */; };
+		D3C2DFFE1FF82AD90058B758 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2DFFD1FF82AD90058B758 /* QuizViewController.swift */; };
 		D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */; };
 		D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */; };
 		D3DBF1A31FCCA52F00A014F9 /* IFlashcardSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */; };
@@ -172,6 +177,9 @@
 		D3810E6A1FE7E33F007CC2B3 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		D3810E6C1FE87B06007CC2B3 /* ProgressKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressKey.swift; sourceTree = "<group>"; };
 		D3810E6E1FE87DD8007CC2B3 /* ProgressDateIntervals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDateIntervals.swift; sourceTree = "<group>"; };
+		D38996911FF857C900FEB463 /* IQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQuizSession.swift; sourceTree = "<group>"; };
+		D38996931FF857ED00FEB463 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
+		D38996951FF85CD000FEB463 /* QuizAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswer.swift; sourceTree = "<group>"; };
 		D389B6C01FD61E23008CACA0 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		D39379F11FDF179500D16D8F /* Global.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Global.bundle; sourceTree = "<group>"; };
 		D39379F31FDF17EB00D16D8F /* HerbalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbalAction.swift; sourceTree = "<group>"; };
@@ -197,6 +205,8 @@
 		D3C1A5721FD2F76F00C60824 /* BrowserTextHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextHighlight.swift; sourceTree = "<group>"; };
 		D3C1A5741FD2F78100C60824 /* BrowserTextHighlightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTextHighlightType.swift; sourceTree = "<group>"; };
 		D3C1A5761FD2FB0D00C60824 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		D3C2DFFB1FF7F3A30058B758 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		D3C2DFFD1FF82AD90058B758 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D3CDE0341FCF42C5004DD8C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D3CDE0361FCF4396004DD8C4 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		D3DBF1A21FCCA52F00A014F9 /* IFlashcardSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFlashcardSession.swift; sourceTree = "<group>"; };
@@ -340,6 +350,7 @@
 				D3266DCA1FE2B2AC00CB6422 /* FlashcardSession.swift */,
 				D3266DCC1FE2B59000CB6422 /* Flashcard.swift */,
 				D3810E6C1FE87B06007CC2B3 /* ProgressKey.swift */,
+				D38996911FF857C900FEB463 /* IQuizSession.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -431,12 +442,24 @@
 		D3B86EC01FC8C8A800DF1723 /* Experiences */ = {
 			isa = PBXGroup;
 			children = (
+				D3C2DFFA1FF7F2DA0058B758 /* Quiz */,
 				D303AB411FD8C1E2006F4919 /* Navigation */,
 				D3CDE0331FCF42A9004DD8C4 /* Main */,
 				D32BCB471FCB1DA500BE0A22 /* Flashcards */,
 				D3E5EA0D1FC8F43C00E27037 /* Browser */,
 			);
 			path = Experiences;
+			sourceTree = "<group>";
+		};
+		D3C2DFFA1FF7F2DA0058B758 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2DFFB1FF7F3A30058B758 /* Quiz.storyboard */,
+				D3C2DFFD1FF82AD90058B758 /* QuizViewController.swift */,
+				D38996931FF857ED00FEB463 /* QuizQuestion.swift */,
+				D38996951FF85CD000FEB463 /* QuizAnswer.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		D3CDE0331FCF42A9004DD8C4 /* Main */ = {
@@ -649,6 +672,7 @@
 				D3B86E7F1FC8A8C300DF1723 /* Main.storyboard in Resources */,
 				D39379F21FDF179500D16D8F /* Global.bundle in Resources */,
 				D32BCB491FCB1DF000BE0A22 /* Flashcards.storyboard in Resources */,
+				D3C2DFFC1FF7F3A30058B758 /* Quiz.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,12 +854,14 @@
 				D3DBF1B21FCCBC1800A014F9 /* CoreDataConstants.swift in Sources */,
 				D3266DC11FE29D1B00CB6422 /* PreferencesController.swift in Sources */,
 				D3DBF1AB1FCCAAA200A014F9 /* FlashcardsViewController.swift in Sources */,
+				D38996921FF857C900FEB463 /* IQuizSession.swift in Sources */,
 				D394CC101FCB2FF200945D5A /* BrowserContentPageTextTableViewCell.swift in Sources */,
 				D3569B271FCA4EF10038EE6F /* LinkHandler.swift in Sources */,
 				D39379F41FDF17EB00D16D8F /* HerbalAction.swift in Sources */,
 				D303AB471FD8C526006F4919 /* UINavigationControllerExtensions.swift in Sources */,
 				D3E653F71FDC329D006072E7 /* Course.swift in Sources */,
 				D3266DCD1FE2B59000CB6422 /* Flashcard.swift in Sources */,
+				D38996941FF857ED00FEB463 /* QuizQuestion.swift in Sources */,
 				D3810E6F1FE87DD8007CC2B3 /* ProgressDateIntervals.swift in Sources */,
 				D3E5EA121FC8F49500E27037 /* ReuseIdentifiers.swift in Sources */,
 				D321EE821FD42B8F0082E8B9 /* BrowserImage.swift in Sources */,
@@ -844,6 +870,7 @@
 				D3569B0B1FC983010038EE6F /* CodingError.swift in Sources */,
 				D3810E6D1FE87B06007CC2B3 /* ProgressKey.swift in Sources */,
 				D3CDE0351FCF42C5004DD8C4 /* MainViewController.swift in Sources */,
+				D3C2DFFE1FF82AD90058B758 /* QuizViewController.swift in Sources */,
 				D3C1A5731FD2F76F00C60824 /* BrowserTextHighlight.swift in Sources */,
 				D330D92D1FEFE17000B24532 /* BrowserViewController.swift in Sources */,
 				D3FC30581FD4A4BB005E581D /* BrowserContentMarkdownSection.swift in Sources */,
@@ -872,6 +899,7 @@
 				D329E6291FDD8F0500F82110 /* QuestionBuilder.swift in Sources */,
 				D3CDE0371FCF4396004DD8C4 /* MenuButton.swift in Sources */,
 				D3F66E121FD5F552005FFC86 /* UIViewExtensions.swift in Sources */,
+				D38996961FF85CD000FEB463 /* QuizAnswer.swift in Sources */,
 				D3266DD11FE2CB4000CB6422 /* ContentKey.swift in Sources */,
 				D3569B231FCA3A2B0038EE6F /* FontNames.swift in Sources */,
 				D3266DC31FE29E0000CB6422 /* IPreferencesController.swift in Sources */,

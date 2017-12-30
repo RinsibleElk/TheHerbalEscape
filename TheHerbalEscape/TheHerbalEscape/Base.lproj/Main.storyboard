@@ -41,11 +41,14 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCy-pJ-ScH">
                                                 <rect key="frame" x="0.0" y="79" width="319" height="59"/>
-                                                <state key="normal" title="Collapsible" backgroundImage="buttonNormal">
+                                                <state key="normal" title="Quiz" backgroundImage="buttonNormal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="buttonSelected"/>
                                                 <state key="highlighted" backgroundImage="buttonSelected"/>
+                                                <connections>
+                                                    <segue destination="WJK-uf-1qA" kind="show" id="xPk-OP-Nm2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-nO-v6g">
                                                 <rect key="frame" x="0.0" y="158" width="319" height="59"/>
@@ -86,6 +89,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRo-wu-SMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="836" y="-17.541229385307346"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="wiR-XU-rQ0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quiz" id="WJK-uf-1qA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwv-A1-1CV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="-154"/>
         </scene>
         <!--Browser-->
         <scene sceneID="r2b-L9-kql">

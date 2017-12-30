@@ -26,4 +26,5 @@ struct Colors {
     static let Lavender = UIColor(rgb: 0xe6e6fa)
     static let MistyRose = UIColor(rgb: 0xffe4e1)
     static let LemonChiffon = UIColor(rgb: 0xfffacd)
+    static let Honeydew = UIColor(rgb: 0xf0fff0)
 }
