@@ -47,7 +47,7 @@
                                                 <state key="selected" backgroundImage="buttonSelected"/>
                                                 <state key="highlighted" backgroundImage="buttonSelected"/>
                                                 <connections>
-                                                    <segue destination="WJK-uf-1qA" kind="show" id="xPk-OP-Nm2"/>
+                                                    <segue destination="Pva-Yv-1jW" kind="show" identifier="QuizMenuSegueIdentifier" id="xsH-xL-Vlq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-nO-v6g">
@@ -58,7 +58,7 @@
                                                 <state key="selected" backgroundImage="buttonSelected"/>
                                                 <state key="highlighted" backgroundImage="buttonSelected"/>
                                                 <connections>
-                                                    <segue destination="eTl-ju-HKE" kind="show" id="exC-9j-BbX"/>
+                                                    <segue destination="Pva-Yv-1jW" kind="show" identifier="FlashcardsMenuSegueIdentifier" id="bPS-Ew-asS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -96,7 +96,7 @@
                 <viewControllerPlaceholder storyboardName="Quiz" id="WJK-uf-1qA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwv-A1-1CV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="-154"/>
+            <point key="canvasLocation" x="2435" y="826"/>
         </scene>
         <!--Browser-->
         <scene sceneID="r2b-L9-kql">
@@ -106,13 +106,67 @@
             </objects>
             <point key="canvasLocation" x="1598" y="-45"/>
         </scene>
+        <!--Course Menu Table View Controller-->
+        <scene sceneID="Eaj-ZT-Ov8">
+            <objects>
+                <tableViewController id="Pva-Yv-1jW" customClass="CourseMenuTableViewController" customModule="TheHerbalEscape" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ldH-6H-d67">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlashcardMenuItemReuseIdentifier" id="Ucm-kr-mBC" customClass="CourseMenuTableViewCell" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ucm-kr-mBC" id="kHS-A3-1Jr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonNormal" highlightedImage="buttonSelected" translatesAutoresizingMaskIntoConstraints="NO" id="Swk-dj-Pkn">
+                                            <rect key="frame" x="16" y="11" width="343" height="68"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CourseName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-00-QTE">
+                                            <rect key="frame" x="134" y="34" width="105.5" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Swk-dj-Pkn" firstAttribute="leading" secondItem="kHS-A3-1Jr" secondAttribute="leadingMargin" id="VBJ-yA-8Lg"/>
+                                        <constraint firstItem="Swk-dj-Pkn" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="aoH-gI-zfr"/>
+                                        <constraint firstItem="Swk-dj-Pkn" firstAttribute="trailing" secondItem="kHS-A3-1Jr" secondAttribute="trailingMargin" id="cnE-7c-iUp"/>
+                                        <constraint firstItem="Swk-dj-Pkn" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="ftb-uo-bVj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backgroundImageView" destination="Swk-dj-Pkn" id="Wm1-n0-HRe"/>
+                                    <outlet property="titleLabelView" destination="EDg-00-QTE" id="uJ4-Ri-eFx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pva-Yv-1jW" id="YBB-IR-6y5"/>
+                            <outlet property="delegate" destination="Pva-Yv-1jW" id="mew-8Z-bs2"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="eTl-ju-HKE" kind="show" identifier="FlashcardsSegueIdentifier" id="Rhv-yn-r7y"/>
+                        <segue destination="WJK-uf-1qA" kind="show" identifier="QuizSegueIdentifier" id="tnL-cn-eQJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67e-hh-ypH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="748.87556221889065"/>
+        </scene>
         <!--Flashcards-->
         <scene sceneID="tfH-oI-Pn0">
             <objects>
                 <viewControllerPlaceholder storyboardName="Flashcards" id="eTl-ju-HKE" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKf-Ce-KoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="45"/>
+            <point key="canvasLocation" x="2436" y="748"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="kfY-Eb-Vvx">
@@ -122,6 +176,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ta1-Zy-4px">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.059406660497188568" green="0.30781954526901245" blue="0.0600162073969841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -139,4 +194,7 @@
         <image name="buttonNormal" width="272" height="59"/>
         <image name="buttonSelected" width="272" height="59"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xsH-xL-Vlq"/>
+    </inferredMetricsTieBreakers>
 </document>

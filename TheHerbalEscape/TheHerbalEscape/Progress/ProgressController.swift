@@ -24,13 +24,19 @@ class ProgressController: IProgressController {
         return FlashcardSession(randomSeed: nil, course: course, progressController: self, contentRepository: contentRepository)
     }
     
+    /// Create a new quiz session for a given course.
+    func createQuizSession(course:String?, contentRepository: IContentRepository) -> IQuizSession {
+        return QuizSession(randomSeed: nil, course: course, progressController: self, contentRepository: contentRepository)
+    }
+
+    
     /// Save after changes.
     func save() throws {
         try moc.save()
     }
     
     /// Retrieve the progress object for a given key.
-    func fetchProgress(progressKey: ProgressKey) -> Progress? {
+    func fetchProgress(progressKey: ProgressKey) -> IProgressFacade? {
         let fetchRequest = NSFetchRequest<Progress>(entityName: "Progress")
         let sampleCount = 1
         fetchRequest.predicate = NSPredicate(format: "(question == %@) AND (name == %@)", progressKey.question, progressKey.name)
@@ -38,7 +44,7 @@ class ProgressController: IProgressController {
         do {
             let progressObjects = try moc.fetch(fetchRequest)
             if progressObjects.count > 0 {
-                return progressObjects[0]
+                return ProgressFacade(progress: progressObjects[0])
             }
             else {
                 return nil
@@ -50,7 +56,7 @@ class ProgressController: IProgressController {
     }
     
     /// Retrieve all the progress objects for a given course, ordered by due date.
-    func fetchProgress(course: String?) -> [Progress] {
+    func fetchProgress(course: String?) -> [IProgressFacade] {
         // Some constants that I might configure somewhere, that determine how I will choose what to show.
         let sampleCount = 100
         var sortDescriptors = [NSSortDescriptor]()
@@ -67,23 +73,26 @@ class ProgressController: IProgressController {
         fetchRequest.fetchLimit = sampleCount
         do {
             let progressObjects = try moc.fetch(fetchRequest)
-            return progressObjects
+            return progressObjects.map({ (progress) -> IProgressFacade in
+                return ProgressFacade(progress: progress)
+            })
         }
         catch {
-            return [Progress]()
+            return [IProgressFacade]()
         }
     }
     
     /// Load initial data.
     func loadInitialData(contentRepository: IContentRepository) {
         let todayDate = Date()
+        let veryHardInt16 = FlashcardDifficulty.veryHard.toInt16()
         for question in contentRepository.allQuestions() {
             for content in contentRepository.allContent(contentType: question.BaseContentType) {
                 let entity = NSEntityDescription.entity(forEntityName: "Progress", in: moc)!
                 let progress = NSManagedObject(entity: entity, insertInto: moc) as! Progress
                 progress.dueDate = todayDate
                 progress.easyCount = 0
-                progress.lastDifficulty = 0
+                progress.lastDifficulty = veryHardInt16
                 progress.name = content.contentKey.ContentName
                 progress.question = question.Name
             }
@@ -92,6 +101,23 @@ class ProgressController: IProgressController {
             try moc.save()
         }
         catch {
+        }
+    }
+    
+    /// Get the overall progress.
+    func getProgressSummary(contentRepository: IContentRepository) -> OverallProgressSummary {
+        let fetchRequest = NSFetchRequest<Progress>(entityName: "Progress")
+        let progressSummary = OverallProgressSummary()
+        do {
+            let progressObjects = try moc.fetch(fetchRequest)
+            for progress in progressObjects {
+                let content = contentRepository.fetchQuestion(question: progress.question!)
+                progressSummary.update(course: content.Course, oldValue: nil, newValue: progress.lastDifficulty.toDifficulty())
+            }
+            return progressSummary
+        }
+        catch {
+            return progressSummary
         }
     }
 }

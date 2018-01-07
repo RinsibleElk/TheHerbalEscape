@@ -1,0 +1,30 @@
+{
+    "Questions": [
+                  {
+                  "Name": "PlantLatinName",
+                  "RelationshipType": "Simple",
+                  "Course": "Plants",
+                  "BaseContentType": "Plant",
+                  "TargetContentType": "Plant",
+                  "BaseFieldName": "CommonName",
+                  "TargetFieldName": "LatinName",
+                  "FlashcardQuestion": "Latin Name?",
+                  "ReverseFlashcardQuestion": "Common Name?",
+                  "TestQuestion": "What is the latin name of $1?",
+                  "ReverseTestQuestion": "What is the common name of $1?"
+                  },
+                  {
+                  "Name": "PlantHerbalFamily",
+                  "RelationshipType": "ManyToOne",
+                  "Course": "Plants",
+                  "BaseContentType": "Plant",
+                  "TargetContentType": "HerbalFamily",
+                  "BaseFieldName": "CommonName",
+                  "TargetFieldName": "HerbalFamily",
+                  "FlashcardQuestion": "Herbal Family?",
+                  "TestQuestion": "What is the herbal family of $1?",
+                  "ReverseTestQuestion": "Which of these plants are in the herbal family $1?"
+                  }
+                  ]
+}
+

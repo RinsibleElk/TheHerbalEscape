@@ -13,15 +13,21 @@ protocol IProgressController {
     /// Create a new flashcard session for a given course.
     func createFlashcardSession(course:String?, contentRepository: IContentRepository) -> IFlashcardSession
 
+    /// Create a new quiz session for a given course.
+    func createQuizSession(course:String?, contentRepository: IContentRepository) -> IQuizSession
+
     /// Fetch a sample of progress values.
-    func fetchProgress(course: String?) -> [Progress]
+    func fetchProgress(course: String?) -> [IProgressFacade]
     
     /// Fetch progress given a key.
-    func fetchProgress(progressKey: ProgressKey) -> Progress?
+    func fetchProgress(progressKey: ProgressKey) -> IProgressFacade?
     
     /// Load initial data for all progress.
     func loadInitialData(contentRepository: IContentRepository)
     
     /// Save after changing.
     func save() throws
+    
+    /// Get progress summary.
+    func getProgressSummary(contentRepository: IContentRepository) -> OverallProgressSummary
 }

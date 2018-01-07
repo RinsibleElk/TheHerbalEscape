@@ -15,4 +15,5 @@ struct ReuseIdentifiers {
     static let BrowserContentPageImageTableCellIdentifier           = "BrowserContentPageImageTableCellIdentifier"
     static let BrowserContentPageTitleSectionHeaderIdentifier       = "BrowserContentPageTitleSectionHeaderIdentifier"
     static let BrowserContentPageCollapsibleSectionHeaderIdentifier = "BrowserContentPageCollapsibleSectionHeaderIdentifier"
+    static let FlashcardMenuItemReuseIdentifier                     = "FlashcardMenuItemReuseIdentifier"
 }

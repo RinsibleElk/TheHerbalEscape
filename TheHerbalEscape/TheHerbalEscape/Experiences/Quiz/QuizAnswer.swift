@@ -18,9 +18,13 @@ class QuizAnswer: Codable {
     /// Whether it's correct.
     var IsCorrect: Bool
     
+    /// Optional image name.
+    var ImageName: String?
+    
     // MARK: - Initializers
-    init(answer: String, isCorrect: Bool) {
+    init(answer: String, isCorrect: Bool, imageName: String?) {
         Answer = answer
         IsCorrect = isCorrect
+        ImageName = imageName
     }
 }

@@ -9,16 +9,41 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    // MARK: - Properties
+    var overallProgressSummary: OverallProgressSummary?
+    
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if (appDelegate != nil) {
+            overallProgressSummary = appDelegate!.progressController!.getProgressSummary(contentRepository: appDelegate!.contentRepository)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier != nil {
+            switch segue.identifier! {
+            case SegueIdentifiers.FlashcardsMenuSegueIdentifier:
+                if let destinationVc = segue.destination as? CourseMenuTableViewController {
+                    destinationVc.selectionSegueIdentifier = SegueIdentifiers.FlashcardsSegueIdentifier
+                    destinationVc.progress = overallProgressSummary!
+                }
+            default:
+                if let destinationVc = segue.destination as? CourseMenuTableViewController {
+                    destinationVc.selectionSegueIdentifier = SegueIdentifiers.QuizSegueIdentifier
+                    destinationVc.progress = overallProgressSummary!
+                }
+            }
+        }
     }
 }

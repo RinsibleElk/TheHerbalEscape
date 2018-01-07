@@ -21,4 +21,7 @@ extension UIView {
         self.layer.add(animation, forKey: nil)
     }
     
+    func setBackgroundColor(color: UIColor) {
+        self.backgroundColor = color
+    }
 }

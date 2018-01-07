@@ -88,26 +88,27 @@ class FlashcardSession: IFlashcardSession {
         for flashcard in flashcards {
             if let progress = progressController.fetchProgress(progressKey: flashcard) {
                 if let difficulty = flashcard.Result {
+                    progress.lastDifficulty = difficulty
                     switch difficulty {
                     case .easy:
                         var timeInterval = DateComponents()
                         timeInterval.day = ProgressDateIntervals.easyDays
-                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
                         progress.easyCount = 0
                     case .veryEasy:
                         var timeInterval = DateComponents()
                         timeInterval.day = ProgressDateIntervals.veryEasyDays
-                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
                         progress.easyCount = progress.easyCount + 1
                     case .hard:
                         var timeInterval = DateComponents()
                         timeInterval.day = ProgressDateIntervals.hardDays
-                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
                         progress.easyCount = 0
                     case .veryHard:
                         var timeInterval = DateComponents()
                         timeInterval.day = ProgressDateIntervals.veryHardDays
-                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)
+                        progress.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
                         progress.easyCount = 0
                     }
                 }
@@ -133,11 +134,11 @@ class FlashcardSession: IFlashcardSession {
         var showCount = 10
 
         // Split the progress objects by whether they are actually due or not.
-        var dueProgress = [Progress]()
-        var notDueProgress = [Progress]()
+        var dueProgress = [IProgressFacade]()
+        var notDueProgress = [IProgressFacade]()
         let date = Date()
         for progressObject in progress {
-            if progressObject.dueDate! <= date {
+            if progressObject.dueDate <= date {
                 dueProgress.append(progressObject)
             }
             else {
@@ -152,13 +153,13 @@ class FlashcardSession: IFlashcardSession {
             let progressObject = dueProgress.remove(at: index)
             
             // Get the question.
-            let question = contentRepository.fetchQuestion(question: progressObject.question!)
+            let question = contentRepository.fetchQuestion(question: progressObject.question)
             
             // Randomise the side to show.
             let reverseSide = question.ReverseFlashcardQuestion != nil && randomSource.nextBool()
             
             // Add the flashcard.
-            flashcards.append(Flashcard(contentRepository: contentRepository, reverseSide: reverseSide, question: question, name: progressObject.name!))
+            flashcards.append(Flashcard(contentRepository: contentRepository, reverseSide: reverseSide, question: question, name: progressObject.name))
             showCount = showCount - 1
         }
         
@@ -167,13 +168,13 @@ class FlashcardSession: IFlashcardSession {
             let progressObject = notDueProgress.removeFirst()
             
             // Get the question.
-            let question = contentRepository.fetchQuestion(question: progressObject.question!)
+            let question = contentRepository.fetchQuestion(question: progressObject.question)
             
             // Randomise the side to show.
             let reverseSide = question.ReverseFlashcardQuestion != nil && randomSource.nextBool()
             
             // Add the flashcard.
-            flashcards.append(Flashcard(contentRepository: contentRepository, reverseSide: reverseSide, question: question, name: progressObject.name!))
+            flashcards.append(Flashcard(contentRepository: contentRepository, reverseSide: reverseSide, question: question, name: progressObject.name))
             showCount = showCount - 1
         }
     }

@@ -9,13 +9,32 @@
 import UIKit
 
 /// Quiz question and answers, as presented to the user.
-class QuizQuestion: Codable {
+class QuizQuestion: Codable, ProgressKey {
+    // MARK: - ProgressKey
+    var question: String {
+        get {
+            return QuestionName
+        }
+    }
+    
+    var name: String {
+        get {
+            return ContentName
+        }
+    }
+    
     // MARK: - Properties
     
     /// The colour to show for the question.
     var Color: CourseColor
     
-    /// The question.
+    /// The question name.
+    var QuestionName: String
+    
+    /// The content name. This is the content that is intended to be under test.
+    var ContentName: String
+    
+    /// The question text.
     var Question: String
 
     /// Whether this supports multiple selection.
@@ -25,9 +44,11 @@ class QuizQuestion: Codable {
     var Answers: [QuizAnswer]
     
     // MARK: - Initializers
-    init(color: CourseColor, question: String, supportsMultipleSelection: Bool, answers: [QuizAnswer]) {
+    init(color: CourseColor, questionName: String, contentName: String, questionText: String, supportsMultipleSelection: Bool, answers: [QuizAnswer]) {
         Color = color
-        Question = question
+        QuestionName = questionName
+        ContentName = contentName
+        Question = questionText
         SupportsMultipleSelection = supportsMultipleSelection
         Answers = answers
     }

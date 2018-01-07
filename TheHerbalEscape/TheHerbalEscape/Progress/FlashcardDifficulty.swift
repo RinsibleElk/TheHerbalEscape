@@ -9,7 +9,7 @@
 import Foundation
 
 /// Four levels of difficulty.
-public enum FlashcardDifficulty : Int, Codable {
+enum FlashcardDifficulty : Int, Codable {
     case veryEasy
     case easy
     case hard
@@ -26,6 +26,20 @@ public enum FlashcardDifficulty : Int, Codable {
             return .veryEasy
         case .veryHard:
             return .easy
+        }
+    }
+    
+    /// Convert to Int16.
+    func toInt16() -> Int16 {
+        switch self {
+        case .veryHard:
+            return 0
+        case .hard:
+            return 1
+        case .easy:
+            return 2
+        default:
+            return 3
         }
     }
 }

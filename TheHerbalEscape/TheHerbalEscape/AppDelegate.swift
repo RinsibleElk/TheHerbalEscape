@@ -33,14 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        var remaining = 0
-        remaining = remaining + 1
+        var remaining = 4
         DataManager.getContents(plantsUrl) { (data, error) in
             remaining = remaining - 1
             if let data = data {
                 let plants = PlantContents.decodeFromJSON(jsonData: data)
                 for plant in plants {
-                    // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(plant)
                     self.contentRepository.Contents[plant.contentKey] = plant
                 }
@@ -49,13 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.loadData()
             }
         }
-        remaining = remaining + 1
         DataManager.getContents(herbalActionsUrl) { (data, error) in
             remaining = remaining - 1
             if let data = data {
                 let actions = HerbalActionContents.decodeFromJSON(jsonData: data)
                 for action in actions {
-                    // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(action)
                     self.contentRepository.Contents[action.contentKey] = action
                 }
@@ -64,13 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.loadData()
             }
         }
-        remaining = remaining + 1
         DataManager.getContents(herbalFamiliesUrl) { (data, error) in
             remaining = remaining - 1
             if let data = data {
                 let families = HerbalFamilyContents.decodeFromJSON(jsonData: data)
                 for family in families {
-                    // Not at all thread safe!!!!
                     self.contentRepository.Browsables.append(family)
                     self.contentRepository.Contents[family.contentKey] = family
                 }
@@ -79,13 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.loadData()
             }
         }
-        remaining = remaining + 1
         DataManager.getContents(questionsUrl) { (data, error) in
             remaining = remaining - 1
             if let data = data {
                 let questions = QuestionContents.decodeFromJSON(jsonData: data)
                 for question in questions {
-                    // Not at all thread safe!!!!
                     self.contentRepository.Questions[question.Name] = question
                 }
             }
@@ -164,7 +156,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
