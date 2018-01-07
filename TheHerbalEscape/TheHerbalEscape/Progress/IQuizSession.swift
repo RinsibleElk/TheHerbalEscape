@@ -39,4 +39,10 @@ protocol IQuizSession: Codable {
 
     /// Number of incorrect answers given.
     var numIncorrect: Int { get }
+    
+    /// Whether the results have been saved.
+    var haveSaved: Bool { get }
+    
+    /// Save results.
+    func save(progressController: IProgressController)
 }

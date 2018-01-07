@@ -343,4 +343,78 @@ class QuizSession: IQuizSession {
             return numIncorrect
         }
     }
+    
+    var haveSaved: Bool = false
+    
+    func save(progressController: IProgressController) {
+        if !haveSaved {
+            var index = 0
+            let date = Date()
+            while index < results.count && index < questions.count {
+                let progress = progressController.fetchProgress(progressKey: questions[index])
+                if progress != nil {
+                    if results[index] {
+                        switch progress!.lastDifficulty {
+                        case .easy:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.veryEasyDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.easyCount = 1
+                            progress!.lastDifficulty = .veryEasy
+                        case .veryEasy:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.veryEasyDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.easyCount = progress!.easyCount + 1
+                            progress!.lastDifficulty = .veryEasy
+                        case .hard:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.easyDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.easyCount = 0
+                            progress!.lastDifficulty = .easy
+                        case .veryHard:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.hardDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.easyCount = 0
+                            progress!.lastDifficulty = .hard
+                        }
+                    }
+                    else {
+                        progress!.easyCount = 0
+                        switch progress!.lastDifficulty {
+                        case .easy:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.hardDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.lastDifficulty = .hard
+                        case .veryEasy:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.easyDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.lastDifficulty = .easy
+                        case .hard:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.veryHardDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.lastDifficulty = .veryHard
+                        case .veryHard:
+                            var timeInterval = DateComponents()
+                            timeInterval.day = ProgressDateIntervals.veryHardDays
+                            progress!.dueDate = Calendar.current.date(byAdding: timeInterval, to: date)!
+                            progress!.lastDifficulty = .veryHard
+                        }
+                    }
+                }
+                index = index + 1
+            }
+            do {
+                try progressController.save()
+            }
+            catch {
+                // TODO Log some results
+            }
+        }
+    }
 }

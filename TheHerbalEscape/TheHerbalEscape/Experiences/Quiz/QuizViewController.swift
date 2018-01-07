@@ -53,6 +53,10 @@ class QuizViewController: UIViewController, IQuizQuestionDelegate {
         browserButton.isEnabled = true
         continueButton.isHidden = true
         continueButton.isEnabled = false
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if (appDelegate != nil) {
+            quizSession!.save(progressController: appDelegate!.progressController!)
+        }
     }
     
     private func updateState() {
