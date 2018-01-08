@@ -28,6 +28,7 @@
 		D30E2AAD1FF9514600B2BF1C /* CourseMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E2AAC1FF9514600B2BF1C /* CourseMenuTableViewController.swift */; };
 		D30E2AAF1FF951A400B2BF1C /* CourseMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E2AAE1FF951A400B2BF1C /* CourseMenuTableViewCell.swift */; };
 		D31749A41FD3326500CB2942 /* BrowserContentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31749A31FD3326500CB2942 /* BrowserContentElement.swift */; };
+		D31C7D1C200409DE00E2FC0D /* ProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31C7D1B200409DE00E2FC0D /* ProgressControl.swift */; };
 		D321EE821FD42B8F0082E8B9 /* BrowserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321EE811FD42B8F0082E8B9 /* BrowserImage.swift */; };
 		D321EE861FD4300A0082E8B9 /* EmptyBrowsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D321EE851FD4300A0082E8B9 /* EmptyBrowsable.swift */; };
 		D3266DC11FE29D1B00CB6422 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3266DC01FE29D1B00CB6422 /* PreferencesController.swift */; };
@@ -103,6 +104,7 @@
 		D3DBF1AB1FCCAAA200A014F9 /* FlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1AA1FCCAAA200A014F9 /* FlashcardsViewController.swift */; };
 		D3DBF1B21FCCBC1800A014F9 /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */; };
 		D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */; };
+		D3DDA47520042F9F006CFDA4 /* ProgressBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DDA47420042F9F006CFDA4 /* ProgressBarButtonItem.swift */; };
 		D3E3F13420025093005D6660 /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3F13320025093005D6660 /* QuizQuestionViewController.swift */; };
 		D3E3F1362002564D005D6660 /* IQuizQuestionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3F1352002564D005D6660 /* IQuizQuestionDelegate.swift */; };
 		D3E3F13820026587005D6660 /* QuizAnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3F13720026587005D6660 /* QuizAnswerState.swift */; };
@@ -171,6 +173,7 @@
 		D30E2AAC1FF9514600B2BF1C /* CourseMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMenuTableViewController.swift; sourceTree = "<group>"; };
 		D30E2AAE1FF951A400B2BF1C /* CourseMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMenuTableViewCell.swift; sourceTree = "<group>"; };
 		D31749A31FD3326500CB2942 /* BrowserContentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserContentElement.swift; sourceTree = "<group>"; };
+		D31C7D1B200409DE00E2FC0D /* ProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressControl.swift; sourceTree = "<group>"; };
 		D321EE811FD42B8F0082E8B9 /* BrowserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserImage.swift; sourceTree = "<group>"; };
 		D321EE851FD4300A0082E8B9 /* EmptyBrowsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBrowsable.swift; sourceTree = "<group>"; };
 		D3266DC01FE29D1B00CB6422 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 		D3DBF1AA1FCCAAA200A014F9 /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewController.swift; sourceTree = "<group>"; };
 		D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
 		D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContentRepository.swift; sourceTree = "<group>"; };
+		D3DDA47420042F9F006CFDA4 /* ProgressBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarButtonItem.swift; sourceTree = "<group>"; };
 		D3E3F13320025093005D6660 /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
 		D3E3F1352002564D005D6660 /* IQuizQuestionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQuizQuestionDelegate.swift; sourceTree = "<group>"; };
 		D3E3F13720026587005D6660 /* QuizAnswerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerState.swift; sourceTree = "<group>"; };
@@ -493,6 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				D3E5EA191FC905B200E27037 /* TextUtilities.swift */,
+				D31C7D1B200409DE00E2FC0D /* ProgressControl.swift */,
+				D3DDA47420042F9F006CFDA4 /* ProgressBarButtonItem.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -986,6 +992,7 @@
 				D3A9373D1FFC40B800A72F24 /* QuizSession.swift in Sources */,
 				D30D221E20015DC0000061CC /* DateExtensions.swift in Sources */,
 				D3569B131FC997720038EE6F /* Experiences.swift in Sources */,
+				D31C7D1C200409DE00E2FC0D /* ProgressControl.swift in Sources */,
 				D303AB431FD8C21A006F4919 /* NavigationViewController.swift in Sources */,
 				D3C1A5771FD2FB0D00C60824 /* StringExtensions.swift in Sources */,
 				D3FC305A1FD4AC60005E581D /* CollapseHandler.swift in Sources */,
@@ -995,6 +1002,7 @@
 				D3266DCF1FE2C89300CB6422 /* Content.swift in Sources */,
 				D3569B1B1FC9FB580038EE6F /* Colors.swift in Sources */,
 				D3E5EA181FC8FC0200E27037 /* BrowserTableViewCell.swift in Sources */,
+				D3DDA47520042F9F006CFDA4 /* ProgressBarButtonItem.swift in Sources */,
 				D389B6C11FD61E23008CACA0 /* UILabelExtensions.swift in Sources */,
 				D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */,
 				D3569B171FC9B8AF0038EE6F /* BrowsableClient.swift in Sources */,

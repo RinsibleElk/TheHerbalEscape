@@ -24,19 +24,22 @@ class CourseMenuTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabelView: UILabel!
-
+    @IBOutlet weak var progressControl: ProgressControl!
+    
     // MARK: - Private functions
     private func setText() {
         if course != nil {
+            titleLabelView.text = course!
             if progress != nil {
-                titleLabelView.text = "\(course!) (\(Int(progress!.Percentage)))"
+                progressControl.numberAchieved = Int(progress!.Percentage * 4.0)
             }
             else {
-                titleLabelView.text = "\(course!)"
+                progressControl.numberAchieved = 0
             }
         }
         else {
             titleLabelView.text = "All"
+            progressControl.numberAchieved = 0
         }
     }
 

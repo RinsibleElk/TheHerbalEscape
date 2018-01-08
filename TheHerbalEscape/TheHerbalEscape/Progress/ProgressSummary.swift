@@ -31,10 +31,10 @@ class ProgressSummary: Codable {
             let total = VeryEasyCount + EasyCount + HardCount + VeryHardCount
             let totalEasy = VeryEasyCount + EasyCount
             if total == 0 {
-                return 100.0
+                return 1.0
             }
             else {
-                return 100.0 * (Float(totalEasy) / Float(total))
+                return (Float(totalEasy) / Float(total))
             }
         }
     }
