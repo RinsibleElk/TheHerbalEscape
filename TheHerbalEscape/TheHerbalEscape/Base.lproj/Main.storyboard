@@ -84,9 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Do2-oX-0OD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Menu" id="nIr-lJ-iTl">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Kz7-Mv-1YB" customClass="ProgressBarButtonItem" customModule="TheHerbalEscape" customModuleProvider="target"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Menu" id="nIr-lJ-iTl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRo-wu-SMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
