@@ -8,7 +8,7 @@
         "TargetContentType": "Plant",
         "BaseFieldName": "CommonName",
         "TargetFieldName": "LatinName",
-        "ImageFieldName": "ImageName",
+        "FlashcardQuestionImageFieldName": "ImageName",
         "FlashcardQuestion": "Latin Name?",
         "ReverseFlashcardQuestion": "Common Name?",
         "TestQuestion": "What is the latin name of $1?",
@@ -22,7 +22,7 @@
       "TargetContentType": "HerbalFamily",
       "BaseFieldName": "CommonName",
       "TargetFieldName": "HerbalFamily",
-      "ImageFieldName": "ImageName",
+      "FlashcardQuestionImageFieldName": "ImageName",
       "FlashcardQuestion": "Herbal Family?",
       "TestQuestion": "What is the herbal family of $1?",
       "ReverseTestQuestion": "Which of these plants are in the herbal family $1?"

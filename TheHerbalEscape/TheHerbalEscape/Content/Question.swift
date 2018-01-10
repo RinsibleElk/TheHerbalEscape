@@ -34,13 +34,8 @@ class Question: Codable {
     /// The name of the field on the TargetEntity used to determine the answer to the question.
     var TargetFieldName: String
     
-    /// Optional image to show. This is the field name on the BaseEntity that determines this image.
-    /// This shows in:
-    /// - Flashcard FrontSide
-    /// - ReverseFlashcard RearSide
-    /// - TestQuestion Question
-    /// - ReverseTestQuestion Answer
-    var ImageFieldName: String?
+    /// Optional image to show. This is the field name on the BaseEntity that determines the image for Flashcard FrontSide and ReverseFlashcard RearSide.
+    var FlashcardQuestionImageFieldName: String?
     
     /// Optional sound to play. This is the field name on the BaseEntity that determines this sound. This is used only if the user has enabled sound in their Preferences.
     /// This is played in:

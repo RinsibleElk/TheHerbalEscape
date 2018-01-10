@@ -27,7 +27,7 @@ class Flashcard: Codable, ProgressKey {
         let contentKey = ContentKey(contentType: contentType, contentName: name)
         let content = contentRepository.fetchContent(contentKey: contentKey)
         let questionText = content.getValue(name: question.BaseFieldName)!
-        let questionImage = (question.ImageFieldName != nil) ? content.getValue(name: question.ImageFieldName!) : nil
+        let questionImage = (question.FlashcardQuestionImageFieldName != nil) ? content.getValue(name: question.FlashcardQuestionImageFieldName!) : nil
         let answerSound = (question.SoundFieldName != nil) ? content.getValue(name: question.SoundFieldName!) : nil
         let course = contentRepository.fetchCourse(courseName: question.Course)
         var answerText : String
