@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 @IBDesignable class FlashcardViewController: UIViewController {
     // MARK: - Outlets
@@ -15,28 +16,43 @@ import UIKit
     @IBOutlet weak var flashcardImage: UIImageView!
     @IBOutlet weak var flashcardLabel: UILabel!
     @IBOutlet weak var flashcardView: UIView!
-    
+    @IBOutlet weak var flashcardWithImageView: UIView!
+    @IBOutlet weak var flashcardWithImageLabel: UILabel!
+
     // MARK: - Properties
     var flashcardSide: FlashcardSide? = nil {
         didSet {
             if (isViewLoaded && flashcardSide != nil) {
                 if (flashcardSide?.ImageName != nil) {
                     flashcardImage.image = UIImage(named: flashcardSide!.ImageName!)
-                    flashcardImage.isHidden = false
                 }
                 else {
-                    flashcardImage.isHidden = true
+                    flashcardImage.image = nil
                 }
                 flashcardLabel.text = flashcardSide!.Text
+                flashcardWithImageLabel.text = flashcardSide!.Text
                 let backgroundColor = flashcardSide!.Color.getUiColor()
                 flashcardView.backgroundColor = backgroundColor
                 topLabel.text = flashcardSide!.Question
                 bottomLabel.text = nil
+                setupViews()
             }
         }
     }
     
-    // MARK: - Overrides
+    // MARK: - Private methods
+    private func setupViews() {
+        if flashcardImage.image != nil && traitCollection.verticalSizeClass == .regular {
+            flashcardWithImageView.isHidden = false
+            flashcardLabel.isHidden = true
+        }
+        else {
+            flashcardWithImageView.isHidden = true
+            flashcardLabel.isHidden = false
+        }
+    }
+    
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,8 +62,15 @@ import UIKit
         view.layer.cornerRadius = 30
         view.layer.masksToBounds = true
         view.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
+        
+        // Bootstrap AutoLayout
+        view.setNeedsUpdateConstraints()
     }
-
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setupViews()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
