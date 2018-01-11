@@ -9,6 +9,7 @@
         "BaseFieldName": "CommonName",
         "TargetFieldName": "LatinName",
         "FlashcardQuestionImageFieldName": "ImageName",
+        "ReverseTestAnswerImageFieldName": "ImageName",
         "FlashcardQuestion": "Latin Name?",
         "ReverseFlashcardQuestion": "Common Name?",
         "TestQuestion": "What is the latin name of $1?",
@@ -23,6 +24,7 @@
       "BaseFieldName": "CommonName",
       "TargetFieldName": "HerbalFamily",
       "FlashcardQuestionImageFieldName": "ImageName",
+      "ReverseTestAnswerImageFieldName": "ImageName",
       "FlashcardQuestion": "Herbal Family?",
       "TestQuestion": "What is the herbal family of $1?",
       "ReverseTestQuestion": "Which of these plants are in the herbal family $1?"

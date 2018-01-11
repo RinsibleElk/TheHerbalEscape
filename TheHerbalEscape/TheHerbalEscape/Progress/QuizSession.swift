@@ -283,7 +283,8 @@ class QuizSession: IQuizSession {
                 let correctAnswer = testContent.getValue(name: question.BaseFieldName)!
                 isSingleChoice = true
                 var incorrectAnswers = [String]()
-                answers.append(QuizAnswer(answer: correctAnswer, isCorrect: true, imageName: nil))
+                let imageFieldName = question.ReverseTestAnswerImageFieldName
+                answers.append(QuizAnswer(answer: correctAnswer, isCorrect: true, imageName: imageFieldName == nil ? nil : testContent.getValue(name: imageFieldName!)))
                 for content in allContent {
                     let answerString = content.getValue(name: question.BaseFieldName)!
                     if answerString != correctAnswer {
@@ -300,7 +301,14 @@ class QuizSession: IQuizSession {
                     }
                 }
                 for index in incorrectIndices {
-                    answers.append(QuizAnswer(answer: incorrectAnswers[index], isCorrect: false, imageName: nil))
+                    if imageFieldName == nil {
+                        answers.append(QuizAnswer(answer: incorrectAnswers[index], isCorrect: false, imageName: nil))
+                    }
+                    else {
+                        let name = incorrectAnswers[index]
+                        let content = contentRepository.fetchContent(contentKey: ContentKey(contentType: question.BaseContentType, contentName: name))
+                        answers.append(QuizAnswer(answer: name, isCorrect: false, imageName: content.getValue(name: imageFieldName!)))
+                    }
                 }
             }
 

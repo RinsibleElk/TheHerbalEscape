@@ -24,15 +24,25 @@ class QuizQuestionViewController: UIViewController {
     @IBOutlet weak var answer2TextLabel: UILabel!
     @IBOutlet weak var answer3TextLabel: UILabel!
     @IBOutlet weak var answer4TextLabel: UILabel!
+    @IBOutlet weak var answer1ImageView: UIImageView!
+    @IBOutlet weak var answer2ImageView: UIImageView!
+    @IBOutlet weak var answer3ImageView: UIImageView!
+    @IBOutlet weak var answer4ImageView: UIImageView!
     var quizQuestion: QuizQuestion? {
         didSet {
             if quizQuestion != nil {
                 questionTextLabel.text = quizQuestion!.Question
+                imagesDefined = quizQuestion!.Answers[0].ImageName != nil
                 answer1TextLabel.text = quizQuestion!.Answers[0].Answer
                 answer2TextLabel.text = quizQuestion!.Answers[1].Answer
                 answer3TextLabel.text = quizQuestion!.Answers[2].Answer
                 answer4TextLabel.text = quizQuestion!.Answers[3].Answer
+                answer1ImageView.image = quizQuestion!.Answers[0].ImageName == nil ? nil : (UIImage(named: quizQuestion!.Answers[0].ImageName!) ?? #imageLiteral(resourceName: "noImage"))
+                answer2ImageView.image = quizQuestion!.Answers[1].ImageName == nil ? nil : (UIImage(named: quizQuestion!.Answers[1].ImageName!) ?? #imageLiteral(resourceName: "noImage"))
+                answer3ImageView.image = quizQuestion!.Answers[2].ImageName == nil ? nil : (UIImage(named: quizQuestion!.Answers[2].ImageName!) ?? #imageLiteral(resourceName: "noImage"))
+                answer4ImageView.image = quizQuestion!.Answers[3].ImageName == nil ? nil : (UIImage(named: quizQuestion!.Answers[3].ImageName!) ?? #imageLiteral(resourceName: "noImage"))
                 setupCurvedView(view: questionView, answerState: .Normal, isQuestion: true)
+                setupViewConstraints()
             }
         }
     }
@@ -44,12 +54,13 @@ class QuizQuestionViewController: UIViewController {
     private var answer4State: QuizAnswerState = .Normal
     private var didSetupConstraints: Bool = false
     private var twoByTwoConstraints: NSArray?
-    private var fourByOneConstraints: NSArray?
-    private var oneByFourConstraints: NSArray?
+    private var twoByTwoWithImagesConstraints: NSArray?
     private var tapGesture1: UITapGestureRecognizer?
     private var tapGesture2: UITapGestureRecognizer?
     private var tapGesture3: UITapGestureRecognizer?
     private var tapGesture4: UITapGestureRecognizer?
+    private var imagesIncluded: Bool = false
+    private var imagesDefined: Bool = false
 
     // MARK: - Private functions
     private func setupCurvedView(view: UIView, answerState: QuizAnswerState, isQuestion: Bool) {
@@ -59,6 +70,29 @@ class QuizQuestionViewController: UIViewController {
         view.layer.masksToBounds = true
         view.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
         view.backgroundColor = (isQuestion && quizQuestion != nil) ? quizQuestion!.Color.getUiColor() : answerState.getBackgroundColor()
+    }
+    
+    private func setupViewConstraints() {
+        if (!imagesDefined || traitCollection.verticalSizeClass != .regular) && imagesIncluded {
+            twoByTwoWithImagesConstraints?.autoRemoveConstraints()
+            twoByTwoConstraints?.autoInstallConstraints()
+            answer1ImageView.isHidden = true
+            answer2ImageView.isHidden = true
+            answer3ImageView.isHidden = true
+            answer4ImageView.isHidden = true
+            imagesIncluded = false
+            self.view.layoutIfNeeded()
+        }
+        else if imagesDefined && !imagesIncluded && traitCollection.verticalSizeClass == .regular {
+            twoByTwoConstraints?.autoRemoveConstraints()
+            twoByTwoWithImagesConstraints?.autoInstallConstraints()
+            answer1ImageView.isHidden = false
+            answer2ImageView.isHidden = false
+            answer3ImageView.isHidden = false
+            answer4ImageView.isHidden = false
+            imagesIncluded = true
+            self.view.layoutIfNeeded()
+        }
     }
     
     // MARK: - API
@@ -129,11 +163,15 @@ class QuizQuestionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setupViewConstraints()
+    }
 
     override func updateViewConstraints() {
         if (!didSetupConstraints) {
             twoByTwoConstraints =
-                NSLayoutConstraint.autoCreateAndInstallConstraints {
+                NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
                     questionView.autoPinEdge(toSuperviewEdge: .top)
                     questionView.autoPinEdge(toSuperviewEdge: .left)
                     questionView.autoPinEdge(toSuperviewEdge: .right)
@@ -181,12 +219,16 @@ class QuizQuestionViewController: UIViewController {
                     answer4TextLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
                     answer4TextLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
                 } as NSArray
-            fourByOneConstraints =
+            twoByTwoWithImagesConstraints =
                 NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
                     questionView.autoPinEdge(toSuperviewEdge: .top)
                     questionView.autoPinEdge(toSuperviewEdge: .left)
                     questionView.autoPinEdge(toSuperviewEdge: .right)
-                    questionView.autoConstrainAttribute(.height, to: .height, of: placeholderView, withMultiplier: 0.5)
+                    questionView.autoConstrainAttribute(.height, to: .height, of: placeholderView, withMultiplier: 0.2)
+                    answerSectionView.autoPinEdge(.top, to: .bottom, of: questionView, withOffset: 8)
+                    answerSectionView.autoPinEdge(toSuperviewEdge: .left)
+                    answerSectionView.autoPinEdge(toSuperviewEdge: .right)
+                    answerSectionView.autoPinEdge(toSuperviewEdge: .bottom)
                     answer1View.autoConstrainAttribute(.width, to: .width, of: answer2View)
                     answer2View.autoConstrainAttribute(.width, to: .width, of: answer3View)
                     answer3View.autoConstrainAttribute(.width, to: .width, of: answer4View)
@@ -197,40 +239,67 @@ class QuizQuestionViewController: UIViewController {
                     answer3View.autoPinEdge(toSuperviewEdge: .left)
                     answer2View.autoPinEdge(toSuperviewEdge: .right)
                     answer4View.autoPinEdge(toSuperviewEdge: .right)
-                    answer1View.autoPinEdge(.top, to: .bottom, of: questionView, withOffset: 8)
-                    answer2View.autoPinEdge(.top, to: .bottom, of: questionView, withOffset: 8)
-                    answer1View.autoPinEdge(.right, to: .left, of: answer2View, withOffset: 8)
+                    answer1View.autoPinEdge(toSuperviewEdge: .top)
+                    answer2View.autoPinEdge(toSuperviewEdge: .top)
+                    answer2View.autoPinEdge(.left, to: .right, of: answer1View, withOffset: 8)
                     answer3View.autoPinEdge(toSuperviewEdge: .bottom)
                     answer4View.autoPinEdge(toSuperviewEdge: .bottom)
-                    answer3View.autoPinEdge(.right, to: .left, of: answer4View, withOffset: 8)
+                    answer4View.autoPinEdge(.left, to: .right, of: answer3View, withOffset: 8)
                     answer3View.autoPinEdge(.top, to: .bottom, of: answer1View, withOffset: 8)
                     answer4View.autoPinEdge(.top, to: .bottom, of: answer2View, withOffset: 8)
+                    questionTextLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    questionTextLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    questionTextLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
+                    questionTextLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
+                    answer1TextLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer1TextLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer1ImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer1ImageView.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer1ImageView.autoPinEdge(toSuperviewEdge: .top, withInset: 16)
+                    answer1TextLabel.autoPinEdge(.top, to: .bottom, of: answer1ImageView, withOffset: 8)
+                    answer1TextLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
+                    answer1ImageView.autoConstrainAttribute(.height, to: .height, of: answer1View, withMultiplier: 0.6)
+                    answer2TextLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer2TextLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer2ImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer2ImageView.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer2ImageView.autoPinEdge(toSuperviewEdge: .top, withInset: 16)
+                    answer2TextLabel.autoPinEdge(.top, to: .bottom, of: answer2ImageView, withOffset: 8)
+                    answer2TextLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
+                    answer2ImageView.autoConstrainAttribute(.height, to: .height, of: answer2View, withMultiplier: 0.6)
+                    answer3TextLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer3TextLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer3ImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer3ImageView.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer3ImageView.autoPinEdge(toSuperviewEdge: .top, withInset: 16)
+                    answer3TextLabel.autoPinEdge(.top, to: .bottom, of: answer3ImageView, withOffset: 8)
+                    answer3TextLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
+                    answer3ImageView.autoConstrainAttribute(.height, to: .height, of: answer3View, withMultiplier: 0.6)
+                    answer4TextLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer4TextLabel.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer4ImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 8)
+                    answer4ImageView.autoPinEdge(toSuperviewEdge: .right, withInset: 8)
+                    answer4ImageView.autoPinEdge(toSuperviewEdge: .top, withInset: 16)
+                    answer4TextLabel.autoPinEdge(.top, to: .bottom, of: answer4ImageView, withOffset: 8)
+                    answer4TextLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
+                    answer4ImageView.autoConstrainAttribute(.height, to: .height, of: answer4View, withMultiplier: 0.6)
                 } as NSArray
-            oneByFourConstraints =
-                NSLayoutConstraint.autoCreateConstraintsWithoutInstalling {
-                    questionView.autoPinEdge(toSuperviewEdge: .top)
-                    questionView.autoPinEdge(toSuperviewEdge: .left)
-                    questionView.autoPinEdge(toSuperviewEdge: .right)
-                    questionView.autoConstrainAttribute(.height, to: .height, of: placeholderView, withMultiplier: 0.5)
-                    answer1View.autoConstrainAttribute(.width, to: .width, of: answer2View)
-                    answer2View.autoConstrainAttribute(.width, to: .width, of: answer3View)
-                    answer3View.autoConstrainAttribute(.width, to: .width, of: answer4View)
-                    answer1View.autoConstrainAttribute(.height, to: .height, of: answer2View)
-                    answer2View.autoConstrainAttribute(.height, to: .height, of: answer3View)
-                    answer3View.autoConstrainAttribute(.height, to: .height, of: answer4View)
-                    answer1View.autoPinEdge(toSuperviewEdge: .left)
-                    answer3View.autoPinEdge(toSuperviewEdge: .left)
-                    answer2View.autoPinEdge(toSuperviewEdge: .right)
-                    answer4View.autoPinEdge(toSuperviewEdge: .right)
-                    answer1View.autoPinEdge(.top, to: .bottom, of: questionView, withOffset: 8)
-                    answer2View.autoPinEdge(.top, to: .bottom, of: questionView, withOffset: 8)
-                    answer1View.autoPinEdge(.right, to: .left, of: answer2View, withOffset: 8)
-                    answer3View.autoPinEdge(toSuperviewEdge: .bottom)
-                    answer4View.autoPinEdge(toSuperviewEdge: .bottom)
-                    answer3View.autoPinEdge(.right, to: .left, of: answer4View, withOffset: 8)
-                    answer3View.autoPinEdge(.top, to: .bottom, of: answer1View, withOffset: 8)
-                    answer4View.autoPinEdge(.top, to: .bottom, of: answer2View, withOffset: 8)
-                } as NSArray
+            if !imagesDefined || traitCollection.verticalSizeClass != .regular {
+                twoByTwoConstraints?.autoInstallConstraints()
+                answer1ImageView.isHidden = true
+                answer2ImageView.isHidden = true
+                answer3ImageView.isHidden = true
+                answer4ImageView.isHidden = true
+                imagesIncluded = false
+            }
+            else {
+                twoByTwoWithImagesConstraints?.autoInstallConstraints()
+                answer1ImageView.isHidden = false
+                answer2ImageView.isHidden = false
+                answer3ImageView.isHidden = false
+                answer4ImageView.isHidden = false
+                imagesIncluded = true
+            }
             didSetupConstraints = true
         }
         super.updateViewConstraints()

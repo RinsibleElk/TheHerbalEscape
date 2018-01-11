@@ -195,6 +195,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbd-d2-JYJ">
+                                                <rect key="frame" x="-24" y="-25" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -211,6 +215,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nqh-au-4J5">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -227,6 +235,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uz-sI-uPE">
+                                                <rect key="frame" x="0.0" y="-19" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -243,6 +255,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1Y-9x-3Wp">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
@@ -260,12 +276,16 @@
                         <viewLayoutGuide key="safeArea" id="qkx-Bt-0aF"/>
                     </view>
                     <connections>
+                        <outlet property="answer1ImageView" destination="xbd-d2-JYJ" id="D2j-HA-Yfa"/>
                         <outlet property="answer1TextLabel" destination="QfH-Ac-uYZ" id="5h3-72-z1P"/>
                         <outlet property="answer1View" destination="i8O-TT-ieb" id="1gK-Ip-JAf"/>
+                        <outlet property="answer2ImageView" destination="nqh-au-4J5" id="R0J-db-ET8"/>
                         <outlet property="answer2TextLabel" destination="ieP-wC-DIi" id="wx2-VN-qFC"/>
                         <outlet property="answer2View" destination="RtD-ZR-aHc" id="1dS-94-a46"/>
+                        <outlet property="answer3ImageView" destination="1uz-sI-uPE" id="LmF-dL-wr1"/>
                         <outlet property="answer3TextLabel" destination="VX5-67-aUk" id="eYJ-yQ-EFL"/>
                         <outlet property="answer3View" destination="HzO-BK-0Eu" id="hsn-DS-ufR"/>
+                        <outlet property="answer4ImageView" destination="v1Y-9x-3Wp" id="Ko3-ow-aCs"/>
                         <outlet property="answer4TextLabel" destination="mf3-kw-6pF" id="IAM-pP-VA6"/>
                         <outlet property="answer4View" destination="kGy-fy-SUI" id="Orh-B4-QqB"/>
                         <outlet property="answerSectionView" destination="k67-H7-4ma" id="37F-7K-oHP"/>
