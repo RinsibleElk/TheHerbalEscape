@@ -40,12 +40,12 @@ class BrowserTableViewController: UITableViewController, UISearchResultsUpdating
         searchController!.dimsBackgroundDuringPresentation = false
         searchController!.searchBar.placeholder = "Filter..."
         searchController!.searchBar.returnKeyType = .done
-        //tableView.tableHeaderView = searchController!.searchBar
+        tableView.tableHeaderView = searchController!.searchBar
 //        if #available(iOS 11.0, *) {
 //            navigationItem.searchController = searchController
 //            navigationItem.hidesSearchBarWhenScrolling = false
 //        } else {
-            tableView.tableHeaderView = searchController!.searchBar
+//            tableView.tableHeaderView = searchController!.searchBar
 //        }
         definesPresentationContext = true
     }
