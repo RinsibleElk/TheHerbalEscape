@@ -165,6 +165,7 @@ class QuizQuestionViewController: UIViewController {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         setupViewConstraints()
     }
 
