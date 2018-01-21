@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -106,8 +107,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJx-Vm-TJg" customClass="ProgressControl" customModule="TheHerbalEscape" customModuleProvider="target">
-                                <rect key="frame" x="67" y="321" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJx-Vm-TJg" customClass="CircularProgressControl" customModule="TheHerbalEscape" customModuleProvider="target">
+                                <rect key="frame" x="67" y="281" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -119,6 +120,15 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberAchieved">
                                         <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="notAchievedColor">
+                                        <color key="value" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="percentageAchieved">
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -158,12 +168,21 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonNormal" highlightedImage="buttonSelected" translatesAutoresizingMaskIntoConstraints="NO" id="Swk-dj-Pkn">
                                             <rect key="frame" x="16" y="11" width="343" height="68"/>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6M-x0-9ej" customClass="ProgressControl" customModule="TheHerbalEscape" customModuleProvider="target">
-                                            <rect key="frame" x="302" y="28" width="43" height="34"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6M-x0-9ej" customClass="CircularProgressControl" customModule="TheHerbalEscape" customModuleProvider="target">
+                                            <rect key="frame" x="277" y="11" width="68" height="68"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-9W-GGI">
+                                                    <rect key="frame" x="25" y="25.5" width="20" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="UeT-LL-d71"/>
-                                                <constraint firstAttribute="height" constant="34" id="XrD-59-eML"/>
+                                                <constraint firstItem="di4-9W-GGI" firstAttribute="centerY" secondItem="L6M-x0-9ej" secondAttribute="centerY" id="M0s-cp-bTh"/>
+                                                <constraint firstItem="di4-9W-GGI" firstAttribute="centerX" secondItem="L6M-x0-9ej" secondAttribute="centerX" id="UxL-yx-n21"/>
+                                                <constraint firstAttribute="width" secondItem="L6M-x0-9ej" secondAttribute="height" multiplier="1:1" id="qVz-5y-9ic"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
@@ -178,10 +197,13 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                     <real key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CourseName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-00-QTE">
-                                            <rect key="frame" x="31" y="34" width="263" height="21"/>
+                                            <rect key="frame" x="31" y="34" width="238" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -189,11 +211,16 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="EDg-00-QTE" firstAttribute="centerY" secondItem="kHS-A3-1Jr" secondAttribute="centerY" id="049-2V-SFk"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="L6M-x0-9ej" secondAttribute="trailing" constant="14" id="AVv-5s-Sbt"/>
-                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="centerY" secondItem="kHS-A3-1Jr" secondAttribute="centerY" id="C7m-P8-veU"/>
+                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="0Ss-GY-XlK"/>
+                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="2b3-vK-5ml"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="L6M-x0-9ej" secondAttribute="trailing" constant="14" id="84m-hd-q0P"/>
+                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="Brp-GH-zzl"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="DZp-Rv-6Qj"/>
+                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="leading" secondItem="EDg-00-QTE" secondAttribute="trailing" constant="8" id="KiP-C6-Pcr"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="LfQ-2m-Mux"/>
-                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="leading" secondItem="EDg-00-QTE" secondAttribute="trailing" constant="8" id="kWk-y9-7Nl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="L6M-x0-9ej" secondAttribute="trailing" constant="14" id="cnT-hF-Xba"/>
+                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="leading" secondItem="EDg-00-QTE" secondAttribute="trailing" constant="8" id="pVP-FF-weE"/>
+                                        <constraint firstItem="L6M-x0-9ej" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="spy-iv-QqB"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="leading" secondItem="kHS-A3-1Jr" secondAttribute="leadingMargin" id="uWe-pH-g2L"/>
                                         <constraint firstItem="EDg-00-QTE" firstAttribute="leading" secondItem="kHS-A3-1Jr" secondAttribute="leadingMargin" constant="15" id="xuk-2h-fgx"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="trailing" secondItem="kHS-A3-1Jr" secondAttribute="trailingMargin" id="zCy-Rp-Ilw"/>
@@ -201,7 +228,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="Swk-dj-Pkn" id="Wm1-n0-HRe"/>
-                                    <outlet property="progressControl" destination="L6M-x0-9ej" id="Szs-gO-fNW"/>
+                                    <outlet property="progressControl" destination="L6M-x0-9ej" id="rt9-Ii-1iR"/>
+                                    <outlet property="progressLabel" destination="di4-9W-GGI" id="ibl-CJ-Rxx"/>
                                     <outlet property="titleLabelView" destination="EDg-00-QTE" id="uJ4-Ri-eFx"/>
                                 </connections>
                             </tableViewCell>

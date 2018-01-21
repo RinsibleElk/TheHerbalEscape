@@ -105,6 +105,7 @@
 		D3DBF1B21FCCBC1800A014F9 /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */; };
 		D3DBF1B61FCCC4DA00A014F9 /* IContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */; };
 		D3DDA47520042F9F006CFDA4 /* ProgressBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DDA47420042F9F006CFDA4 /* ProgressBarButtonItem.swift */; };
+		D3E32F5F2014A2AD001BCC26 /* CircularProgressControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E32F5E2014A2AD001BCC26 /* CircularProgressControl.swift */; };
 		D3E3F13420025093005D6660 /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3F13320025093005D6660 /* QuizQuestionViewController.swift */; };
 		D3E3F1362002564D005D6660 /* IQuizQuestionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3F1352002564D005D6660 /* IQuizQuestionDelegate.swift */; };
 		D3E3F13820026587005D6660 /* QuizAnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3F13720026587005D6660 /* QuizAnswerState.swift */; };
@@ -256,6 +257,7 @@
 		D3DBF1B11FCCBC1800A014F9 /* CoreDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
 		D3DBF1B51FCCC4DA00A014F9 /* IContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContentRepository.swift; sourceTree = "<group>"; };
 		D3DDA47420042F9F006CFDA4 /* ProgressBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarButtonItem.swift; sourceTree = "<group>"; };
+		D3E32F5E2014A2AD001BCC26 /* CircularProgressControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressControl.swift; sourceTree = "<group>"; };
 		D3E3F13320025093005D6660 /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
 		D3E3F1352002564D005D6660 /* IQuizQuestionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQuizQuestionDelegate.swift; sourceTree = "<group>"; };
 		D3E3F13720026587005D6660 /* QuizAnswerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerState.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 				D3E5EA191FC905B200E27037 /* TextUtilities.swift */,
 				D31C7D1B200409DE00E2FC0D /* ProgressControl.swift */,
 				D3DDA47420042F9F006CFDA4 /* ProgressBarButtonItem.swift */,
+				D3E32F5E2014A2AD001BCC26 /* CircularProgressControl.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -957,6 +960,7 @@
 				D3F23E0B1FD436090061725D /* BrowserTitleHeaderView.swift in Sources */,
 				D30D220920011D15000061CC /* ArrayExtensions.swift in Sources */,
 				D3E5EA1A1FC905B200E27037 /* TextUtilities.swift in Sources */,
+				D3E32F5F2014A2AD001BCC26 /* CircularProgressControl.swift in Sources */,
 				D3CE84461FF90968007A490B /* ProgressSummary.swift in Sources */,
 				D30E2AA91FF933E700B2BF1C /* OverallProgressSummary.swift in Sources */,
 				D30E2AAD1FF9514600B2BF1C /* CourseMenuTableViewController.swift in Sources */,
