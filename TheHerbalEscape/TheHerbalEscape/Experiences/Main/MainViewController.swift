@@ -11,16 +11,13 @@ import UIKit
 class MainViewController: UIViewController {
     // MARK: - Properties
     var overallProgressSummary: OverallProgressSummary?
-    
+
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        if (appDelegate != nil) {
-            overallProgressSummary = appDelegate!.progressController!.getProgressSummary(contentRepository: appDelegate!.contentRepository)
-        }
+        updateProgress()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +43,14 @@ class MainViewController: UIViewController {
                     destinationVc.progress = overallProgressSummary!
                 }
             }
+        }
+    }
+    
+    // MARK: - ProgressUpdatedDelegate
+    func updateProgress() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if (appDelegate != nil) {
+            overallProgressSummary = appDelegate!.progressController!.getProgressSummary(contentRepository: appDelegate!.contentRepository)
         }
     }
 }
