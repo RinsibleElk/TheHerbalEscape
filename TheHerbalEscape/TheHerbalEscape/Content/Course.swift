@@ -19,6 +19,13 @@ class Course: Codable {
     
     /// The level of the Course. Used to determine if the Course is applicable for testing based on the user's preferences.
     var Level: Int
+    
+    // MARK: - Initializers
+    init(name: String, color: CourseColor, level: Int) {
+        Name = name
+        Color = color
+        Level = level
+    }
 }
 
 public class CourseContents : Decodable {

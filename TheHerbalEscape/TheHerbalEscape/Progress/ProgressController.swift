@@ -112,7 +112,7 @@ class ProgressController: IProgressController {
             let progressObjects = try moc.fetch(fetchRequest)
             for progress in progressObjects {
                 let content = contentRepository.fetchQuestion(question: progress.question!)
-                progressSummary.update(course: content.Course, oldValue: nil, newValue: progress.lastDifficulty.toDifficulty())
+                progressSummary.update(course: contentRepository.fetchCourse(courseName: content.Course), oldValue: nil, newValue: progress.lastDifficulty.toDifficulty())
             }
             return progressSummary
         }

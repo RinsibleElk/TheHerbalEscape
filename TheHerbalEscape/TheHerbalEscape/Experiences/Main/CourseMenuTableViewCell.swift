@@ -10,7 +10,7 @@ import UIKit
 
 class CourseMenuTableViewCell: UITableViewCell {
     // MARK: - Properties
-    var course: String? {
+    var course: Course? {
         didSet {
             setText()
         }
@@ -30,16 +30,20 @@ class CourseMenuTableViewCell: UITableViewCell {
     // MARK: - Private functions
     private func setText() {
         if course != nil {
-            titleLabelView.text = course!
+            titleLabelView.text = course!.Name
             let progressPercentage = progress != nil ? Int(progress!.Percentage * 100.0) : 0
             progressLabel.text = "\(progressPercentage)%"
+            progressLabel.textColor = course!.Color.getUiColor()
             progressControl.percentageAchieved = progressPercentage
+            progressControl.achievedColor = course!.Color.getUiColor()
         }
         else {
             titleLabelView.text = "All"
             let progressPercentage = 0
             progressLabel.text = "\(progressPercentage)%"
+            progressLabel.textColor = Colors.White
             progressControl.percentageAchieved = progressPercentage
+            progressControl.achievedColor = Colors.White
         }
     }
 

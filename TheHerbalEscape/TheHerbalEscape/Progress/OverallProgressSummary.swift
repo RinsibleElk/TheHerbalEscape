@@ -11,7 +11,7 @@ import Foundation
 /// All progress summarised.
 class OverallProgressSummary: Codable {
     // MARK: - Constants
-    static let AllCourses = "All"
+    static let AllCourses = Course(name: "All", color: CourseColor.White, level: 1)
     
     // MARK: - Properties
     /// Summary of total progress across all courses.
@@ -21,7 +21,7 @@ class OverallProgressSummary: Codable {
     var PerCourseSummary: [String:ProgressSummary]
     
     /// Courses.
-    var Courses: [String]
+    var Courses: [Course]
     
     // MARK: - Initializers
     init() {
@@ -32,15 +32,15 @@ class OverallProgressSummary: Codable {
     
     // MARK: - API
     /// Get the progress for a course.
-    func getProgress(course: String?) -> ProgressSummary {
-        if course == nil || course! == OverallProgressSummary.AllCourses {
+    func getProgress(course: Course?) -> ProgressSummary {
+        if course == nil || course!.Name == OverallProgressSummary.AllCourses.Name {
             return TotalProgress
         }
         else {
-            let progress = PerCourseSummary[course!]
+            let progress = PerCourseSummary[course!.Name]
             if progress == nil {
-                let perCourseProgress = ProgressSummary(course: course!)
-                PerCourseSummary[course!] = perCourseProgress
+                let perCourseProgress = ProgressSummary(course: course!.Name)
+                PerCourseSummary[course!.Name] = perCourseProgress
                 Courses.append(course!)
                 return perCourseProgress
             }
@@ -51,7 +51,7 @@ class OverallProgressSummary: Codable {
     }
     
     /// Update the difficulty of a flashcard or question.
-    func update(course:String, oldValue: FlashcardDifficulty?, newValue: FlashcardDifficulty) {
+    func update(course:Course, oldValue: FlashcardDifficulty?, newValue: FlashcardDifficulty) {
         getProgress(course: nil).update(oldValue: oldValue, newValue: newValue)
         getProgress(course: course).update(oldValue: oldValue, newValue: newValue)
     }

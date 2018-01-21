@@ -15,9 +15,12 @@ enum CourseColor: String, Codable {
     case MistyRose = "MistyRose"
     case LemonChiffon = "LemonChiffon"
     case Honeydew = "Honeydew"
+    case White = "White"
 
     func getUiColor() -> UIColor {
         switch self {
+        case .White:
+            return Colors.White
         case .Azure:
             return Colors.Azure
         case .Lavender:

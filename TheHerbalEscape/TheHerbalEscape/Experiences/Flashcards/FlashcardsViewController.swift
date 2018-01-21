@@ -24,7 +24,30 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     var flashcardVc2: FlashcardViewController?
     var showingFrontSide = true
     var showingCard1 = true
-    var isAnimating = false
+    var helpButtonShouldBeEnabled = true {
+        didSet {
+            if helpButtonShouldBeEnabled != oldValue {
+                if helpButtonShouldBeEnabled {
+                    helpToolbarButton.isEnabled = !isAnimating
+                }
+                else {
+                    helpToolbarButton.isEnabled = false
+                }
+            }
+        }
+    }
+    var isAnimating = false {
+        didSet {
+            if isAnimating != oldValue {
+                if isAnimating {
+                    helpToolbarButton.isEnabled = false
+                }
+                else {
+                    helpToolbarButton.isEnabled = helpButtonShouldBeEnabled
+                }
+            }
+        }
+    }
     var animator: UIDynamicAnimator!
     var snapBehavior: UISnapBehavior?
     var snapPoint: CGPoint?
@@ -47,10 +70,10 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
                 if showHelp {
                     helpView.isHidden = false
                     if showingCard1 {
-                        flashcard1.alpha = 0.3
+                        flashcard1.alpha = 0.2
                     }
                     else {
-                        flashcard2.alpha = 0.3
+                        flashcard2.alpha = 0.2
                     }
                 }
                 else {
@@ -102,7 +125,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         easy.alpha = 0
         hard.alpha = 0
         veryHard.alpha = 0
-        helpToolbarButton.isEnabled = true
+        helpButtonShouldBeEnabled = true
 
         // Bootstrap Auto Layout
         view.setNeedsUpdateConstraints()
@@ -158,7 +181,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         resultsView.isHidden = false
         flashcard1.isHidden = true
         flashcard2.isHidden = true
-        helpToolbarButton.isEnabled = false
+        helpButtonShouldBeEnabled = false
     }
 
     // MARK: - Gestures
