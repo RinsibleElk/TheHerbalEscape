@@ -24,8 +24,8 @@ class CourseMenuTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabelView: UILabel!
-    @IBOutlet weak var progressControl: CircularProgressControl!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressControl: CircularProgressControl!
     
     // MARK: - Private functions
     private func setText() {

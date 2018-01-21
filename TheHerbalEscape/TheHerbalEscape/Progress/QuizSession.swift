@@ -32,7 +32,12 @@ class QuizSession: IQuizSession {
     var continueText: String {
         get {
             if showingAnswers {
-                return "Next Question"
+                if index == questions.count - 1 {
+                    return "View Results"
+                }
+                else {
+                    return "Next Question"
+                }
             }
             else {
                 return "Confirm"

@@ -39,6 +39,32 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var easyResultsLabel: UILabel!
     @IBOutlet weak var hardResultsLabel: UILabel!
     @IBOutlet weak var veryHardResultsLabel: UILabel!
+    @IBOutlet weak var helpToolbarButton: UIBarButtonItem!
+    @IBOutlet weak var helpView: UIView!
+    var showHelp: Bool = false {
+        didSet {
+            if showHelp != oldValue {
+                if showHelp {
+                    helpView.isHidden = false
+                    if showingCard1 {
+                        flashcard1.alpha = 0.3
+                    }
+                    else {
+                        flashcard2.alpha = 0.3
+                    }
+                }
+                else {
+                    helpView.isHidden = true
+                    if showingCard1 {
+                        flashcard1.alpha = 1.0
+                    }
+                    else {
+                        flashcard2.alpha = 1.0
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: - Overrides
     override func viewDidLoad() {
@@ -66,13 +92,17 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
 
         // Do any additional setup after loading the view.
         resultsView.isHidden = true
+        helpView.isHidden = true
+        flashcard1.isHidden = false
+        flashcard2.isHidden = true
         setUndoEnabled(isEnabled: false)
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "wavy"))
-        flashcard2.isHidden = true
+        showHelp = false
         veryEasy.alpha = 0
         easy.alpha = 0
         hard.alpha = 0
         veryHard.alpha = 0
+        helpToolbarButton.isEnabled = true
 
         // Bootstrap Auto Layout
         view.setNeedsUpdateConstraints()
@@ -128,6 +158,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         resultsView.isHidden = false
         flashcard1.isHidden = true
         flashcard2.isHidden = true
+        helpToolbarButton.isEnabled = false
     }
 
     // MARK: - Gestures
@@ -246,6 +277,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     private func handleSwipe(difficulty: FlashcardDifficulty) {
         if (!isAnimating) {
+            showHelp = false
             flashcardSession.finishCard(difficulty: difficulty)
             setUndoEnabled(isEnabled: flashcardSession.canUndo)
             handleSwipeAnimation(difficulty: difficulty, showEmoticons: true)
@@ -257,6 +289,7 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
         if !isAnimating {
+            showHelp = false
             isAnimating = true
             let frontView = showingCard1 ? flashcard1 : flashcard2
             let backView = showingCard1 ? flashcard2 : flashcard1
@@ -284,12 +317,14 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     @IBAction func handleUndo(_ sender: UIBarButtonItem) {
         if !isAnimating && flashcardSession.canUndo {
+            showHelp = false
             let lastDifficulty = flashcardSession.undo()
             setUndoEnabled(isEnabled: flashcardSession.canUndo)
             handleSwipeAnimation(difficulty: lastDifficulty.reverse(), showEmoticons: false)
         }
     }
     @IBAction func handleDrag(_ sender: UIPanGestureRecognizer) {
+        showHelp = false
         let translation = sender.translation(in: self.view)
         if sender.state == .ended {
             if let view = showingCard1 ? flashcard1 : flashcard2 {
@@ -340,7 +375,8 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
         else {
             if let view = showingCard1 ? flashcard1 : flashcard2 {
                 if (snapPoint == nil) {
-                    snapPoint = flashcardPlaceholderView.convert(flashcardPlaceholderView.center, to: self.view)
+                    // TODO: This never comes out quite central...
+                    snapPoint = view.convert(view.center, to: self.view) // flashcardPlaceholderView.convert(flashcardPlaceholderView.center, to: self.view)
                 }
                 view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
                 let veryEasyAlpha = min(1, max(0, 2.0 * (0.5 * flashcardPlaceholderView.frame.height - view.center.y) / flashcardPlaceholderView.frame.height))
@@ -353,6 +389,12 @@ class FlashcardsViewController: UIViewController, UIGestureRecognizerDelegate {
                 veryHard.alpha = veryHardAlpha
             }
             sender.setTranslation(CGPoint.zero, in: self.view)
+        }
+    }
+
+    @IBAction func helpButtonPressed(_ sender: UIBarButtonItem) {
+        if !isAnimating {
+            showHelp = !showHelp
         }
     }
 }

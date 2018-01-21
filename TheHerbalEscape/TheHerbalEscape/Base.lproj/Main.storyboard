@@ -127,30 +127,30 @@
                                             <rect key="frame" x="16" y="11" width="343" height="68"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CourseName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-00-QTE">
-                                            <rect key="frame" x="31" y="34" width="240" height="21"/>
+                                            <rect key="frame" x="31" y="34" width="244" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUT-fO-f05" customClass="CircularProgressControl" customModule="TheHerbalEscape" customModuleProvider="target">
-                                            <rect key="frame" x="279" y="11" width="68" height="68"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kF-3B-tS5" customClass="CircularProgressControl" customModule="TheHerbalEscape" customModuleProvider="target">
+                                            <rect key="frame" x="283" y="11" width="68" height="68"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-uD-sQL">
-                                                    <rect key="frame" x="24" y="26" width="20" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s99-n8-Edt">
+                                                    <rect key="frame" x="19" y="25.5" width="30" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="DQU-uD-sQL" firstAttribute="centerY" secondItem="WUT-fO-f05" secondAttribute="centerY" id="P9R-MQ-uqY"/>
-                                                <constraint firstItem="DQU-uD-sQL" firstAttribute="centerX" secondItem="WUT-fO-f05" secondAttribute="centerX" id="ZoN-hz-BLM"/>
-                                                <constraint firstAttribute="width" secondItem="WUT-fO-f05" secondAttribute="height" multiplier="1:1" id="xFb-aG-HC5"/>
+                                                <constraint firstItem="s99-n8-Edt" firstAttribute="centerY" secondItem="4kF-3B-tS5" secondAttribute="centerY" id="0Ad-n8-0Ec"/>
+                                                <constraint firstAttribute="width" secondItem="4kF-3B-tS5" secondAttribute="height" multiplier="1:1" id="IAc-X3-LCO"/>
+                                                <constraint firstItem="s99-n8-Edt" firstAttribute="centerX" secondItem="4kF-3B-tS5" secondAttribute="centerX" id="t2d-SN-7wm"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="thickness">
-                                                    <real key="value" value="7"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="minThickness">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="notAchievedColor">
                                                     <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,26 +158,35 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="achievedColor">
                                                     <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxThickness">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="percentageAchieved">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="numSections">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="EDg-00-QTE" firstAttribute="centerY" secondItem="kHS-A3-1Jr" secondAttribute="centerY" id="049-2V-SFk"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="DZp-Rv-6Qj"/>
+                                        <constraint firstItem="4kF-3B-tS5" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="ESN-Z7-Nfg"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="LfQ-2m-Mux"/>
-                                        <constraint firstItem="WUT-fO-f05" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="ODg-4o-gOu"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="WUT-fO-f05" secondAttribute="trailing" constant="12" id="Y3L-59-kPI"/>
-                                        <constraint firstItem="WUT-fO-f05" firstAttribute="bottom" secondItem="kHS-A3-1Jr" secondAttribute="bottomMargin" id="iHE-eA-RIN"/>
+                                        <constraint firstItem="4kF-3B-tS5" firstAttribute="top" secondItem="kHS-A3-1Jr" secondAttribute="topMargin" id="UAW-Eh-gFZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4kF-3B-tS5" secondAttribute="trailing" constant="8" id="bce-aM-0Ac"/>
+                                        <constraint firstItem="4kF-3B-tS5" firstAttribute="leading" secondItem="EDg-00-QTE" secondAttribute="trailing" constant="8" id="szz-WH-sOz"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="leading" secondItem="kHS-A3-1Jr" secondAttribute="leadingMargin" id="uWe-pH-g2L"/>
                                         <constraint firstItem="EDg-00-QTE" firstAttribute="leading" secondItem="kHS-A3-1Jr" secondAttribute="leadingMargin" constant="15" id="xuk-2h-fgx"/>
-                                        <constraint firstItem="WUT-fO-f05" firstAttribute="leading" secondItem="EDg-00-QTE" secondAttribute="trailing" constant="8" id="yVJ-Cm-vdt"/>
                                         <constraint firstItem="Swk-dj-Pkn" firstAttribute="trailing" secondItem="kHS-A3-1Jr" secondAttribute="trailingMargin" id="zCy-Rp-Ilw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="Swk-dj-Pkn" id="Wm1-n0-HRe"/>
-                                    <outlet property="progressControl" destination="WUT-fO-f05" id="M2d-5S-kr4"/>
-                                    <outlet property="progressLabel" destination="DQU-uD-sQL" id="Lu6-SW-3ht"/>
+                                    <outlet property="progressControl" destination="4kF-3B-tS5" id="moe-g0-Qov"/>
+                                    <outlet property="progressLabel" destination="s99-n8-Edt" id="uVm-GY-kbj"/>
                                     <outlet property="titleLabelView" destination="EDg-00-QTE" id="uJ4-Ri-eFx"/>
                                 </connections>
                             </tableViewCell>
