@@ -36,11 +36,13 @@ class MainViewController: UIViewController {
             case SegueIdentifiers.FlashcardsMenuSegueIdentifier:
                 if let destinationVc = segue.destination as? CourseMenuTableViewController {
                     destinationVc.selectionSegueIdentifier = SegueIdentifiers.FlashcardsSegueIdentifier
+                    destinationVc.menuTitle = "Select Flashcards"
                     destinationVc.progress = overallProgressSummary!
                 }
             default:
                 if let destinationVc = segue.destination as? CourseMenuTableViewController {
                     destinationVc.selectionSegueIdentifier = SegueIdentifiers.QuizSegueIdentifier
+                    destinationVc.menuTitle = "Select Quiz"
                     destinationVc.progress = overallProgressSummary!
                 }
             }

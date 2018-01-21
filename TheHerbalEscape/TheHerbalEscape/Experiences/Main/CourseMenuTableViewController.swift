@@ -11,18 +11,14 @@ import UIKit
 class CourseMenuTableViewController: UITableViewController {
     // MARK: - Properties
     var progress: OverallProgressSummary?
+    var menuTitle: String!
     var selectionSegueIdentifier: String!
     
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "wavy"))
+        title = menuTitle
     }
 
     override func didReceiveMemoryWarning() {
