@@ -29,6 +29,17 @@ class QuizSession: IQuizSession {
         }
     }
     
+    var continueText: String {
+        get {
+            if showingAnswers {
+                return "Next Question"
+            }
+            else {
+                return "Confirm"
+            }
+        }
+    }
+    
     func continueTapped() -> QuizTransition {
         if showingAnswers {
             var isCorrect = true

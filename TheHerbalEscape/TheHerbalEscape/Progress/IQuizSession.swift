@@ -33,6 +33,9 @@ protocol IQuizSession: Codable {
     
     /// Whether the continue button should be enabled.
     var continueEnabled:Bool { get }
+    
+    /// The text to show on the continue button.
+    var continueText: String { get }
 
     /// Number of correct answers given.
     var numCorrect: Int { get }

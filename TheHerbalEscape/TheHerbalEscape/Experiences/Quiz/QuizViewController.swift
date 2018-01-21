@@ -61,6 +61,7 @@ class QuizViewController: UIViewController, IQuizQuestionDelegate {
     
     private func updateState() {
         continueButton.isEnabled = quizSession!.continueEnabled
+        continueButton.setTitle(quizSession!.continueText, for: [])
         if let vc = (viewMode == .Question1) ? questionVc1 : questionVc2 {
             for answerIndex in 1...4 {
                 vc.setAnswerState(answerIndex: answerIndex, answerState: quizSession!.getState(answerIndex: answerIndex))
@@ -74,6 +75,7 @@ class QuizViewController: UIViewController, IQuizQuestionDelegate {
 
         resultsView.isHidden = true
         browserButton.isEnabled = false
+        continueButton.setTitle("Confirm", for: [])
 
         // Set up session - TODO find a better way to do this.
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
